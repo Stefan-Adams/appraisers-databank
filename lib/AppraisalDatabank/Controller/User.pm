@@ -3,6 +3,9 @@ use Mojo::Base 'Mojolicious::Controller';
 
 use Mojo::Util qw/slurp md5_sum/;
 
+use File::Path;
+use File::Basename;
+
 sub register {
   my $c = shift;
 
@@ -36,11 +39,11 @@ sub register {
   return $c->render unless my $w9 = $c->param('w9');
   my $size = $w9->size;
   my $name = $w9->filename;
-  my $filename = $validation->output->{'state'}.'/'.$validation->output->{'slid'};
-  mkdir 'w9/'.$validation->output->{'state'} unless -e 'w9/'.$validation->output->{'state'};
+  my $filename = $c->app->home->rel_file('w9/'.$validation->output->{'state'}.'/'.$validation->output->{'slid'});
+  mkpath dirname $filename;
   # TODO: Insert file system hashing function here
-  $w9->move_to("w9/$filename");
-  if ( -e "w9/$filename" && -s _ == $size ) {
+  $w9->move_to($filename);
+  if ( -e $filename && -s _ == $size ) {
     $c->render_later;
     $c->mysql->db->query($c->sql->insert('users', $validation->output) => sub {
       my ($db, $err, $results) = @_;
