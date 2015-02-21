@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      label.field-with-error { color: #dd7e5e }
-      input.field-with-error { background-color: #fd9e7e }
-    </style>
+    <title>Register</title>
+    %= asset 'adb.css'
   </head>
   <body>
     Register<br />
-    %= form_for register => begin
+    %= form_for post_register => (enctype => 'multipart/form-data') => begin
       %= label_for email => 'Email (Required)'
       <br>
       %= email_field 'email'
@@ -32,6 +30,11 @@
       %= label_for taxid => 'Federal ID or Social Security Number (Required)'
       <br>
       %= text_field 'taxid'
+      <br>
+
+      %= label_for w9 => 'W-9 (Required)'
+      <br>
+      %= file_field 'w9'
       <br>
 
       %= label_for firstname => 'First Name'
@@ -71,7 +74,7 @@
 
       %= label_for tos => 'I agree to the Terms of Service'
       <br>
-      %= check_box 'tos'
+      %= check_box 'tos' => 1
       <br>
 
       %= submit_button

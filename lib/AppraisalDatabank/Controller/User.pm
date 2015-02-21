@@ -1,6 +1,8 @@
 package AppraisalDatabank::Controller::User;
 use Mojo::Base 'Mojolicious::Controller';
 
+use Mojo::Util qw/slurp md5_sum/;
+
 sub register {
   my $c = shift;
 
@@ -11,7 +13,7 @@ sub register {
   # Validate parameters ("pass_again" depends on "password")
   $validation->required('email')->email->not_exists;
   $validation->required('pass_again')->equal_to('password') and delete $validation->output->{pass_again}
-    if $validation->required('password')->size(1, 500)->is_valid;
+    if $validation->required('password')->size(1, 64)->is_valid;
   $validation->required('slid');
   $validation->required('taxid');
   $validation->required('firstname');
@@ -26,15 +28,35 @@ sub register {
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
 
-  $c->render_later;
-  $c->mysql->db->query($c->sql->insert('users', $validation->output) => sub {
-    my ($db, $err, $results) = @_;
-    if ( $err ) {
-      $c->reply->exception('Something went wrong with your registration!');
-    } else {
-      $c->redirect_to('home');
-    }
-  });
+  # Check file size
+  return $c->render(text => 'File is too big.', status => 200)
+    if $c->req->is_limit_exceeded;
+
+  # Process uploaded file
+  return $c->render unless my $w9 = $c->param('w9');
+  my $size = $w9->size;
+  my $name = $w9->filename;
+  my $filename = $validation->output->{'state'}.'/'.$validation->output->{'slid'};
+  mkdir 'w9/'.$validation->output->{'state'} unless -e 'w9/'.$validation->output->{'state'};
+  # TODO: Insert file system hashing function here
+  $w9->move_to("w9/$filename");
+  if ( -e "w9/$filename" && -s _ == $size ) {
+    $c->render_later;
+    $c->mysql->db->query($c->sql->insert('users', $validation->output) => sub {
+      my ($db, $err, $results) = @_;
+      if ( $err ) {
+        # Remove file
+        $c->reply->exception($err);
+      } else {
+        $c->app->log->info("uploaded $name to $filename");
+        $c->stash(success => "Thanks for registering.");
+        $c->redirect_to('home');
+      }
+    });
+  } else {
+    # Remove file
+    $c->reply->exception('Something went wrong saving your upload!');
+  }
 }
 
 sub login {

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      label.field-with-error { color: #dd7e5e }
-      input.field-with-error { background-color: #fd9e7e }
-    </style>
+    <title>Login</title>
+    %= asset 'adb.css'
   </head>
   <body>
     Login or <%= link_to Register => 'register' %><br />
+    <%= stash 'success' %><%= stash 'error' %><br />
     %= form_for login => begin
       %= label_for email => 'Email (required, 1-20 characters, only e-t)'
       <br>
