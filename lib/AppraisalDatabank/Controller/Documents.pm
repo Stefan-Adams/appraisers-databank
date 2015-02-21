@@ -3,6 +3,9 @@ use Mojo::Base 'Mojolicious::Controller';
 
 use Mojo::Util qw/slurp md5_sum/;
 
+use File::Path;
+use File::Basename;
+
 sub home {
   my $c = shift;
 
@@ -105,9 +108,11 @@ sub upload {
     return $c->render(error => 'Document must be of type PDF');
   }
   my $filename = $validation->output->{filename} = md5_sum($name.time.$validation->output->{email});
+  my $docdir = $c->app->home->rel_file('documents');
+  mkpath $docdir;
   # TODO: Insert file system hashing function here
-  $doc->move_to("documents/$filename");
-  if ( -e "documents/$filename" && -s _ == $size ) {
+  $doc->move_to("$docdir/$filename");
+  if ( -e "$docdir/$filename" && -s _ == $size ) {
     $c->render_later;
     $c->mysql->db->query($c->sql->insert('documents', $validation->output) => sub {
       my ($db, $err, $results) = @_;
