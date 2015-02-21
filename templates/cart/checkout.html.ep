@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    %= asset 'adb.css'
+  </head>
+  <body>
+    <%= link_to 'Home' => 'home' %><br />
+    <%= stash 'success' %><%= stash 'error' %><br />
+    Download purchased documents
+    <div id="table">
+    % my $action = begin
+      % my $doc = shift;
+      <%= link_to Download => 'download' => {filename => $doc->{filename}} => (target => '_blank') %>
+      % unless ( $doc->{complete} ) {
+        <div id="<%= $doc->{filename} %>" class="">Incomplete Document</div>
+      % }
+    % end
+    %= include 'documents/table', docs => stash('cart'), action => $action
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+% return unless $docs->size;
+% my $columns = {map { $_ => 1 } stash('columns') || qw/mls inspection_date address city county state zip uploaded/};
+<table>
+  <tr>
+    % if ( defined $action && ref $action eq 'CODE' ) {
+    <th>&nbsp;</th>
+    % }
+    % if ( $columns->{mls} ) {
+    <th>MLS</th>
+    % }
+    % if ( $columns->{inspection_date} ) {
+    <th>Inspection Date</th>
+    % }
+    % if ( $columns->{address} ) {
+    <th>Address</th>
+    % }
+    % if ( $columns->{city} ) {
+    <th>City</th>
+    % }
+    % if ( $columns->{county} ) {
+    <th>County</th>
+    % }
+    % if ( $columns->{state} ) {
+    <th>State</th>
+    % }
+    % if ( $columns->{zip} ) {
+    <th>Zip</th>
+    % }
+    % if ( $columns->{uploaded} ) {
+    <th>Upload Date</th>
+    % }
+  </tr>
+  % foreach my $doc ( @$docs ) {
+  %# color = green if $doc->{complete}
+  <tr>
+    % if ( defined $action && ref $action eq 'CODE' ) {
+    <td><%= $action->($doc) %></td>
+    % }
+    % if ( $columns->{mls} ) {
+    <td><%= $doc->{mls} %></td>
+    % }
+    % if ( $columns->{inspection_date} ) {
+    <td><%= $doc->{inspection_date} %></td>
+    % }
+    % if ( $columns->{address} ) {
+    <td><%= $doc->{address} %></td>
+    % }
+    % if ( $columns->{city} ) {
+    <td><%= $doc->{city} %></td>
+    % }
+    % if ( $columns->{county} ) {
+    <td><%= $doc->{county} %></td>
+    % }
+    % if ( $columns->{state} ) {
+    <td><%= $doc->{state} %></td>
+    % }
+    % if ( $columns->{zip} ) {
+    <td><%= $doc->{zip} %></td>
+    % }
+    % if ( $columns->{uploaded} ) {
+    <td><%= $doc->{uploaded} %></td>
+    % }
+  </tr>
+  % }
+</table>

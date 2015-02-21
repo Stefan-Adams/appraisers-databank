@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      label.field-with-error { color: #dd7e5e }
+      input.field-with-error { background-color: #fd9e7e }
+    </style>
+  </head>
+  <body>
+    Login or <%= link_to Register => 'register' %><br />
+    %= form_for login => begin
+      %= label_for email => 'Email (required, 1-20 characters, only e-t)'
+      <br>
+      %= email_field 'email'
+      <br>
+
+      %= label_for password => 'Password (required, 7-500 characters)'
+      <br>
+      %= password_field 'password'
+      <br>
+
+      %= submit_button
+    % end
+  </body>
+</html>

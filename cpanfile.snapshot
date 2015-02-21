@@ -1,0 +1,1318 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  B-Hooks-OP-Check-0.19
+    pathname: Z/ZE/ZEFRAM/B-Hooks-OP-Check-0.19.tar.gz
+    provides:
+      B::Hooks::OP::Check 0.19
+      B::Hooks::OP::Check::Install::Files undef
+    requirements:
+      ExtUtils::Depends 0.302
+      ExtUtils::MakeMaker 6.42
+      Test::More 0
+      parent 0
+      perl 5.008001
+  CPAN-Meta-2.143240
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-2.143240.tar.gz
+    provides:
+      CPAN::Meta 2.143240
+      CPAN::Meta::Converter 2.143240
+      CPAN::Meta::Feature 2.143240
+      CPAN::Meta::History 2.143240
+      CPAN::Meta::Merge 2.143240
+      CPAN::Meta::Prereqs 2.143240
+      CPAN::Meta::Spec 2.143240
+      CPAN::Meta::Validator 2.143240
+    requirements:
+      CPAN::Meta::Requirements 2.121
+      CPAN::Meta::YAML 0.008
+      Carp 0
+      ExtUtils::MakeMaker 6.17
+      JSON::PP 2.27200
+      Parse::CPAN::Meta 1.4414
+      Scalar::Util 0
+      perl 5.008
+      strict 0
+      version 0.88
+      warnings 0
+  CPAN-Meta-YAML-0.012
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-YAML-0.012.tar.gz
+    provides:
+      CPAN::Meta::YAML 0.012
+    requirements:
+      B 0
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.17
+      Fcntl 0
+      Scalar::Util 0
+      strict 0
+      warnings 0
+  Class-Method-Modifiers-2.11
+    pathname: E/ET/ETHER/Class-Method-Modifiers-2.11.tar.gz
+    provides:
+      Class::Method::Modifiers 2.11
+    requirements:
+      B 0
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      base 0
+      strict 0
+      warnings 0
+  Clone-0.38
+    pathname: G/GA/GARU/Clone-0.38.tar.gz
+    provides:
+      Clone 0.38
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+  DBD-mysql-4.029
+    pathname: C/CA/CAPTTOFU/DBD-mysql-4.029.tar.gz
+    provides:
+      Bundle::DBD::mysql 4.027
+      DBD::mysql 4.029
+      DBD::mysql::GetInfo undef
+      DBD::mysql::db 4.029
+      DBD::mysql::dr 4.029
+      DBD::mysql::st 4.029
+    requirements:
+      DBI 1.08
+      Data::Dumper 0
+      Test::Deep 0
+      Test::More 0
+      perl 5.008001
+  DBI-1.633
+    pathname: T/TI/TIMB/DBI-1.633.tar.gz
+    provides:
+      Bundle::DBI 12.008696
+      DBD::DBM 0.08
+      DBD::DBM::Statement 0.08
+      DBD::DBM::Table 0.08
+      DBD::DBM::db 0.08
+      DBD::DBM::dr 0.08
+      DBD::DBM::st 0.08
+      DBD::ExampleP 12.014311
+      DBD::ExampleP::db 12.014311
+      DBD::ExampleP::dr 12.014311
+      DBD::ExampleP::st 12.014311
+      DBD::File 0.44
+      DBD::File::DataSource::File 0.44
+      DBD::File::DataSource::Stream 0.44
+      DBD::File::Statement 0.44
+      DBD::File::Table 0.44
+      DBD::File::TableSource::FileSystem 0.44
+      DBD::File::db 0.44
+      DBD::File::dr 0.44
+      DBD::File::st 0.44
+      DBD::Gofer 0.015327
+      DBD::Gofer::Policy::Base 0.010088
+      DBD::Gofer::Policy::classic 0.010088
+      DBD::Gofer::Policy::pedantic 0.010088
+      DBD::Gofer::Policy::rush 0.010088
+      DBD::Gofer::Transport::Base 0.014121
+      DBD::Gofer::Transport::corostream undef
+      DBD::Gofer::Transport::null 0.010088
+      DBD::Gofer::Transport::pipeone 0.010088
+      DBD::Gofer::Transport::stream 0.014599
+      DBD::Gofer::db 0.015327
+      DBD::Gofer::dr 0.015327
+      DBD::Gofer::st 0.015327
+      DBD::NullP 12.014715
+      DBD::NullP::db 12.014715
+      DBD::NullP::dr 12.014715
+      DBD::NullP::st 12.014715
+      DBD::Proxy 0.2004
+      DBD::Proxy::RPC::PlClient 0.2004
+      DBD::Proxy::db 0.2004
+      DBD::Proxy::dr 0.2004
+      DBD::Proxy::st 0.2004
+      DBD::Sponge 12.010003
+      DBD::Sponge::db 12.010003
+      DBD::Sponge::dr 12.010003
+      DBD::Sponge::st 12.010003
+      DBDI 12.015129
+      DBI 1.633
+      DBI::Const::GetInfo::ANSI 2.008697
+      DBI::Const::GetInfo::ODBC 2.011374
+      DBI::Const::GetInfoReturn 2.008697
+      DBI::Const::GetInfoType 2.008697
+      DBI::DBD 12.015129
+      DBI::DBD::Metadata 2.014214
+      DBI::DBD::SqlEngine 0.06
+      DBI::DBD::SqlEngine::DataSource 0.06
+      DBI::DBD::SqlEngine::Statement 0.06
+      DBI::DBD::SqlEngine::Table 0.06
+      DBI::DBD::SqlEngine::TableSource 0.06
+      DBI::DBD::SqlEngine::TieMeta 0.06
+      DBI::DBD::SqlEngine::TieTables 0.06
+      DBI::DBD::SqlEngine::db 0.06
+      DBI::DBD::SqlEngine::dr 0.06
+      DBI::DBD::SqlEngine::st 0.06
+      DBI::FAQ 1.014935
+      DBI::Gofer::Execute 0.014283
+      DBI::Gofer::Request 0.012537
+      DBI::Gofer::Response 0.011566
+      DBI::Gofer::Serializer::Base 0.009950
+      DBI::Gofer::Serializer::DataDumper 0.009950
+      DBI::Gofer::Serializer::Storable 0.015586
+      DBI::Gofer::Transport::Base 0.012537
+      DBI::Gofer::Transport::pipeone 0.012537
+      DBI::Gofer::Transport::stream 0.012537
+      DBI::Profile 2.015065
+      DBI::ProfileData 2.010008
+      DBI::ProfileDumper 2.015325
+      DBI::ProfileDumper::Apache 2.014121
+      DBI::ProfileSubs 0.009396
+      DBI::ProxyServer 0.3005
+      DBI::ProxyServer::db 0.3005
+      DBI::ProxyServer::dr 0.3005
+      DBI::ProxyServer::st 0.3005
+      DBI::SQL::Nano 1.015544
+      DBI::SQL::Nano::Statement_ 1.015544
+      DBI::SQL::Nano::Table_ 1.015544
+      DBI::Util::CacheMemory 0.010315
+      DBI::Util::_accessor 0.009479
+      DBI::common 1.633
+    requirements:
+      ExtUtils::MakeMaker 6.48
+      Test::Simple 0.90
+      perl 5.008
+  DBM-Deep-2.0011
+    pathname: R/RK/RKINYON/DBM-Deep-2.0011.tar.gz
+    provides:
+      DBM::Deep 2.0011
+      DBM::Deep::Array undef
+      DBM::Deep::Engine undef
+      DBM::Deep::Engine::DBI undef
+      DBM::Deep::Engine::File undef
+      DBM::Deep::Hash undef
+      DBM::Deep::Iterator undef
+      DBM::Deep::Iterator::DBI undef
+      DBM::Deep::Iterator::File undef
+      DBM::Deep::Iterator::File::BucketList undef
+      DBM::Deep::Iterator::File::Index undef
+      DBM::Deep::Null undef
+      DBM::Deep::Sector undef
+      DBM::Deep::Sector::DBI undef
+      DBM::Deep::Sector::DBI::Reference undef
+      DBM::Deep::Sector::DBI::Scalar undef
+      DBM::Deep::Sector::File undef
+      DBM::Deep::Sector::File::BucketList undef
+      DBM::Deep::Sector::File::Data undef
+      DBM::Deep::Sector::File::Index undef
+      DBM::Deep::Sector::File::Null undef
+      DBM::Deep::Sector::File::Reference undef
+      DBM::Deep::Sector::File::Scalar undef
+      DBM::Deep::Storage undef
+      DBM::Deep::Storage::DBI undef
+      DBM::Deep::Storage::File undef
+    requirements:
+      Digest::MD5 1.00
+      Fcntl 0.01
+      File::Path 0.01
+      File::Temp 0.01
+      Pod::Usage 1.3
+      Scalar::Util 1.14
+      Test::Deep 0.095
+      Test::Exception 0.21
+      Test::More 0.88
+      Test::Warn 0.08
+      perl 5.008_004
+  Devel-GlobalDestruction-0.13
+    pathname: H/HA/HAARG/Devel-GlobalDestruction-0.13.tar.gz
+    provides:
+      Devel::GlobalDestruction 0.13
+    requirements:
+      ExtUtils::CBuilder 0.27
+      ExtUtils::MakeMaker 0
+      Sub::Exporter::Progressive 0.001011
+      perl 5.006
+  Digest-HMAC-1.03
+    pathname: G/GA/GAAS/Digest-HMAC-1.03.tar.gz
+    provides:
+      Digest::HMAC 1.03
+      Digest::HMAC_MD5 1.01
+      Digest::HMAC_SHA1 1.03
+    requirements:
+      Digest::MD5 2
+      Digest::SHA 1
+      ExtUtils::MakeMaker 0
+      perl 5.004
+  Email-Valid-1.196
+    pathname: R/RJ/RJBS/Email-Valid-1.196.tar.gz
+    provides:
+      Email::Valid 1.196
+    requirements:
+      ExtUtils::MakeMaker 0
+      Mail::Address 0
+      Net::DNS 0
+      Scalar::Util 0
+      Test::More 0
+      perl 5.006
+  ExtUtils-Depends-0.404
+    pathname: X/XA/XAOC/ExtUtils-Depends-0.404.tar.gz
+    provides:
+      ExtUtils::Depends 0.404
+    requirements:
+      Data::Dumper 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      IO::File 0
+      perl 5.006
+  ExtUtils-MakeMaker-7.04
+    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-7.04.tar.gz
+    provides:
+      DynaLoader 7.04
+      ExtUtils::Command::MM 7.04
+      ExtUtils::Liblist 7.04
+      ExtUtils::Liblist::Kid 7.04
+      ExtUtils::MM 7.04
+      ExtUtils::MM_AIX 7.04
+      ExtUtils::MM_Any 7.04
+      ExtUtils::MM_BeOS 7.04
+      ExtUtils::MM_Cygwin 7.04
+      ExtUtils::MM_DOS 7.04
+      ExtUtils::MM_Darwin 7.04
+      ExtUtils::MM_MacOS 7.04
+      ExtUtils::MM_NW5 7.04
+      ExtUtils::MM_OS2 7.04
+      ExtUtils::MM_QNX 7.04
+      ExtUtils::MM_UWIN 7.04
+      ExtUtils::MM_Unix 7.04
+      ExtUtils::MM_VMS 7.04
+      ExtUtils::MM_VOS 7.04
+      ExtUtils::MM_Win32 7.04
+      ExtUtils::MM_Win95 7.04
+      ExtUtils::MY 7.04
+      ExtUtils::MakeMaker 7.04
+      ExtUtils::MakeMaker::Config 7.04
+      ExtUtils::MakeMaker::Locale 7.04
+      ExtUtils::MakeMaker::_version 7.04
+      ExtUtils::MakeMaker::charstar 7.04
+      ExtUtils::MakeMaker::version 7.04
+      ExtUtils::MakeMaker::version::regex 7.04
+      ExtUtils::MakeMaker::version::vpp 7.04
+      ExtUtils::Mkbootstrap 7.04
+      ExtUtils::Mksymlists 7.04
+      ExtUtils::testlib 7.04
+      MM 7.04
+      MY 7.04
+      in 7.04
+    requirements:
+      Data::Dumper 0
+      DirHandle 0
+      Encode 0
+      File::Basename 0
+      File::Spec 0.8
+      Pod::Man 0
+      perl 5.006
+  File-Slurp-9999.19
+    pathname: U/UR/URI/File-Slurp-9999.19.tar.gz
+    provides:
+      File::Slurp 9999.19
+      FileSlurp_12 9999.13
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      POSIX 0
+      perl 5.004
+  Hash-Merge-0.200
+    pathname: R/RE/REHSACK/Hash-Merge-0.200.tar.gz
+    provides:
+      Hash::Merge 0.200
+    requirements:
+      Clone 0
+      ExtUtils::MakeMaker 0
+      perl 5.008001
+  IO-Socket-IP-0.36
+    pathname: P/PE/PEVANS/IO-Socket-IP-0.36.tar.gz
+    provides:
+      IO::Socket::IP 0.36
+    requirements:
+      IO::Socket 0
+      Socket 1.97
+      Test::More 0.88
+  IO-Socket-SSL-2.012
+    pathname: S/SU/SULLR/IO-Socket-SSL-2.012.tar.gz
+    provides:
+      IO::Socket::SSL 2.012
+      IO::Socket::SSL::Intercept 1.93
+      IO::Socket::SSL::OCSP_Cache 2.012
+      IO::Socket::SSL::OCSP_Resolver 2.012
+      IO::Socket::SSL::PublicSuffix undef
+      IO::Socket::SSL::SSL_Context 2.012
+      IO::Socket::SSL::SSL_HANDLE 2.012
+      IO::Socket::SSL::Session_Cache 2.012
+      IO::Socket::SSL::Utils 0.031
+    requirements:
+      ExtUtils::MakeMaker 0
+      Net::SSLeay 1.46
+      Scalar::Util 0
+  Import-Into-1.002004
+    pathname: E/ET/ETHER/Import-Into-1.002004.tar.gz
+    provides:
+      Import::Into 1.002004
+    requirements:
+      ExtUtils::MakeMaker 0
+      Module::Runtime 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Lexical-SealRequireHints-0.007
+    pathname: Z/ZE/ZEFRAM/Lexical-SealRequireHints-0.007.tar.gz
+    provides:
+      Lexical::SealRequireHints 0.007
+    requirements:
+      Module::Build 0
+      Test::More 0
+      perl 5.006
+      strict 0
+      warnings 0
+  MRO-Compat-0.12
+    pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
+    provides:
+      MRO::Compat 0.12
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      Test::More 0.47
+      perl 5.006
+  MailTools-2.14
+    pathname: M/MA/MARKOV/MailTools-2.14.tar.gz
+    provides:
+      Mail undef
+      Mail::Address 2.14
+      Mail::Cap 2.14
+      Mail::Field 2.14
+      Mail::Field::AddrList 2.14
+      Mail::Field::Date 2.14
+      Mail::Field::Generic 2.14
+      Mail::Filter 2.14
+      Mail::Header 2.14
+      Mail::Internet 2.14
+      Mail::Mailer 2.14
+      Mail::Mailer::qmail 2.14
+      Mail::Mailer::rfc822 2.14
+      Mail::Mailer::sendmail 2.14
+      Mail::Mailer::smtp 2.14
+      Mail::Mailer::smtp::pipe 2.14
+      Mail::Mailer::smtps 2.14
+      Mail::Mailer::smtps::pipe 2.14
+      Mail::Mailer::testfile 2.14
+      Mail::Mailer::testfile::pipe 2.14
+      Mail::Send 2.14
+      Mail::Util 2.14
+    requirements:
+      Date::Format 0
+      Date::Parse 0
+      ExtUtils::MakeMaker 0
+      IO::Handle 0
+      Net::Domain 1.05
+      Net::SMTP 1.03
+      Test::More 0
+  Module-Build-0.4211
+    pathname: L/LE/LEONT/Module-Build-0.4211.tar.gz
+    provides:
+      Module::Build 0.4211
+      Module::Build::Base 0.4211
+      Module::Build::Compat 0.4211
+      Module::Build::Config 0.4211
+      Module::Build::Cookbook 0.4211
+      Module::Build::Dumper 0.4211
+      Module::Build::Notes 0.4211
+      Module::Build::PPMMaker 0.4211
+      Module::Build::Platform::Default 0.4211
+      Module::Build::Platform::MacOS 0.4211
+      Module::Build::Platform::Unix 0.4211
+      Module::Build::Platform::VMS 0.4211
+      Module::Build::Platform::VOS 0.4211
+      Module::Build::Platform::Windows 0.4211
+      Module::Build::Platform::aix 0.4211
+      Module::Build::Platform::cygwin 0.4211
+      Module::Build::Platform::darwin 0.4211
+      Module::Build::Platform::os2 0.4211
+      Module::Build::PodParser 0.4211
+    requirements:
+      CPAN::Meta 2.142060
+      CPAN::Meta::YAML 0.003
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0.27
+      ExtUtils::Install 0
+      ExtUtils::Manifest 0
+      ExtUtils::Mkbootstrap 0
+      ExtUtils::ParseXS 2.21
+      File::Basename 0
+      File::Compare 0
+      File::Copy 0
+      File::Find 0
+      File::Path 0
+      File::Spec 0.82
+      File::Temp 0.15
+      Getopt::Long 0
+      Module::Metadata 1.000002
+      Parse::CPAN::Meta 1.4401
+      Perl::OSType 1
+      Pod::Man 2.17
+      Test::Harness 3.16
+      Test::More 0.49
+      Text::Abbrev 0
+      Text::ParseWords 0
+      perl 5.008000
+      version 0.87
+  Module-Runtime-0.014
+    pathname: Z/ZE/ZEFRAM/Module-Runtime-0.014.tar.gz
+    provides:
+      Module::Runtime 0.014
+    requirements:
+      Module::Build 0
+      Test::More 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Mojo-Redis2-0.17
+    pathname: J/JH/JHTHORSEN/Mojo-Redis2-0.17.tar.gz
+    provides:
+      Mojo::Redis2 0.17
+      Mojo::Redis2::Backend undef
+      Mojo::Redis2::Bulk undef
+      Mojo::Redis2::Client undef
+      Mojo::Redis2::Server undef
+      Mojo::Redis2::Transaction 0.01
+    requirements:
+      ExtUtils::MakeMaker 0
+      Mojolicious 5.0
+      Protocol::Redis 1.0
+      Test::More 0.88
+  Mojo-mysql-0.05
+    pathname: H/HA/HARRYL/Mojo-mysql-0.05.tar.gz
+    provides:
+      Mojo::mysql 0.05
+      Mojo::mysql::Database undef
+      Mojo::mysql::Migrations undef
+      Mojo::mysql::Results undef
+      Mojo::mysql::Transaction undef
+    requirements:
+      DBD::mysql 4.019
+      ExtUtils::MakeMaker 0
+      Mojolicious 5.49
+      Test::More 0.90
+  Mojolicious-5.79
+    pathname: S/SR/SRI/Mojolicious-5.79.tar.gz
+    provides:
+      Mojo undef
+      Mojo::Asset undef
+      Mojo::Asset::File undef
+      Mojo::Asset::Memory undef
+      Mojo::Base undef
+      Mojo::ByteStream undef
+      Mojo::Cache undef
+      Mojo::Collection undef
+      Mojo::Content undef
+      Mojo::Content::MultiPart undef
+      Mojo::Content::Single undef
+      Mojo::Cookie undef
+      Mojo::Cookie::Request undef
+      Mojo::Cookie::Response undef
+      Mojo::DOM undef
+      Mojo::DOM::CSS undef
+      Mojo::DOM::HTML undef
+      Mojo::Date undef
+      Mojo::EventEmitter undef
+      Mojo::Exception undef
+      Mojo::Headers undef
+      Mojo::HelloWorld undef
+      Mojo::Home undef
+      Mojo::IOLoop undef
+      Mojo::IOLoop::Client undef
+      Mojo::IOLoop::Delay undef
+      Mojo::IOLoop::Server undef
+      Mojo::IOLoop::Stream undef
+      Mojo::JSON undef
+      Mojo::JSON::Pointer undef
+      Mojo::JSON::_Bool undef
+      Mojo::Loader undef
+      Mojo::Log undef
+      Mojo::Message undef
+      Mojo::Message::Request undef
+      Mojo::Message::Response undef
+      Mojo::Parameters undef
+      Mojo::Path undef
+      Mojo::Reactor undef
+      Mojo::Reactor::EV undef
+      Mojo::Reactor::Poll undef
+      Mojo::Server undef
+      Mojo::Server::CGI undef
+      Mojo::Server::Daemon undef
+      Mojo::Server::Hypnotoad undef
+      Mojo::Server::Morbo undef
+      Mojo::Server::PSGI undef
+      Mojo::Server::PSGI::_IO undef
+      Mojo::Server::Prefork undef
+      Mojo::Template undef
+      Mojo::Transaction undef
+      Mojo::Transaction::HTTP undef
+      Mojo::Transaction::WebSocket undef
+      Mojo::URL undef
+      Mojo::Upload undef
+      Mojo::UserAgent undef
+      Mojo::UserAgent::CookieJar undef
+      Mojo::UserAgent::Proxy undef
+      Mojo::UserAgent::Server undef
+      Mojo::UserAgent::Transactor undef
+      Mojo::Util undef
+      Mojolicious 5.79
+      Mojolicious::Command undef
+      Mojolicious::Command::cgi undef
+      Mojolicious::Command::cpanify undef
+      Mojolicious::Command::daemon undef
+      Mojolicious::Command::eval undef
+      Mojolicious::Command::generate undef
+      Mojolicious::Command::generate::app undef
+      Mojolicious::Command::generate::lite_app undef
+      Mojolicious::Command::generate::makefile undef
+      Mojolicious::Command::generate::plugin 0.01
+      Mojolicious::Command::get undef
+      Mojolicious::Command::inflate undef
+      Mojolicious::Command::prefork undef
+      Mojolicious::Command::psgi undef
+      Mojolicious::Command::routes undef
+      Mojolicious::Command::test undef
+      Mojolicious::Command::version undef
+      Mojolicious::Commands undef
+      Mojolicious::Controller undef
+      Mojolicious::Lite undef
+      Mojolicious::Plugin undef
+      Mojolicious::Plugin::Charset undef
+      Mojolicious::Plugin::Config undef
+      Mojolicious::Plugin::Config::Sandbox undef
+      Mojolicious::Plugin::DefaultHelpers undef
+      Mojolicious::Plugin::EPLRenderer undef
+      Mojolicious::Plugin::EPRenderer undef
+      Mojolicious::Plugin::HeaderCondition undef
+      Mojolicious::Plugin::JSONConfig undef
+      Mojolicious::Plugin::Mount undef
+      Mojolicious::Plugin::PODRenderer undef
+      Mojolicious::Plugin::TagHelpers undef
+      Mojolicious::Plugins undef
+      Mojolicious::Renderer undef
+      Mojolicious::Routes undef
+      Mojolicious::Routes::Match undef
+      Mojolicious::Routes::Pattern undef
+      Mojolicious::Routes::Route undef
+      Mojolicious::Sessions undef
+      Mojolicious::Static undef
+      Mojolicious::Types undef
+      Mojolicious::Validator undef
+      Mojolicious::Validator::Validation undef
+      Test::Mojo undef
+      ojo undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      IO::Socket::IP 0.26
+      Pod::Simple 3.09
+      Time::Local 1.2
+      perl 5.010001
+  Mojolicious-Command-deploy-0.02
+    pathname: T/TE/TEMPIRE/Mojolicious-Command-deploy-0.02.tar.gz
+    provides:
+      Mojolicious::Command::deploy 0.02
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      Mojolicious 2.48
+  Mojolicious-Command-deploy-heroku-0.11
+    pathname: T/TE/TEMPIRE/Mojolicious-Command-deploy-heroku-0.11.tar.gz
+    provides:
+      Mojolicious::Command::deploy::heroku 0.11
+      Mojolicious::Command::generate::heroku undef
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      File::Path 2.08
+      File::Slurp 9999.19
+      IPC::Cmd 0.78
+      Mojolicious 4.50
+      Mojolicious::Command::deploy 0.01
+      Net::Heroku 0.08
+  Mojolicious-Plugin-PayPal-0.05
+    pathname: J/JH/JHTHORSEN/Mojolicious-Plugin-PayPal-0.05.tar.gz
+    provides:
+      Mojolicious::Plugin::PayPal 0.05
+    requirements:
+      ExtUtils::MakeMaker 0
+      IO::Socket::SSL 1.84
+      Mojolicious 5.13
+      Test::More 0.88
+  Moo-1.007000
+    pathname: H/HA/HAARG/Moo-1.007000.tar.gz
+    provides:
+      Method::Generate::Accessor undef
+      Method::Generate::BuildAll undef
+      Method::Generate::Constructor undef
+      Method::Generate::DemolishAll undef
+      Method::Inliner undef
+      Moo 1.007000
+      Moo::HandleMoose undef
+      Moo::HandleMoose::FakeConstructor undef
+      Moo::HandleMoose::FakeMetaClass undef
+      Moo::HandleMoose::_TypeMap undef
+      Moo::Object undef
+      Moo::Role 1.007000
+      Moo::_Utils undef
+      Moo::_mro undef
+      Moo::sification undef
+      Sub::Defer 1.007000
+      Sub::Quote 1.007000
+      oo undef
+    requirements:
+      Class::Method::Modifiers 1.1
+      Devel::GlobalDestruction 0.11
+      Exporter 5.57
+      ExtUtils::MakeMaker 0
+      Import::Into 1.002
+      Module::Runtime 0.014
+      Role::Tiny 1.003004
+      Scalar::Util 0
+      perl 5.006
+      strictures 1.004003
+  Net-DNS-0.82
+    pathname: N/NL/NLNETLABS/Net-DNS-0.82.tar.gz
+    provides:
+      Net::DNS 0.82
+      Net::DNS::Domain 1276
+      Net::DNS::DomainName 1272
+      Net::DNS::DomainName1035 1272
+      Net::DNS::DomainName2535 1272
+      Net::DNS::Header 1241
+      Net::DNS::Mailbox 1155
+      Net::DNS::Mailbox1035 1155
+      Net::DNS::Mailbox2535 1155
+      Net::DNS::Nameserver 1276
+      Net::DNS::Packet 1282
+      Net::DNS::Parameters 1282
+      Net::DNS::Question 1286
+      Net::DNS::RR 1288
+      Net::DNS::RR::A 1272
+      Net::DNS::RR::AAAA 1272
+      Net::DNS::RR::AFSDB 1188
+      Net::DNS::RR::APL 1272
+      Net::DNS::RR::APL::Item 1272
+      Net::DNS::RR::CAA 1188
+      Net::DNS::RR::CERT 1188
+      Net::DNS::RR::CNAME 1188
+      Net::DNS::RR::DHCID 1188
+      Net::DNS::RR::DNAME 1188
+      Net::DNS::RR::EUI48 1188
+      Net::DNS::RR::EUI64 1188
+      Net::DNS::RR::GPOS 1188
+      Net::DNS::RR::HINFO 1188
+      Net::DNS::RR::HIP 1188
+      Net::DNS::RR::IPSECKEY 1188
+      Net::DNS::RR::ISDN 1188
+      Net::DNS::RR::KX 1188
+      Net::DNS::RR::L32 1188
+      Net::DNS::RR::L64 1188
+      Net::DNS::RR::LOC 1276
+      Net::DNS::RR::LP 1188
+      Net::DNS::RR::MB 1182
+      Net::DNS::RR::MG 1182
+      Net::DNS::RR::MINFO 1188
+      Net::DNS::RR::MR 1182
+      Net::DNS::RR::MX 1282
+      Net::DNS::RR::NAPTR 1229
+      Net::DNS::RR::NID 1188
+      Net::DNS::RR::NS 1188
+      Net::DNS::RR::NULL 1188
+      Net::DNS::RR::OPENPGPKEY 1253
+      Net::DNS::RR::OPT 1288
+      Net::DNS::RR::PTR 1188
+      Net::DNS::RR::PX 1188
+      Net::DNS::RR::RP 1229
+      Net::DNS::RR::RT 1188
+      Net::DNS::RR::SOA 1188
+      Net::DNS::RR::SPF 1188
+      Net::DNS::RR::SRV 1188
+      Net::DNS::RR::SSHFP 1188
+      Net::DNS::RR::TKEY 1276
+      Net::DNS::RR::TLSA 1188
+      Net::DNS::RR::TSIG 1282
+      Net::DNS::RR::TXT 1235
+      Net::DNS::RR::X25 1188
+      Net::DNS::Resolver 1276
+      Net::DNS::Resolver::Base 1288
+      Net::DNS::Resolver::MSWin32 1282
+      Net::DNS::Resolver::Recurse 1282
+      Net::DNS::Resolver::UNIX 1282
+      Net::DNS::Resolver::android 1282
+      Net::DNS::Resolver::cygwin 1282
+      Net::DNS::Resolver::os2 1282
+      Net::DNS::Text 1276
+      Net::DNS::Update 1288
+      Net::DNS::ZoneFile 1288
+      Net::DNS::ZoneFile::Generator 1288
+      Net::DNS::ZoneFile::Text 1288
+    requirements:
+      Digest::HMAC 1.01
+      Digest::MD5 2.13
+      Digest::SHA 5.23
+      ExtUtils::MakeMaker 0
+      IO::Socket 1.24
+      MIME::Base64 2.11
+      Test::More 0.52
+      perl 5.00404
+  Net-Heroku-0.10
+    pathname: T/TE/TEMPIRE/Net-Heroku-0.10.tar.gz
+    provides:
+      Net::Heroku 0.1
+      Net::Heroku::UserAgent undef
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      IO::Socket::SSL 1.75
+      Mojolicious 3.85
+  Net-SSLeay-1.68
+    pathname: M/MI/MIKEM/Net-SSLeay-1.68.tar.gz
+    provides:
+      Net::SSLeay 1.68
+      Net::SSLeay::Handle 0.61
+    requirements:
+      ExtUtils::MakeMaker 6.36
+      MIME::Base64 0
+      Test::More 0.60_01
+      perl 5.005
+  Number-Phone-3.0006
+    pathname: D/DC/DCANTRELL/Number-Phone-3.0006.tar.gz
+    provides:
+      Number::Phone 3.0006
+      Number::Phone::Country 1.9
+      Number::Phone::Country::Data 1.4
+      Number::Phone::Lib 1.0
+      Number::Phone::NANP 1.4
+      Number::Phone::NANP::AG 1.1
+      Number::Phone::NANP::AI 1.1
+      Number::Phone::NANP::AS 1.1
+      Number::Phone::NANP::BB 1.1
+      Number::Phone::NANP::BM 1.1
+      Number::Phone::NANP::BS 1.1
+      Number::Phone::NANP::CA 1.1
+      Number::Phone::NANP::DM 1.1
+      Number::Phone::NANP::DO 1.1
+      Number::Phone::NANP::Data 1.2014120322172
+      Number::Phone::NANP::GD 1.1
+      Number::Phone::NANP::GU 1.1
+      Number::Phone::NANP::JM 1.1
+      Number::Phone::NANP::KN 1.1
+      Number::Phone::NANP::KY 1.1
+      Number::Phone::NANP::LC 1.1
+      Number::Phone::NANP::MP 1.1
+      Number::Phone::NANP::MS 1.1
+      Number::Phone::NANP::PR 1.1
+      Number::Phone::NANP::SX 1
+      Number::Phone::NANP::TC 1.1
+      Number::Phone::NANP::TT 1.1
+      Number::Phone::NANP::US 1.1
+      Number::Phone::NANP::VC 1.1
+      Number::Phone::NANP::VG 1.1
+      Number::Phone::NANP::VI 1.1
+      Number::Phone::StubCountry 1.1
+      Number::Phone::StubCountry::AC 1.20141203221722
+      Number::Phone::StubCountry::AD 1.20141203221722
+      Number::Phone::StubCountry::AE 1.20141203221722
+      Number::Phone::StubCountry::AF 1.20141203221722
+      Number::Phone::StubCountry::AG 1.20141203221722
+      Number::Phone::StubCountry::AI 1.20141203221722
+      Number::Phone::StubCountry::AL 1.20141203221722
+      Number::Phone::StubCountry::AM 1.20141203221722
+      Number::Phone::StubCountry::AO 1.20141203221722
+      Number::Phone::StubCountry::AR 1.20141203221722
+      Number::Phone::StubCountry::AS 1.20141203221722
+      Number::Phone::StubCountry::AT 1.20141203221722
+      Number::Phone::StubCountry::AU 1.20141203221722
+      Number::Phone::StubCountry::AW 1.20141203221722
+      Number::Phone::StubCountry::AX 1.20141203221722
+      Number::Phone::StubCountry::AZ 1.20141203221722
+      Number::Phone::StubCountry::BA 1.20141203221722
+      Number::Phone::StubCountry::BB 1.20141203221722
+      Number::Phone::StubCountry::BD 1.20141203221722
+      Number::Phone::StubCountry::BE 1.20141203221722
+      Number::Phone::StubCountry::BF 1.20141203221722
+      Number::Phone::StubCountry::BG 1.20141203221722
+      Number::Phone::StubCountry::BH 1.20141203221722
+      Number::Phone::StubCountry::BI 1.20141203221722
+      Number::Phone::StubCountry::BJ 1.20141203221722
+      Number::Phone::StubCountry::BL 1.20141203221722
+      Number::Phone::StubCountry::BM 1.20141203221722
+      Number::Phone::StubCountry::BN 1.20141203221722
+      Number::Phone::StubCountry::BO 1.20141203221722
+      Number::Phone::StubCountry::BQ 1.20141203221722
+      Number::Phone::StubCountry::BR 1.20141203221722
+      Number::Phone::StubCountry::BS 1.20141203221722
+      Number::Phone::StubCountry::BT 1.20141203221722
+      Number::Phone::StubCountry::BW 1.20141203221722
+      Number::Phone::StubCountry::BY 1.20141203221722
+      Number::Phone::StubCountry::BZ 1.20141203221722
+      Number::Phone::StubCountry::CA 1.20141203221722
+      Number::Phone::StubCountry::CC 1.20141203221722
+      Number::Phone::StubCountry::CD 1.20141203221722
+      Number::Phone::StubCountry::CF 1.20141203221722
+      Number::Phone::StubCountry::CG 1.20141203221722
+      Number::Phone::StubCountry::CH 1.20141203221722
+      Number::Phone::StubCountry::CI 1.20141203221722
+      Number::Phone::StubCountry::CK 1.20141203221722
+      Number::Phone::StubCountry::CL 1.20141203221722
+      Number::Phone::StubCountry::CM 1.20141203221722
+      Number::Phone::StubCountry::CN 1.20141203221722
+      Number::Phone::StubCountry::CO 1.20141203221722
+      Number::Phone::StubCountry::CR 1.20141203221722
+      Number::Phone::StubCountry::CU 1.20141203221722
+      Number::Phone::StubCountry::CV 1.20141203221722
+      Number::Phone::StubCountry::CW 1.20141203221722
+      Number::Phone::StubCountry::CX 1.20141203221722
+      Number::Phone::StubCountry::CY 1.20141203221722
+      Number::Phone::StubCountry::CZ 1.20141203221722
+      Number::Phone::StubCountry::DE 1.20141203221722
+      Number::Phone::StubCountry::DJ 1.20141203221723
+      Number::Phone::StubCountry::DK 1.20141203221723
+      Number::Phone::StubCountry::DM 1.20141203221723
+      Number::Phone::StubCountry::DO 1.20141203221723
+      Number::Phone::StubCountry::DZ 1.20141203221723
+      Number::Phone::StubCountry::EC 1.20141203221723
+      Number::Phone::StubCountry::EE 1.20141203221723
+      Number::Phone::StubCountry::EG 1.20141203221723
+      Number::Phone::StubCountry::EH 1.20141203221723
+      Number::Phone::StubCountry::ER 1.20141203221723
+      Number::Phone::StubCountry::ES 1.20141203221723
+      Number::Phone::StubCountry::ET 1.20141203221723
+      Number::Phone::StubCountry::FI 1.20141203221723
+      Number::Phone::StubCountry::FJ 1.20141203221723
+      Number::Phone::StubCountry::FK 1.20141203221723
+      Number::Phone::StubCountry::FM 1.20141203221723
+      Number::Phone::StubCountry::FO 1.20141203221723
+      Number::Phone::StubCountry::FR 1.20141203221723
+      Number::Phone::StubCountry::GA 1.20141203221723
+      Number::Phone::StubCountry::GB 1.20141203221723
+      Number::Phone::StubCountry::GD 1.20141203221723
+      Number::Phone::StubCountry::GE 1.20141203221723
+      Number::Phone::StubCountry::GF 1.20141203221723
+      Number::Phone::StubCountry::GG 1.20141203221723
+      Number::Phone::StubCountry::GH 1.20141203221723
+      Number::Phone::StubCountry::GI 1.20141203221723
+      Number::Phone::StubCountry::GL 1.20141203221723
+      Number::Phone::StubCountry::GM 1.20141203221723
+      Number::Phone::StubCountry::GN 1.20141203221723
+      Number::Phone::StubCountry::GP 1.20141203221723
+      Number::Phone::StubCountry::GQ 1.20141203221723
+      Number::Phone::StubCountry::GR 1.20141203221723
+      Number::Phone::StubCountry::GT 1.20141203221723
+      Number::Phone::StubCountry::GU 1.20141203221723
+      Number::Phone::StubCountry::GW 1.20141203221723
+      Number::Phone::StubCountry::GY 1.20141203221723
+      Number::Phone::StubCountry::HK 1.20141203221723
+      Number::Phone::StubCountry::HN 1.20141203221723
+      Number::Phone::StubCountry::HR 1.20141203221723
+      Number::Phone::StubCountry::HT 1.20141203221723
+      Number::Phone::StubCountry::HU 1.20141203221723
+      Number::Phone::StubCountry::ID 1.20141203221723
+      Number::Phone::StubCountry::IE 1.20141203221723
+      Number::Phone::StubCountry::IL 1.20141203221723
+      Number::Phone::StubCountry::IM 1.20141203221723
+      Number::Phone::StubCountry::IN 1.20141203221723
+      Number::Phone::StubCountry::IO 1.20141203221723
+      Number::Phone::StubCountry::IQ 1.20141203221723
+      Number::Phone::StubCountry::IR 1.20141203221723
+      Number::Phone::StubCountry::IS 1.20141203221723
+      Number::Phone::StubCountry::IT 1.20141203221723
+      Number::Phone::StubCountry::JE 1.20141203221723
+      Number::Phone::StubCountry::JM 1.20141203221723
+      Number::Phone::StubCountry::JO 1.20141203221723
+      Number::Phone::StubCountry::JP 1.20141203221723
+      Number::Phone::StubCountry::KE 1.20141203221723
+      Number::Phone::StubCountry::KG 1.20141203221723
+      Number::Phone::StubCountry::KH 1.20141203221723
+      Number::Phone::StubCountry::KI 1.20141203221723
+      Number::Phone::StubCountry::KM 1.20141203221723
+      Number::Phone::StubCountry::KN 1.20141203221723
+      Number::Phone::StubCountry::KP 1.20141203221723
+      Number::Phone::StubCountry::KR 1.20141203221723
+      Number::Phone::StubCountry::KW 1.20141203221723
+      Number::Phone::StubCountry::KY 1.20141203221723
+      Number::Phone::StubCountry::KZ 1.20141203221723
+      Number::Phone::StubCountry::LA 1.20141203221723
+      Number::Phone::StubCountry::LB 1.20141203221723
+      Number::Phone::StubCountry::LC 1.20141203221723
+      Number::Phone::StubCountry::LI 1.20141203221723
+      Number::Phone::StubCountry::LK 1.20141203221723
+      Number::Phone::StubCountry::LR 1.20141203221723
+      Number::Phone::StubCountry::LS 1.20141203221723
+      Number::Phone::StubCountry::LT 1.20141203221723
+      Number::Phone::StubCountry::LU 1.20141203221723
+      Number::Phone::StubCountry::LV 1.20141203221723
+      Number::Phone::StubCountry::LY 1.20141203221723
+      Number::Phone::StubCountry::MA 1.20141203221723
+      Number::Phone::StubCountry::MC 1.20141203221723
+      Number::Phone::StubCountry::MD 1.20141203221723
+      Number::Phone::StubCountry::ME 1.20141203221723
+      Number::Phone::StubCountry::MF 1.20141203221723
+      Number::Phone::StubCountry::MG 1.20141203221723
+      Number::Phone::StubCountry::MH 1.20141203221723
+      Number::Phone::StubCountry::MK 1.20141203221723
+      Number::Phone::StubCountry::ML 1.20141203221723
+      Number::Phone::StubCountry::MM 1.20141203221723
+      Number::Phone::StubCountry::MN 1.20141203221723
+      Number::Phone::StubCountry::MO 1.20141203221723
+      Number::Phone::StubCountry::MP 1.20141203221723
+      Number::Phone::StubCountry::MQ 1.20141203221723
+      Number::Phone::StubCountry::MR 1.20141203221723
+      Number::Phone::StubCountry::MS 1.20141203221723
+      Number::Phone::StubCountry::MT 1.20141203221723
+      Number::Phone::StubCountry::MU 1.20141203221723
+      Number::Phone::StubCountry::MV 1.20141203221723
+      Number::Phone::StubCountry::MW 1.20141203221723
+      Number::Phone::StubCountry::MX 1.20141203221723
+      Number::Phone::StubCountry::MY 1.20141203221723
+      Number::Phone::StubCountry::MZ 1.20141203221723
+      Number::Phone::StubCountry::NA 1.20141203221723
+      Number::Phone::StubCountry::NC 1.20141203221723
+      Number::Phone::StubCountry::NE 1.20141203221723
+      Number::Phone::StubCountry::NF 1.20141203221723
+      Number::Phone::StubCountry::NG 1.20141203221723
+      Number::Phone::StubCountry::NI 1.20141203221723
+      Number::Phone::StubCountry::NL 1.20141203221723
+      Number::Phone::StubCountry::NO 1.20141203221723
+      Number::Phone::StubCountry::NP 1.20141203221723
+      Number::Phone::StubCountry::NR 1.20141203221723
+      Number::Phone::StubCountry::NU 1.20141203221723
+      Number::Phone::StubCountry::NZ 1.20141203221723
+      Number::Phone::StubCountry::OM 1.20141203221723
+      Number::Phone::StubCountry::PA 1.20141203221723
+      Number::Phone::StubCountry::PE 1.20141203221723
+      Number::Phone::StubCountry::PF 1.20141203221723
+      Number::Phone::StubCountry::PG 1.20141203221723
+      Number::Phone::StubCountry::PH 1.20141203221723
+      Number::Phone::StubCountry::PK 1.20141203221723
+      Number::Phone::StubCountry::PL 1.20141203221723
+      Number::Phone::StubCountry::PM 1.20141203221723
+      Number::Phone::StubCountry::PR 1.20141203221723
+      Number::Phone::StubCountry::PS 1.20141203221723
+      Number::Phone::StubCountry::PT 1.20141203221723
+      Number::Phone::StubCountry::PW 1.20141203221723
+      Number::Phone::StubCountry::PY 1.20141203221723
+      Number::Phone::StubCountry::QA 1.20141203221723
+      Number::Phone::StubCountry::RE 1.20141203221723
+      Number::Phone::StubCountry::RO 1.20141203221723
+      Number::Phone::StubCountry::RS 1.20141203221723
+      Number::Phone::StubCountry::RU 1.20141203221723
+      Number::Phone::StubCountry::RW 1.20141203221723
+      Number::Phone::StubCountry::SA 1.20141203221723
+      Number::Phone::StubCountry::SB 1.20141203221723
+      Number::Phone::StubCountry::SC 1.20141203221723
+      Number::Phone::StubCountry::SD 1.20141203221723
+      Number::Phone::StubCountry::SE 1.20141203221723
+      Number::Phone::StubCountry::SG 1.20141203221723
+      Number::Phone::StubCountry::SH 1.20141203221723
+      Number::Phone::StubCountry::SI 1.20141203221723
+      Number::Phone::StubCountry::SJ 1.20141203221723
+      Number::Phone::StubCountry::SK 1.20141203221723
+      Number::Phone::StubCountry::SL 1.20141203221723
+      Number::Phone::StubCountry::SM 1.20141203221723
+      Number::Phone::StubCountry::SN 1.20141203221723
+      Number::Phone::StubCountry::SO 1.20141203221723
+      Number::Phone::StubCountry::SR 1.20141203221723
+      Number::Phone::StubCountry::SS 1.20141203221723
+      Number::Phone::StubCountry::ST 1.20141203221723
+      Number::Phone::StubCountry::SV 1.20141203221723
+      Number::Phone::StubCountry::SX 1.20141203221723
+      Number::Phone::StubCountry::SY 1.20141203221723
+      Number::Phone::StubCountry::SZ 1.20141203221723
+      Number::Phone::StubCountry::TA 1.20141203221723
+      Number::Phone::StubCountry::TC 1.20141203221723
+      Number::Phone::StubCountry::TD 1.20141203221723
+      Number::Phone::StubCountry::TG 1.20141203221723
+      Number::Phone::StubCountry::TH 1.20141203221723
+      Number::Phone::StubCountry::TJ 1.20141203221723
+      Number::Phone::StubCountry::TK 1.20141203221723
+      Number::Phone::StubCountry::TL 1.20141203221723
+      Number::Phone::StubCountry::TM 1.20141203221723
+      Number::Phone::StubCountry::TN 1.20141203221723
+      Number::Phone::StubCountry::TO 1.20141203221723
+      Number::Phone::StubCountry::TR 1.20141203221723
+      Number::Phone::StubCountry::TT 1.20141203221723
+      Number::Phone::StubCountry::TV 1.20141203221723
+      Number::Phone::StubCountry::TW 1.20141203221723
+      Number::Phone::StubCountry::TZ 1.20141203221723
+      Number::Phone::StubCountry::UA 1.20141203221723
+      Number::Phone::StubCountry::UG 1.20141203221723
+      Number::Phone::StubCountry::US 1.20141203221723
+      Number::Phone::StubCountry::UY 1.20141203221723
+      Number::Phone::StubCountry::UZ 1.20141203221723
+      Number::Phone::StubCountry::VA 1.20141203221723
+      Number::Phone::StubCountry::VC 1.20141203221723
+      Number::Phone::StubCountry::VE 1.20141203221723
+      Number::Phone::StubCountry::VG 1.20141203221723
+      Number::Phone::StubCountry::VI 1.20141203221723
+      Number::Phone::StubCountry::VN 1.20141203221723
+      Number::Phone::StubCountry::VU 1.20141203221723
+      Number::Phone::StubCountry::WF 1.20141203221723
+      Number::Phone::StubCountry::WS 1.20141203221723
+      Number::Phone::StubCountry::YE 1.20141203221723
+      Number::Phone::StubCountry::YT 1.20141203221723
+      Number::Phone::StubCountry::ZA 1.20141203221723
+      Number::Phone::StubCountry::ZM 1.20141203221723
+      Number::Phone::StubCountry::ZW 1.20141203221723
+      Number::Phone::UK 1.64
+      Number::Phone::UK::Data 1.20141203221612
+      Number::Phone::UK::Exchanges 1.20060823121334
+      Number::Phone::UK::GG 1
+      Number::Phone::UK::IM 1
+      Number::Phone::UK::JE 1
+    requirements:
+      DBM::Deep 2.0008
+      Digest::MD5 0
+      ExtUtils::MakeMaker 0
+      Scalar::Util 0
+      Test::More 0
+  Parse-CPAN-Meta-1.4414
+    pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4414.tar.gz
+    provides:
+      Parse::CPAN::Meta 1.4414
+    requirements:
+      CPAN::Meta::YAML 0.011
+      Carp 0
+      Encode 0
+      Exporter 0
+      ExtUtils::MakeMaker 6.30
+      File::Spec 0.80
+      JSON::PP 2.27200
+      strict 0
+  Protocol-Redis-1.0003
+    pathname: U/UN/UNDEF/Protocol-Redis-1.0003.tar.gz
+    provides:
+      Protocol::Redis 1.0003
+      Protocol::Redis::Test undef
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 7.04
+      List::Util 0
+      Test::More 0.88
+      perl 5.008001
+  Role-Tiny-1.003004
+    pathname: H/HA/HAARG/Role-Tiny-1.003004.tar.gz
+    provides:
+      Role::Tiny 1.003004
+      Role::Tiny::With 1.003004
+    requirements:
+      Exporter 5.57
+      perl 5.006
+  SQL-Abstract-1.81
+    pathname: R/RI/RIBASUSHI/SQL-Abstract-1.81.tar.gz
+    provides:
+      DBIx::Class::Storage::Debug::PrettyPrint undef
+      SQL::Abstract 1.81
+      SQL::Abstract::Test undef
+      SQL::Abstract::Tree undef
+    requirements:
+      Exporter 5.57
+      ExtUtils::MakeMaker 6.59
+      Hash::Merge 0.12
+      List::Util 0
+      MRO::Compat 0.12
+      Moo 1.004002
+      Scalar::Util 0
+      Storable 0
+      Test::Deep 0.101
+      Test::Exception 0.31
+      Test::More 0.88
+      Test::Warn 0
+      Text::Balanced 2.00
+      perl 5.006
+  Sub-Exporter-Progressive-0.001011
+    pathname: F/FR/FREW/Sub-Exporter-Progressive-0.001011.tar.gz
+    provides:
+      Sub::Exporter::Progressive 0.001011
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0.88
+  Sub-Uplevel-0.25
+    pathname: D/DA/DAGOLDEN/Sub-Uplevel-0.25.tar.gz
+    provides:
+      Sub::Uplevel 0.25
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 6.17
+      constant 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Test-Deep-0.115
+    pathname: R/RJ/RJBS/Test-Deep-0.115.tar.gz
+    provides:
+      Test::Deep 0.115
+      Test::Deep::All undef
+      Test::Deep::Any undef
+      Test::Deep::Array undef
+      Test::Deep::ArrayEach undef
+      Test::Deep::ArrayElementsOnly undef
+      Test::Deep::ArrayLength undef
+      Test::Deep::ArrayLengthOnly undef
+      Test::Deep::Blessed undef
+      Test::Deep::Boolean undef
+      Test::Deep::Cache undef
+      Test::Deep::Cache::Simple undef
+      Test::Deep::Class undef
+      Test::Deep::Cmp undef
+      Test::Deep::Code undef
+      Test::Deep::Hash undef
+      Test::Deep::HashEach undef
+      Test::Deep::HashElements undef
+      Test::Deep::HashKeys undef
+      Test::Deep::HashKeysOnly undef
+      Test::Deep::Ignore undef
+      Test::Deep::Isa undef
+      Test::Deep::ListMethods undef
+      Test::Deep::MM undef
+      Test::Deep::Methods undef
+      Test::Deep::NoTest undef
+      Test::Deep::Number undef
+      Test::Deep::Obj undef
+      Test::Deep::Ref undef
+      Test::Deep::RefType undef
+      Test::Deep::Regexp undef
+      Test::Deep::RegexpMatches undef
+      Test::Deep::RegexpOnly undef
+      Test::Deep::RegexpRef undef
+      Test::Deep::RegexpRefOnly undef
+      Test::Deep::RegexpVersion undef
+      Test::Deep::ScalarRef undef
+      Test::Deep::ScalarRefOnly undef
+      Test::Deep::Set undef
+      Test::Deep::Shallow undef
+      Test::Deep::Stack undef
+      Test::Deep::String undef
+      Test::Deep::SubHash undef
+      Test::Deep::SubHashElements undef
+      Test::Deep::SubHashKeys undef
+      Test::Deep::SubHashKeysOnly undef
+      Test::Deep::SuperHash undef
+      Test::Deep::SuperHashElements undef
+      Test::Deep::SuperHashKeys undef
+      Test::Deep::SuperHashKeysOnly undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      List::Util 1.09
+      Scalar::Util 1.09
+      Test::Builder 0
+  Test-Exception-0.36
+    pathname: E/EX/EXODIST/Test-Exception-0.36.tar.gz
+    provides:
+      Test::Exception 0.36
+    requirements:
+      Sub::Uplevel 0.18
+      Test::Builder 0.7
+      Test::Builder::Tester 1.07
+      Test::Harness 2.03
+      Test::More 0.7
+      Test::Simple 0.7
+  Test-Warn-0.30
+    pathname: C/CH/CHORNY/Test-Warn-0.30.tar.gz
+    provides:
+      Test::Warn 0.30
+      Test::Warn::Categorization 0.30
+    requirements:
+      Carp 1.22
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      Sub::Uplevel 0.12
+      Test::Builder 0.13
+      Test::Builder::Tester 1.02
+      Test::More 0
+      perl 5.006
+  TimeDate-2.30
+    pathname: G/GB/GBARR/TimeDate-2.30.tar.gz
+    provides:
+      Date::Format 2.24
+      Date::Format::Generic 2.24
+      Date::Language 1.10
+      Date::Language::Afar 0.99
+      Date::Language::Amharic 1.00
+      Date::Language::Austrian 1.01
+      Date::Language::Brazilian 1.01
+      Date::Language::Bulgarian 1.01
+      Date::Language::Chinese 1.00
+      Date::Language::Chinese_GB 1.01
+      Date::Language::Czech 1.01
+      Date::Language::Danish 1.01
+      Date::Language::Dutch 1.02
+      Date::Language::English 1.01
+      Date::Language::Finnish 1.01
+      Date::Language::French 1.04
+      Date::Language::Gedeo 0.99
+      Date::Language::German 1.02
+      Date::Language::Greek 1.00
+      Date::Language::Hungarian 1.01
+      Date::Language::Icelandic 1.01
+      Date::Language::Italian 1.01
+      Date::Language::Norwegian 1.01
+      Date::Language::Oromo 0.99
+      Date::Language::Romanian 1.01
+      Date::Language::Russian 1.01
+      Date::Language::Russian_cp1251 1.01
+      Date::Language::Russian_koi8r 1.01
+      Date::Language::Sidama 0.99
+      Date::Language::Somali 0.99
+      Date::Language::Spanish 1.00
+      Date::Language::Swedish 1.01
+      Date::Language::Tigrinya 1.00
+      Date::Language::TigrinyaEritrean 1.00
+      Date::Language::TigrinyaEthiopian 1.00
+      Date::Language::Turkish 1.0
+      Date::Parse 2.30
+      Time::Zone 2.24
+    requirements:
+      ExtUtils::MakeMaker 0
+  bareword-filehandles-0.003
+    pathname: I/IL/ILMARI/bareword-filehandles-0.003.tar.gz
+    provides:
+      bareword::filehandles 0.003
+      inc::BarewordFilehandlesMakeMaker undef
+    requirements:
+      B::Hooks::OP::Check 0
+      ExtUtils::Depends 0
+      ExtUtils::MakeMaker 6.31
+      Lexical::SealRequireHints 0
+      Test::More 0.88
+      XSLoader 0
+  indirect-0.33
+    pathname: V/VP/VPIT/indirect-0.33.tar.gz
+    provides:
+      indirect 0.33
+    requirements:
+      Carp 0
+      Config 0
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      XSLoader 0
+      perl 5.008001
+  multidimensional-0.011
+    pathname: I/IL/ILMARI/multidimensional-0.011.tar.gz
+    provides:
+      MyTest undef
+      inc::MultidimensionalMakeMaker undef
+      multidimensional 0.011
+    requirements:
+      B::Hooks::OP::Check 0.19
+      CPAN::Meta 2.112580
+      ExtUtils::Depends 0
+      ExtUtils::MakeMaker 6.30
+      Lexical::SealRequireHints 0.005
+      Test::More 0.88
+      XSLoader 0
+      strict 0
+      warnings 0
+  strictures-1.005006
+    pathname: H/HA/HAARG/strictures-1.005006.tar.gz
+    provides:
+      strictures 1.005006
+    requirements:
+      bareword::filehandles 0
+      indirect 0
+      multidimensional 0
+      perl 5.006

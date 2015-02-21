@@ -1,0 +1,10 @@
+{
+  mysql => 'mysql://user:pass@host/db',
+  redis => {
+    url => 'redis://localhost:6379',
+  },
+  paypal => {
+    secret => 'secret',
+    client_id => 'client_id',
+  },
+};

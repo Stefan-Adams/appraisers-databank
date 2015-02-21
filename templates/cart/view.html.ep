@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    %= asset 'adb.css'
+  </head>
+  <body>
+    <%= link_to 'Home' => 'home' %><br />
+    <%= stash 'success' %><%= stash 'error' %><%= flash 'error' %><br />
+    <div id="table">
+    % my $action = begin
+      % my $doc = shift;
+      %= link_to Remove => 'remove_from_cart' => {filename => $doc->{filename}}
+    % end
+    %= include 'documents/table', docs => stash('cart'), action => $action
+    % if ( stash('cart')->size ) {
+      <%= link_to 'Checkout with PayPal' => 'checkout' %>
+    % } else {
+      Your cart is empty.
+    % }
+    </div>
+  </body>
+</html>
