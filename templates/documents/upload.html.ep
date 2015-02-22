@@ -7,7 +7,7 @@
   <body>
     <%= link_to 'Home' => 'home' %><br />
     <%= stash 'success' %><%= stash 'error' %><br />
-    %= form_for post_upload => (enctype => 'multipart/form-data') => begin
+    %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
       %= label_for doc => 'Subject Propery Document'
       <br>
       %= file_field 'doc'

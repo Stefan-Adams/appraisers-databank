@@ -48,17 +48,17 @@ sub _add_routes {
   $r->get('/')->to('documents#home')->name('home');
 
   my $user = $r->under('/user');
-  $user->get('/register')->to('user#register')->name('register'); # if logged in, redirect to home
-  $user->post('/register')->to('user#register')->name('post_register'); # if logged in, redirect to home
-  $user->get('/login')->to('user#login')->name('login'); # if logged in, redirect to home
+  $user->get('/register')->to('user#register'); # if logged in, redirect to home
+  $user->post('/register')->to('user#register'); # if logged in, redirect to home
+  $user->get('/login')->to('user#login'); # if logged in, redirect to home
   $user->post('/login')->to('user#login'); # if logged in, redirect to home
   $user->get('/logout')->to('user#logout'); # if not logged in, redirect to home
   $user->get('/profile')->over(user=>1)->to('user#profile'); # e.g. change password, change email and change all DB references
   $user->get('/purchases')->over(user=>1)->to('user#purchases'); # e.g. past purchases
 
   my $documents = $r->under('/documents')->over(user=>1);
-  $documents->get('/upload')->to('documents#upload')->name('upload');
-  $documents->post('/upload')->to('documents#upload')->name('post_upload');
+  $documents->get('/upload')->to('documents#upload');
+  $documents->post('/upload')->to('documents#upload');
   $documents->get('/download/:filename')->to('documents#download')->name('download');
   $documents->get('/flag/:filename')->to('documents#flag')->name('flag');
   $documents->get('/review')->over(admin=>1)->to('documents#review'); # review flagged docs

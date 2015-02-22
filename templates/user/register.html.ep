@@ -6,7 +6,7 @@
   </head>
   <body>
     Register<br />
-    %= form_for post_register => (enctype => 'multipart/form-data') => begin
+    %= form_for register => (method => 'POST', enctype => 'multipart/form-data') => begin
       %= label_for email => 'Email (Required)'
       <br>
       %= email_field 'email'

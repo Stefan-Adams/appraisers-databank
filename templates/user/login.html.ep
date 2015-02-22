@@ -7,13 +7,13 @@
   <body>
     Login or <%= link_to Register => 'register' %><br />
     <%= stash 'success' %><%= stash 'error' %><br />
-    %= form_for login => begin
-      %= label_for email => 'Email (required, 1-20 characters, only e-t)'
+    %= form_for login => (method => 'POST') => begin
+      %= label_for email => 'Email'
       <br>
       %= email_field 'email'
       <br>
 
-      %= label_for password => 'Password (required, 7-500 characters)'
+      %= label_for password => 'Password'
       <br>
       %= password_field 'password'
       <br>
