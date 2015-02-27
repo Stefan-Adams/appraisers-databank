@@ -36,16 +36,16 @@ sub home {
   my ($sql, @bind);
   if ( $mls && $address =~ /^(\d+)/ ) {
     $sql = <<SQL;
-    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged $order limit 1
+    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
       union distinct
-    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged $order
+    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged
       union distinct
     $select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order
 SQL
     @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip, $user, $user, $admin, $user, $zip, $1, "$1 %");
   } elsif ( $mls ) {
-    my $sql = <<SQL;
-    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged $order limit 1
+    $sql = <<SQL;
+    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
       union distinct
     $select $join_transactions where zip=? and mls is null $complete_or_not_flagged $order
 SQL
