@@ -107,7 +107,7 @@ sub upload {
   unless ( $doc->headers->content_type eq 'application/pdf' ) {
     return $c->render(error => 'Document must be of type PDF');
   }
-  my $filename = $validation->output->{filename} = md5_sum($name.time.$validation->output->{email});
+  my $filename = $validation->output->{filename} = md5_sum($name.time.$c->session('user')->{email});
   my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip}); # Use File::Spec here
   mkpath $docdir;
   $doc->move_to("$docdir/$filename");
