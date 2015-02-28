@@ -5,8 +5,9 @@
     %= asset 'adb.css'
   </head>
   <body>
+    <%= link_to 'Home' => 'home' %><br />
     Login or <%= link_to Register => 'register' %><br />
-    <%= stash 'success' %><%= stash 'error' %><br />
+    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     %= form_for login => (method => 'POST') => begin
       %= label_for email => 'Email'
       <br>

@@ -13,7 +13,7 @@
     <%= link_to Upload => 'upload' %><br />
     % my $cart = session 'cart';
     <%= link_to "View Cart (${\($#$cart+1)})" => 'cart' %><br />
-    <%= stash 'error' %>
+    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     <br />Search for an Appraisal Packet
     %= form_for home => begin
       %= label_for zip => 'Zip (Required)'

@@ -6,7 +6,7 @@
   </head>
   <body>
     <%= link_to 'Home' => 'home' %><br />
-    <%= stash 'success' %><%= stash 'error' %><br />
+    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
       %= label_for doc => 'Subject Propery Document'
       <br>

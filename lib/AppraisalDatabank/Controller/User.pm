@@ -52,8 +52,8 @@ sub register {
         $c->reply->exception($err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
-        $c->stash(success => "Thanks for registering.");
-        $c->redirect_to('home');
+        $c->flash(f_success => "Thanks for registering.");
+        $c->redirect_to('login');
       }
     });
   } else {
