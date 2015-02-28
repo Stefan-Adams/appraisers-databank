@@ -48,11 +48,11 @@ sub _add_routes {
   $r->get('/')->to('documents#home')->name('home');
 
   my $user = $r->under('/user');
-  $user->get('/register')->to('user#register'); # if logged in, redirect to home
-  $user->post('/register')->to('user#register'); # if logged in, redirect to home
-  $user->get('/login')->to('user#login'); # if logged in, redirect to home
-  $user->post('/login')->to('user#login'); # if logged in, redirect to home
-  $user->get('/logout')->to('user#logout'); # if not logged in, redirect to home
+  $user->get('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home
+  $user->post('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home
+  $user->get('/login')->over(user=>0)->to('user#login'); # if logged in, redirect to home
+  $user->post('/login')->over(user=>0)->to('user#login'); # if logged in, redirect to home
+  $user->get('/logout')->over(user=>1)->to('user#logout'); # if not logged in, redirect to home
   $user->get('/profile')->over(user=>1)->to('user#profile'); # e.g. change password, change email and change all DB references
   $user->get('/purchases')->over(user=>1)->to('user#purchases'); # e.g. past purchases
 
