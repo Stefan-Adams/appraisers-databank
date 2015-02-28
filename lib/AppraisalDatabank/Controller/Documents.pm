@@ -108,9 +108,8 @@ sub upload {
     return $c->render(error => 'Document must be of type PDF');
   }
   my $filename = $validation->output->{filename} = md5_sum($name.time.$validation->output->{email});
-  my $docdir = $c->app->home->rel_file('documents');
+  my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip}); # Use File::Spec here
   mkpath $docdir;
-  # TODO: Insert file system hashing function here
   $doc->move_to("$docdir/$filename");
   if ( -e "$docdir/$filename" && -s _ == $size ) {
     $c->render_later;
