@@ -34,7 +34,7 @@ sub home {
   my $order = 'order by inspection_date desc, uploaded desc';
 
   my ($sql, @bind);
-  if ( $mls && $address =~ /^(\d+)/ ) {
+  if ( $mls && $address && $address =~ /^(\d+)/ ) {
     $sql = <<SQL;
     $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
       union distinct
@@ -50,7 +50,7 @@ SQL
     $select $join_transactions where zip=? and mls is null $complete_or_not_flagged $order
 SQL
     @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip);
-  } elsif ( $address =~ /^(\d+)/) {
+  } elsif ( $address && $address =~ /^(\d+)/) {
     $sql = "$select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order";
     @bind = ($user, $user, $admin, $user, $zip, $1, "$1 %");
   } else {
