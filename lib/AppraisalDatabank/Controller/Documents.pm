@@ -63,7 +63,7 @@ SQL
     sub {
       my ($delay, $err, $results) = @_;
       if ( $err ) {
-        $c->reply->exception($err);
+        $c->render(error => $err);
       } else {
         if ( $results->rows ) {
           $c->render(results => $results->hashes);
