@@ -22,6 +22,15 @@ sub startup {
   $self->helper(mysql => sub { Mojo::mysql->new($config->{mysql}) });
   $self->helper(sql => sub { SQL::Abstract->new });
   $self->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
+  $self->helper('reply.document' => sub {
+    my ($c, $document) = @_;
+    $c->res->headers->content_disposition("attachment; filename=$document.pdf;");
+    if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$document")) ) {
+      $c->reply->asset($document);
+    } else {
+      $c->reply->not_found;
+    }
+  });
 
   $self->mysql->migrations->from_data->migrate;
 

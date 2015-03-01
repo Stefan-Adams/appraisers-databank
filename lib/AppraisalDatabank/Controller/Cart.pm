@@ -68,7 +68,7 @@ sub checkout {
       },
     );
   } elsif ( $c->param('return_url') ) {
-    $c->flash(error => 'Purchase Cancelled!');
+    $c->flash(f_error => 'Purchase Cancelled!');
     $c->redirect_to('cart')
   } else {
     my $cart = $c->session('cart') || [];

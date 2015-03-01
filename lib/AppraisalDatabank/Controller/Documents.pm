@@ -108,8 +108,8 @@ sub upload {
     return $c->render(error => 'Document must be of type PDF');
   }
   my $filename = $validation->output->{filename} = md5_sum($name.time.$c->session('user')->{email});
-  my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip}); # Use File::Spec here
-  mkpath $docdir;
+  my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip});
+  mkpath $docdir unless -d $docdir;
   $doc->move_to("$docdir/$filename");
   if ( -e "$docdir/$filename" && -s _ == $size ) {
     $c->render_later;
@@ -132,25 +132,18 @@ sub upload {
 
 sub download {
   my $c = shift;
-  warn "DOWNLOAD"; 
   my $filename = $c->param('filename');
   if ( $c->session('user')->{admin} ) {
-    $c->res->headers->content_disposition("attachment; filename=$filename.pdf;");
-    #$c->reply->static("documents/$filename");
-    $c->reply->asset(Mojo::Asset::File->new(path => "documents/$filename"));
+    $c->reply->document($filename);
   } else {
-    my $buyer = $c->mysql->db->query('select 1 from documents where filename=? and user_id=?', $filename, $c->session('user')->{id});
-    if ( $buyer->rows ) {
-      $c->res->headers->content_disposition("attachment; filename=$filename.pdf;");
-      #$c->reply->static("documents/$filename");
-      $c->reply->asset(Mojo::Asset::File->new(path => "documents/$filename"));
+    my $owner = $c->mysql->db->query('select 1 from documents where filename=? and user_id=?', $filename, $c->session('user')->{id});
+    if ( $owner->rows ) {
+      $c->reply->document($filename);
     } else {
       $c->mysql->db->query('update transactions set last_downloaded=now(),downloaded=downloaded+1 where filename=? and user_id=?', $filename, $c->session('user')->{id} => sub {
         my ($db, $err, $results) = @_;
         if ( $results->rows ) {
-          $c->res->headers->content_disposition("attachment; filename=$filename.pdf;");
-          #$c->reply->static("../documents/$filename");
-          $c->reply->asset(Mojo::Asset::File->new(path => "documents/$filename"));
+          $c->reply->document($filename);
         } else {
           $c->reply->not_found;
         }
@@ -176,6 +169,5 @@ sub verify {
   }
   $c->redirect_to('home');
 }
-
 
 1;
