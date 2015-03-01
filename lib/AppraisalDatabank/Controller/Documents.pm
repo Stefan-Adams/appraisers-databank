@@ -95,10 +95,7 @@ sub upload {
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
-
-  # Check file size
-  return $c->render(text => 'File is too big.', status => 200)
-    if $c->req->is_limit_exceeded;
+  return $c->render(error => 'File is too big.') if $c->req->is_limit_exceeded;
 
   # Process uploaded file
   return $c->render unless my $doc = $c->param('doc');
