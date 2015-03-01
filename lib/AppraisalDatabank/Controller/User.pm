@@ -30,26 +30,21 @@ sub register {
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
-
-  # Check file size
-  return $c->render(text => 'File is too big.', status => 200)
-    if $c->req->is_limit_exceeded;
+  return $c->render(error => 'File is too big.') if $c->req->is_limit_exceeded;
 
   # Process uploaded file
   return $c->render unless my $w9 = $c->param('w9');
-  my $size = $w9->size;
   my $name = $w9->filename;
   my $filename = $c->app->home->rel_file('w9/'.$validation->output->{'state'}.'/'.$validation->output->{'slid'});
-  mkpath dirname $filename;
-  # TODO: Insert file system hashing function here
+  mkpath dirname $filename unless -d dirname $filename;
   $w9->move_to($filename);
-  if ( -e $filename && -s _ == $size ) {
+  if ( -e $filename && -s _ == $w9->size ) {
     $c->render_later;
     $c->mysql->db->query($c->sql->insert('users', $validation->output) => sub {
       my ($db, $err, $results) = @_;
       if ( $err ) {
-        # Remove file
-        $c->reply->exception($err);
+        # TODO: Remove file
+        $c->render(error => $err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
         $c->flash(f_success => "Thanks for registering.");
@@ -57,8 +52,8 @@ sub register {
       }
     });
   } else {
-    # Remove file
-    $c->reply->exception('Something went wrong saving your upload!');
+    # TODO: Remove file
+    $c->render(error => 'Something went wrong saving your upload!');
   }
 }
 
@@ -80,7 +75,7 @@ sub login {
   $c->mysql->db->query('select * from users where email = ? and password = ?', $validation->param([qw/email password/]) => sub {
     my ($db, $err, $results) = @_;
     if ( $err ) {
-      $c->reply->exception('Something went wrong with your login!');
+      $c->render(error => 'Something went wrong with your login!');
     } else {
       if ( $results->rows ) {
         $c->session(user => $results->hash);
