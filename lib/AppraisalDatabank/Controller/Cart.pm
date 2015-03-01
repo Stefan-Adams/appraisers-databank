@@ -84,7 +84,7 @@ sub checkout {
       },
       sub {
         my ($delay, $res) = @_;
-        return $c->reply->exception($res->code) unless $res->code == 302;
+        return $c->reply->exception($res->code.': \''.$res->param('message').'\'') unless $res->code == 302;
         $c->redirect_to($res->headers->location);
       },
     );
