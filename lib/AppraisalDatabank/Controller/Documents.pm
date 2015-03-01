@@ -99,7 +99,6 @@ sub upload {
 
   # Process uploaded file
   return $c->render unless my $doc = $c->param('doc');
-  my $size = $doc->size;
   my $name = $doc->filename;
   unless ( $doc->headers->content_type eq 'application/pdf' ) {
     return $c->render(error => 'Document must be of type PDF');
@@ -108,22 +107,21 @@ sub upload {
   my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip});
   mkpath $docdir unless -d $docdir;
   $doc->move_to("$docdir/$filename");
-  if ( -e "$docdir/$filename" && -s _ == $size ) {
+  if ( -e "$docdir/$filename" && -s _ == $doc->size ) {
     $c->render_later;
     $c->mysql->db->query($c->sql->insert('documents', $validation->output) => sub {
       my ($db, $err, $results) = @_;
       if ( $err ) {
-        # Remove file
-        $c->reply->exception($err);
+        # TODO: Remove file
+        $c->render(error => $err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
-        $c->stash(success => "Thanks for uploading $size byte file $name (confirmation: $filename).");
-        $c->render;
+        $c->render(success => "Uploaded file $name (confirmation: $filename).");
       }
     });
   } else {
-    # Remove file
-    $c->reply->exception('Something went wrong saving your upload!');
+    # TODO: Remove file
+    $c->render(error => 'Something went wrong saving your upload!');
   }
 }
 
@@ -151,20 +149,31 @@ sub download {
 
 sub flag {
   my $c = shift;
-  $c->mysql->db->query('update documents set flagged_by=?,flagged_at=now() where filename=?', $c->session('user')->{user_id}, $c->param('filename'));
-  $c->render(json => {ok => Mojo::JSON::true});
+  my $query = $c->mysql->db->query('update documents set flagged_by=?,flagged_at=now() where filename=?', $c->session('user')->{user_id}, $c->param('filename'));
+  if ( $query->rows ) {
+    $c->stash(success => 'Flagged');
+  } else {
+    $c->stash(error => 'Could not flag');
+  }
 }
 
 sub verify {
   my $c = shift;
   if ( $c->param('verify') eq 'complete' ) {
-    $c->mysql->db->query('update documents set complete=now(),incomplete=null where filename=?', $c->param('filename'));
-    $c->stash(success => 'Marked as complete');
+    my $query = $c->mysql->db->query('update documents set complete=now(),incomplete=null where filename=?', $c->param('filename'));
+    if ( $query->rows ) {
+      $c->stash(success => 'Marked as complete');
+    } else {
+      $c->stash(error => 'Could not mark as complete');
+    }
   } elsif ( $c->param('verify') eq 'incomplete' ) {
-    $c->mysql->db->query('update documents set incomplete=now(),complete=null where filename=?', $c->param('filename'));
-    $c->stash(success => 'Marked as incomplete');
+    my $query = $c->mysql->db->query('update documents set incomplete=now(),complete=null where filename=?', $c->param('filename'));
+    if ( $query->rows ) {
+      $c->stash(success => 'Marked as incomplete');
+    } else {
+      $c->stash(error => 'Could not mark as incomplete');
+    }
   }
-  $c->redirect_to('home');
 }
 
 1;
