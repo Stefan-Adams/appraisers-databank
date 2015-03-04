@@ -16,61 +16,37 @@ sub home {
   return $c->render unless $validation->has_data;
 
   # Validate that username and password work
-  $validation->required('zip')->like(qr/^\d{5}(-\d{4})?$/);
+  $validation->required('zip')->zip;
   $validation->optional('mls');#->like(qr/^\w+$/);
   $validation->optional('address');#->like(/^\d+$/);
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
 
-  $c->render_later;
-  my $user = $c->session('user')->{id};
-  my $admin = $c->session('user')->{admin};
-  my ($zip, $mls, $address) = map { $validation->output->{$_} } qw/zip mls address/;
+  my ($search, $sql, @bind) = $c->_search($validation);
+  defined $sql or return $c->render(error => 'Too many results, please refine your search');
 
-  my $select = 'select documents.*,if(documents.user_id=? or transactions.user_id=? or ?,1,0) can_download from documents';
-  my $join_transactions = 'left join transactions on documents.filename=transactions.filename and transactions.user_id=?';
-  my $complete_or_not_flagged = 'and ((flagged_at is null and incomplete is null) or complete is not null)';
-  my $order = 'order by inspection_date desc, uploaded desc';
-
-  my ($sql, @bind);
-  if ( $mls && $address && $address =~ /^(\d+)/ ) {
-    $sql = <<SQL;
-    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
-      union distinct
-    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged
-      union distinct
-    $select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order
-SQL
-    @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip, $user, $user, $admin, $user, $zip, $1, "$1 %");
-  } elsif ( $mls ) {
-    $sql = <<SQL;
-    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
-      union distinct
-    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged $order
-SQL
-    @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip);
-  } elsif ( $address && $address =~ /^(\d+)/) {
-    $sql = "$select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order";
-    @bind = ($user, $user, $admin, $user, $zip, $1, "$1 %");
-  } else {
-    return $c->render(error => 'Too many results, please refine your search');
-  }
   $c->delay(
-    sub {
+    sub { # Search
       $c->mysql->db->query($sql, @bind => shift->begin);
     },
-    sub {
+    sub { # Check results
       my ($delay, $err, $results) = @_;
       if ( $err ) {
-        $c->render(error => $err);
+        $c->stash(error => $err);
       } else {
         if ( $results->rows ) {
-          $c->render(results => $results->hashes);
+          $search->{results} = $results->rows;
+          $c->stash(results => $results->hashes);
         } else {
-          $c->render(error => 'No results, please refine your search');
+          $c->stash(error => 'No results, please refine your search');
         }
       }
+      warn 3;
+      $c->mysql->db->query($c->sql->insert('searches', $search) => $delay->begin);
+    },
+    sub { # Render
+      $c->render(text => scalar localtime);
     }
   );
 }
@@ -83,14 +59,14 @@ sub upload {
   return $c->render unless $validation->has_data;
 
   # Validate parameters
-  #$validation->required('doc');
+  #$validation->required('doc'); # Doesn't seem to work by Mojolicious...
   $validation->required('inspection_date')->like(qr/^\d{4}-\d{2}-\d{2}$/);
   $validation->optional('mls');
   $validation->optional('address');
   $validation->optional('city');
   $validation->optional('county');
-  $validation->optional('state')->like(qr/^[A-Za-z]{2}$/);
-  $validation->required('zip')->like(qr/^\d{5}(-\d{4})?$/);
+  $validation->optional('state')->state;
+  $validation->required('zip')->zip;
   $validation->output->{user_id} = $c->session('user')->{id};
 
   # Re-render if validation was unsuccessful
@@ -107,26 +83,29 @@ sub upload {
   my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip});
   mkpath $docdir unless -d $docdir;
   $doc->move_to("$docdir/$filename");
-  if ( -e "$docdir/$filename" && -s _ == $doc->size ) {
-    $c->render_later;
-    $c->mysql->db->query($c->sql->insert('documents', $validation->output) => sub {
-      my ($db, $err, $results) = @_;
+  unless ( -e "$docdir/$filename" && -s _ == $doc->size ) {
+    unlink "$docdir/$filename";
+    $c->render(error => 'Something went wrong saving your upload!');
+  }
+  $c->delay(
+    sub {
+      $c->mysql->db->query($c->sql->insert('documents', $validation->output) => shift->begin);
+    },
+    sub {
+      my ($delay, $err, $results) = @_;
       if ( $err ) {
-        # TODO: Remove file
+        unlink "$docdir/$filename";
         $c->render(error => $err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
         $c->render(success => "Uploaded file $name (confirmation: $filename).");
       }
-    });
-  } else {
-    # TODO: Remove file
-    $c->render(error => 'Something went wrong saving your upload!');
-  }
+    }
+  );
 }
 
 sub download {
-  my $c = shift;
+  my $c = shift->render_later;
   my $filename = $c->param('filename');
   if ( $c->session('user')->{admin} ) {
     $c->reply->document($filename);
@@ -174,6 +153,49 @@ sub verify {
       $c->stash(error => 'Could not mark as incomplete');
     }
   }
+}
+
+sub _search {
+  my ($c, $validation) = @_;
+
+  my $user = $c->session('user')->{id};
+  my $admin = $c->session('user')->{admin};
+  my ($zip, $mls, $address) = map { $validation->output->{$_} } qw/zip mls address/;
+
+  my $search = {
+    user_id => $user,
+    zip => $zip,
+    mls => $mls,
+    address => $address,
+  };
+
+  my $select = 'select documents.*,if(documents.user_id=? or transactions.user_id=? or ?,1,0) can_download from documents';
+  my $join_transactions = 'left join transactions on documents.filename=transactions.filename and transactions.user_id=?';
+  my $complete_or_not_flagged = 'and ((flagged_at is null and incomplete is null) or complete is not null)';
+  my $order = 'order by inspection_date desc, uploaded desc';
+
+  my ($sql, @bind);
+  if ( $mls && $address && $address =~ /^(\d+)/ ) {
+    $sql = <<SQL;
+    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
+      union distinct
+    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged
+      union distinct
+    $select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order
+SQL
+    @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip, $user, $user, $admin, $user, $zip, $1, "$1 %");
+  } elsif ( $mls ) {
+    $sql = <<SQL;
+    $select $join_transactions where zip=? and mls=? $complete_or_not_flagged limit 1
+      union distinct
+    $select $join_transactions where zip=? and mls is null $complete_or_not_flagged $order
+SQL
+    @bind = ($user, $user, $admin, $user, $zip, $mls, $user, $user, $admin, $user, $zip);
+  } elsif ( $address && $address =~ /^(\d+)/) {
+    $sql = "$select $join_transactions where zip=? and (address=? or address like ?) $complete_or_not_flagged $order";
+    @bind = ($user, $user, $admin, $user, $zip, $1, "$1 %");
+  }
+  return $search, $sql, @bind;
 }
 
 1;

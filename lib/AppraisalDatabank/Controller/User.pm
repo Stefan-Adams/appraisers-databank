@@ -16,15 +16,15 @@ sub register {
   # Validate parameters ("pass_again" depends on "password")
   $validation->required('email')->email->not_exists;
   $validation->required('pass_again')->equal_to('password') and delete $validation->output->{pass_again}
-    if $validation->required('password')->size(1, 64)->is_valid;
+    if $validation->required('password')->password->is_valid;
   $validation->required('slid');
   $validation->required('taxid');
   $validation->required('firstname');
   $validation->required('lastname');
   $validation->required('address');
   $validation->required('city');
-  $validation->required('state')->like(qr/^[A-Za-z]{2}$/);
-  $validation->required('zip')->like(qr/^(\d{5}|\d{5}-\d{4})$/);
+  $validation->required('state')->state;
+  $validation->required('zip')->zip;
   $validation->required('phone')->phone;
   $validation->required('tos');
 
@@ -35,7 +35,7 @@ sub register {
   # Process uploaded file
   return $c->render unless my $w9 = $c->param('w9');
   my $name = $w9->filename;
-  my $filename = $c->app->home->rel_file('w9/'.$validation->output->{'state'}.'/'.$validation->output->{'slid'});
+  my $filename = $c->app->home->rel_file('w9/'.$validation->output->{'state'}.'/'.$validation->output->{'slid'}.'-'.$name);
   mkpath dirname $filename unless -d dirname $filename;
   $w9->move_to($filename);
   if ( -e $filename && -s _ == $w9->size ) {
@@ -43,7 +43,7 @@ sub register {
     $c->mysql->db->query($c->sql->insert('users', $validation->output) => sub {
       my ($db, $err, $results) = @_;
       if ( $err ) {
-        # TODO: Remove file
+        unlink $filename;
         $c->render(error => $err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
@@ -52,7 +52,7 @@ sub register {
       }
     });
   } else {
-    # TODO: Remove file
+    unlink $filename;
     $c->render(error => 'Something went wrong saving your upload!');
   }
 }
@@ -66,7 +66,7 @@ sub login {
 
   # Validate that username and password work
   $validation->required('email')->email;
-  $validation->required('password');
+  $validation->required('password')->password;
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
@@ -81,7 +81,7 @@ sub login {
         $c->session(user => $results->hash);
         $c->redirect_to('home');
       } else {
-        $c->render;
+        $c->render(error => 'Something went wrong with your login!');
       }
     }
   });
