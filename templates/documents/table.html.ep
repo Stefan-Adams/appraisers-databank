@@ -1,5 +1,6 @@
 % return unless $docs->size;
 % my $columns = {map { $_ => 1 } stash('columns') || qw/mls inspection_date address city county state zip/};
+<!-- <%= $docs->size %> documents -->
 <table>
   <tr>
     % if ( defined $action && ref $action eq 'CODE' ) {
