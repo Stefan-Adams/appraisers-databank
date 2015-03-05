@@ -42,11 +42,10 @@ sub home {
           $c->stash(error => 'No results, please refine your search');
         }
       }
-      warn 3;
       $c->mysql->db->query($c->sql->insert('searches', $search) => $delay->begin);
     },
     sub { # Render
-      $c->render(text => scalar localtime);
+      $c->render;
     }
   );
 }
