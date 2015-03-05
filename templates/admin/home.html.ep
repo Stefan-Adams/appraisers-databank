@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    %= asset 'adb.css'
+  </head>
+  <body>
+    Welcome, <%= session('user')->{firstname} %>
+    % if ( session('user')->{admin} ) {
+      (admin)
+    % }
+    <br />
+    <%= link_to Logout => 'logout' %><br />
+    <%= link_to Home => 'home' %><br />
+    Number of users: <%= $c->mysql->db->query('select count(*) from users')->array->[0] %><br />
+    Number of documents: <%= $c->mysql->db->query('select count(*) from documents')->array->[0] %><br />
+    Number of purchases: <%= $c->mysql->db->query('select count(*) from transactions')->array->[0] %><br />
+    Number of users without an upload: <%= $c->mysql->db->query('select count(*) from transactions')->array->[0] %><br />
+    Number of users without a purchase: <%= $c->mysql->db->query('select count(*) from transactions')->array->[0] %><br />
+  </body>
+</html>

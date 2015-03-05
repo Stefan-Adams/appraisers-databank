@@ -56,6 +56,9 @@ sub _add_routes {
   # Normal route to controller
   $r->get('/')->to('documents#home')->name('home');
 
+  my $admin = $r->under('/admin')->over(admin=>1);
+  $admin->get('/')->to('admin#home')->name('admin');
+
   my $user = $r->under('/user');
   $user->get('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home
   $user->post('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home

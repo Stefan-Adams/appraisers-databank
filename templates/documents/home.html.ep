@@ -10,6 +10,9 @@
     % }
     <br />
     <%= link_to Logout => 'logout' %><br />
+    % if ( session('user')->{admin} ) {
+    <%= link_to Admin => 'admin' %><br />
+    % }
     <%= link_to Upload => 'upload' %><br />
     % my $cart = session 'cart';
     <%= link_to "View Cart (${\($#$cart+1)})" => 'cart' %><br />
