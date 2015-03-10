@@ -6,7 +6,7 @@ use Mojo::Util qw/slurp md5_sum/;
 use File::Path;
 use File::Basename;
 
-sub home {
+sub search {
   my $c = shift;
 
   return $c->redirect_to('login') unless $c->session('user');

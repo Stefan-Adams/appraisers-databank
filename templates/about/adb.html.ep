@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    %= asset 'adb.css'
+  </head>
+  <body>
+    Welcome to Appraiser's DataBank!  Are you an Appraiser?  <%= link_to 'Login' => 'login' %>!  If not, <%= link_to 'go away' => 'http://google.com' %>!
+  </body>
+</html>

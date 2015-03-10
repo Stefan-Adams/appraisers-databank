@@ -5,7 +5,7 @@
     %= asset 'adb.css'
   </head>
   <body>
-    <%= link_to 'Home' => 'home' %><br />
+    <%= link_to 'Home' => 'search' %><br />
     <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
       %= label_for doc => 'Subject Propery Document'

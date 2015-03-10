@@ -4,7 +4,7 @@
     %= asset 'adb.css'
   </head>
   <body>
-    <%= link_to 'Home' => 'home' %><br />
+    <%= link_to 'Home' => 'search' %><br />
     <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     Download purchased documents
     <div id="table">

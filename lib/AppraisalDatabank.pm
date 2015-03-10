@@ -54,21 +54,24 @@ sub _add_routes {
   my $r = $self->routes;
   
   # Normal route to controller
-  $r->get('/')->to('documents#home')->name('home');
+  $r->get('/')->to(template => 'about/adb')->name('adb');
 
   my $admin = $r->under('/admin')->over(admin=>1);
   $admin->get('/')->to('admin#home')->name('admin');
 
   my $user = $r->under('/user');
-  $user->get('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home
-  $user->post('/register')->over(user=>0)->to('user#register'); # if logged in, redirect to home
+  $user->get('/register')->over(user=>0)->to('user#profile'); # if logged in, redirect to home
+  $user->post('/register')->over(user=>0)->to('user#profile'); # if logged in, redirect to home
   $user->get('/login')->over(user=>0)->to('user#login'); # if logged in, redirect to home
   $user->post('/login')->over(user=>0)->to('user#login'); # if logged in, redirect to home
   $user->get('/logout')->to('user#logout'); # if not logged in, redirect to home
   $user->get('/profile')->over(user=>1)->to('user#profile'); # e.g. change password, change email and change all DB references
+  $user->post('/profile')->over(user=>1)->to('user#profile'); # e.g. change password, change email and change all DB references
   $user->get('/purchases')->over(user=>1)->to('user#purchases'); # e.g. past purchases
 
-  my $documents = $r->under('/documents')->over(user=>1);
+  my $documents = $r->under('/documents')->over(user=>1)->to('user#prereq');
+  $documents->get('/')->to('documents#search')->name('search');
+  $documents->post('/')->to('documents#search')->name('search');
   $documents->get('/upload')->to('documents#upload');
   $documents->post('/upload')->to('documents#upload');
   $documents->get('/download/:filename')->to('documents#download')->name('download');
@@ -76,7 +79,7 @@ sub _add_routes {
   $documents->get('/review')->over(admin=>1)->to('documents#review'); # review flagged docs
   $documents->get('/verify/:verify/:filename' => [verify => [qw/complete incomplete/]])->over(admin=>1)->to('documents#verify')->name('verify');
 
-  my $cart = $r->under('/cart')->over(user=>1);
+  my $cart = $r->under('/cart')->over(user=>1)->to('user#prereq');
   $cart->get('/add/:filename')->to('cart#additem')->name('add_to_cart');
   $cart->get('/')->to('cart#view')->name('cart');
   $cart->get('/remove/:filename')->to('cart#removeitem')->name('remove_from_cart');
