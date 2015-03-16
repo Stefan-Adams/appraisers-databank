@@ -105,18 +105,19 @@ sub upload {
 
 sub download {
   my $c = shift->render_later;
+  my $zip = $c->param('zip');
   my $filename = $c->param('filename');
   if ( $c->session('user')->{admin} ) {
-    $c->reply->document($filename);
+    $c->reply->document($zip, $filename);
   } else {
     my $owner = $c->mysql->db->query('select 1 from documents where filename=? and user_id=?', $filename, $c->session('user')->{id});
     if ( $owner->rows ) {
-      $c->reply->document($filename);
+      $c->reply->document($zip, $filename);
     } else {
       $c->mysql->db->query('update transactions set last_downloaded=now(),downloaded=downloaded+1 where filename=? and user_id=?', $filename, $c->session('user')->{id} => sub {
         my ($db, $err, $results) = @_;
         if ( $results->rows ) {
-          $c->reply->document($filename);
+          $c->reply->document($zip, $filename);
         } else {
           $c->reply->not_found;
         }

@@ -23,9 +23,9 @@ sub startup {
   $self->helper(sql => sub { SQL::Abstract->new });
   $self->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
   $self->helper('reply.document' => sub {
-    my ($c, $document) = @_;
+    my ($c, $zip, $document) = @_;
     $c->res->headers->content_disposition("attachment; filename=$document.pdf;");
-    if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$document")) ) {
+    if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$zip/$document")) ) {
       $c->reply->asset($document);
     } else {
       $c->reply->not_found;
@@ -74,7 +74,7 @@ sub _add_routes {
   $documents->post('/')->to('documents#search')->name('search');
   $documents->get('/upload')->to('documents#upload');
   $documents->post('/upload')->to('documents#upload');
-  $documents->get('/download/:filename')->to('documents#download')->name('download');
+  $documents->get('/download/:zip/:filename')->to('documents#download')->name('download');
   $documents->get('/flag/:filename')->to('documents#flag')->name('flag');
   $documents->get('/review')->over(admin=>1)->to('documents#review'); # review flagged docs
   $documents->get('/verify/:verify/:filename' => [verify => [qw/complete incomplete/]])->over(admin=>1)->to('documents#verify')->name('verify');

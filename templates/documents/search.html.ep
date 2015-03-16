@@ -41,7 +41,7 @@
     % my $action = begin
       % my $doc = shift;
       % if ( $doc->{can_download} ) {
-        <%= link_to Download => 'download' => {filename => $doc->{filename}} => (target => '_blank') %>
+        <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
       % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
         <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
       % } else {
