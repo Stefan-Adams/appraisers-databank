@@ -1,0 +1,332 @@
+/* =======================
+   GLOBAL STYLES
+========================= */
+body {
+    width: 100%;
+    font-family: 'EB Garamond', serif;
+}
+
+
+html, body {
+    min-height: 100vh;
+}
+
+.container, .text {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =======================
+   TEXT STYLES
+========================= */
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #939241;
+}
+
+a:hover {
+    color: #ededed;
+}
+
+p {
+     font-size: 1.2em;
+}
+
+h2 {
+    color: #9DB648;
+    margin-top: 0;  
+}
+
+h3 {
+    color: #9DB648;
+    font-size: 1.8em;
+}
+
+h4 {
+    color: #fafafa;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.6em;
+}
+
+.intro p, .int p, ol {
+    color: #fafafa;
+}
+h1, h2, h3, h4, p, li, a{
+    letter-spacing: 1px;
+}
+
+/* =======================
+   HEADER STYLES
+========================= */
+
+.hm-header {
+    width: 100%;
+    min-height: 120px;
+    position: absolute;
+    background: rgba(0,0,0,0.15);
+    z-index: 100;
+}
+
+.header {
+    width: 100%;
+    background: #202E44;
+    
+}
+
+.flex,  .nav {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.flex {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
+
+.nav {
+    width: 100%;
+    align-self: flex-end;
+    -webkit-align-self: flex-end;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+}
+
+.nav li {
+    margin-left: 20px;
+}
+
+.welcome {
+    color: #fafafa;
+    margin-right: auto;
+}
+
+.title, .title a{
+    color: #fafafa;
+}
+
+.logged-out-nav li {
+    font-size: 1.1em;
+}
+
+.logged-out-nav a {
+    color: #ffffff;
+}
+
+.logged-out-nav a:hover {
+    color: #EDEDED;
+}
+
+.current {
+    text-decoration: underline;
+    color: #fafafa;                 
+}
+
+.stand-out {
+    background-color: #7D9138;
+    padding: 8px;
+}
+
+
+/* =======================
+   HOME PAGE STYLES
+========================= */
+
+.boxes {
+    width: 100%;
+    height: 200px;
+    color: #fafafa;
+    font-size: 2em;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: no-wrap;
+    -webkit-flex-wrap: no-wrap;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    position: relative;
+    top: 60px;
+}
+
+
+.boxes li{
+    border: 3px solid #fafafa;
+    flex-grow: 1;
+    -webkit-flex-grow: 1;
+    min-width: 200px;
+    margin-right: 15px;
+    margin-top: 15px;
+    padding: 20px 10px;
+    z-index: 1;
+}
+
+.boxes a{
+    color: #fafafa;
+}
+
+.find {
+    background-color: rgba(68,89,38,.7);
+}   
+.sell {
+    background-color: rgba(125,145,56,.7);
+}    
+.share {
+    background-color: rgba(147,146,65,.7);
+}
+
+.intro {
+    background: #161F2E;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    
+}
+
+/* =======================
+   CONTENT STYLES
+========================= */
+
+.content-area, .welcome-area {
+    padding: 20px;
+    z-index: 0;
+}
+
+.content-area {
+    background: linear-gradient(90deg, #FFFFFF 30%, rgba(255,255,255,0.50) 100%),
+                #DCDCDC url('../img/house-row.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 65vh;
+}
+
+.welcome-area {
+    background: #DCDCDC url('../img/house-row.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 90vh;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+/* =======================
+   FOOTER STYLES
+========================= */
+
+.footer {
+    background: #202E44;
+    width: 100%;
+    height: 10vh;
+    min-height: 50px;
+    z-index: 100;
+}
+
+.footer-nav {
+    float: right;
+}
+
+.footer-nav li {
+    float: left;
+    margin-left: 20px;
+}
+
+.footer-nav a{
+    color: #939241;
+}
+
+.footer-nav a:hover{
+    color: #EDEDED;
+}
+
+/* =======================
+   FORM STYLES
+========================= */
+
+input {
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+input[type=submit] {
+    padding: 8px 10px;
+    background: #7D9138;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+input[type=submit]:hover {
+    background-color: #9DB648;
+}
+
+
+.columns::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.col{
+    float: left;
+    width: 40%;
+    min-width: 230px;
+}
+
+/* =======================
+   MEDIA QUERIES
+========================= */
+
+@media (max-width: 768px){
+    
+.boxes {
+   flex-direction: column;
+   -webkit-flex-direction: column;
+   font-size: 1.4em;
+   height: auto;
+}   
+
+.boxes li{
+    width: 180px;
+    padding: 5px 10px;
+    margin: 15px;
+}
+    
+
+}
+    
+@media (max-width: 360px){
+    
+.boxes {
+    display: hidden;
+}
+.footer-nav {
+    float: left;
+}
+    
+}
+
+
+
+
+    
+
+
+
+
+

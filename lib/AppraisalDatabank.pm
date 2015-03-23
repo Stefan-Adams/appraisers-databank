@@ -54,7 +54,7 @@ sub _add_routes {
   my $r = $self->routes;
   
   # Normal route to controller
-  $r->get('/')->to(template => 'about/adb')->name('adb');
+  $r->get('/' => sub{shift->reply->static('/index.html')})->name('adb');
 
   my $admin = $r->under('/admin')->over(admin=>1);
   $admin->get('/')->to('admin#home')->name('admin');
