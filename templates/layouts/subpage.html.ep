@@ -9,8 +9,15 @@
     <body>
         <div class="int header">
             <div class="flex container">
-                <h1 class="title"><a href="index.html">Appraiser's Data Bank</a></h1>
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'about/adb' %></h1>
                     <ul class="logged-out-nav nav">
+                        <!--
+                        <%= link_to Logout => 'logout' %><br />
+                        <%= link_to Profile => 'profile' %><br />
+                        % if ( session('user')->{admin} ) {
+                        <%= link_to Admin => 'admin' %><br />
+                        % }
+                        -->
                         <li><%= link_to "Login" => 'login' %></li>
                         <li><%= link_to "Sign Up" => 'register', class => 'stand-out' %></li>
                         <li class="current"><%= link_to "Learn More" => 'about/learn' %></li>

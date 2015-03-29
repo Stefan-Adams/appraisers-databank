@@ -8,6 +8,7 @@ use File::Basename;
 
 sub prereq {
   my $c = shift;
+return 1;
   unless ( $c->mysql->db->query('select tos from users where id=?', $c->session('user')->{id})->array->[0] ) {
     $c->stash(tos_missing => 'You must agree to the TOS');
     $c->redirect_to('profile');
