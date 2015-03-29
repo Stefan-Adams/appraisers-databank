@@ -45,7 +45,12 @@ sub startup {
 
 sub _add_assets {
   my $self = shift;
-  $self->asset('adb.css' => '/css/adb.css');
+  $self->asset('adb.css' =>
+    #'/css/adb.css',
+    '/css/normalize.css',
+    '/css/main.css',
+    'http://fonts.googleapis.com/css?family=EB+Garamond',
+  );
 }
 
 sub _add_routes {
@@ -54,7 +59,8 @@ sub _add_routes {
   my $r = $self->routes;
   
   # Normal route to controller
-  $r->get('/' => sub{shift->reply->static('/index.html')})->name('adb');
+  $r->get('/')->name('about/adb');
+  $r->get('/about/learn-more')->name('about/learn');
 
   my $admin = $r->under('/admin')->over(admin=>1);
   $admin->get('/')->to('admin#home')->name('admin');
@@ -126,4 +132,3 @@ CREATE TABLE IF NOT EXISTS `documents` ( `id` int(11) NOT NULL AUTO_INCREMENT, `
 CREATE TABLE IF NOT EXISTS `transactions` ( `id` int(11) NOT NULL AUTO_INCREMENT, `transaction` varchar(16) NOT NULL, `filename` varchar(64) NOT NULL, `user_id` int(11) NOT NULL, `purchased_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `last_downloaded` datetime DEFAULT NULL, `downloaded` int(11) DEFAULT '0', `refunded_at` datetime DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `searches` ( `id` int(11) NOT NULL AUTO_INCREMENT, `user_id` int(11) NOT NULL, searched_at timestamp, `zip` VARCHAR(10) NOT NULL, `mls` varchar(32) DEFAULT NULL, `address` varchar(255) DEFAULT NULL, results smallint, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `zips` ( `zip` VARCHAR(5) NOT NULL, `lat` FLOAT NOT NULL, `lng` FLOAT NOT NULL, PRIMARY KEY (`zip`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
-

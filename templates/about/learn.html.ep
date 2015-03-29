@@ -1,0 +1,9 @@
+% layout 'subpage';
+<div class="text">
+    <h2>Find Documents</h2>
+    <p>Insert intriguing and wonderfully helpful information about these services.</p>
+    <h2>Sell Your Work</h2>
+    <p>Insert intriguing and wonderfully helpful information about these services.</p>
+    <h2>Share Information</h2>
+    <p>Insert intriguing and wonderfully helpful information about these services.</p>
+</div>
