@@ -14,7 +14,7 @@
                         <!--
                         <%= link_to Logout => 'logout' %><br />
                         <%= link_to Profile => 'profile' %><br />
-                        % if ( session('user')->{admin} ) {
+                        % if ( session('user') && session('user')->{admin} ) {
                         <%= link_to Admin => 'admin' %><br />
                         % }
                         -->
