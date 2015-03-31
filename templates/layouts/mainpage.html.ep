@@ -2,28 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title><%= title %></title>
+        <title>Appraiser's DataBank</title>
         %= asset 'adb.css'
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <div class="int header">
+        <div class="hm hm-header">
             <div class="flex container">
-                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'about/adb' %></h1>
+                <h1 class="title">Appraiser's DataBank</h1>
                     <ul class="logged-out-nav nav">
                         %= include 'snippets/topmenu'
                     </ul>
             </div>
         </div>
-        <div class="content-area">
-            <%= content %>
-        </div>
+        <%= content %>
         <div class="footer">
-           <div class="container">
+            <div class="container">
                 <ul class="footer-nav">
                     %= include 'snippets/bottommenu'
                 </ul>
-           </div>
+            </div>
         </div>
     </body>
 </html>

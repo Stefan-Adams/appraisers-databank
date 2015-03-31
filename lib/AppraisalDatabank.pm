@@ -19,6 +19,7 @@ sub startup {
   $self->plugin('AssetPack');
   $self->plugin(PayPal => $self->config->{paypal});
 
+  $self->helper(is_current => sub { q(class="current") if $_[0]->current_route eq $_[1] });
   $self->helper(mysql => sub { Mojo::mysql->new($config->{mysql}) });
   $self->helper(sql => sub { SQL::Abstract->new });
   $self->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
@@ -46,7 +47,7 @@ sub startup {
 sub _add_assets {
   my $self = shift;
   $self->asset('adb.css' =>
-    #'/css/adb.css',
+    '/css/adb.css',
     '/css/normalize.css',
     '/css/main.css',
     'http://fonts.googleapis.com/css?family=EB+Garamond',

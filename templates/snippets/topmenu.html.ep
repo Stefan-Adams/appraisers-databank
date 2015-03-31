@@ -1,0 +1,14 @@
+% if ( session('user') ) {
+    % my $cart = session 'cart';
+    <li <%== is_current 'cart' %>><%= link_to "View Cart (${\($#$cart+1)})" => 'cart' %></li>
+    <li <%== is_current 'search' %>><%= link_to Search => 'search' %></li>
+    <li <%== is_current 'profile' %>><%= link_to Profile => 'profile' %></li>
+    % if ( session('user')->{admin} ) {
+        <li <%== is_current 'admin' %>><%= link_to Admin => 'admin' %></li>
+    % }
+    <li><%= link_to Logout => 'logout' %></li>
+% } else {
+    <li <%== is_current 'login' %>><%= link_to "Login" => 'login' %></li>
+    <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', class => 'stand-out' %></li>
+    <li <%== is_current 'about/learn' %>><%= link_to "Learn More" => 'about/learn' %></li>
+% }

@@ -1,14 +1,8 @@
 % layout 'subpage';
 <div class="text">
-    Welcome, <%= session('user')->{firstname} %>
-    % if ( session('user')->{admin} ) {
-        (admin)
-    % }
-    <br />
-    % my $cart = session 'cart';
-    <%= link_to "View Cart (${\($#$cart+1)})" => 'cart' %><br />
-    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
-    <br />Search for an Appraisal Packet
+    Welcome, <%= session('user')->{firstname} %><br />
+    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br /><br />
+    Search for an Appraisal Packet<br />
     %= form_for search => begin
         %= label_for zip => 'Zip (Required)'
         <br>
