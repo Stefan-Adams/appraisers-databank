@@ -1,0 +1,5 @@
+% layout 'subpage';
+<div class="text">
+    <h2>Terms of Service</h2>
+    %= include 'user/tos'
+</div>

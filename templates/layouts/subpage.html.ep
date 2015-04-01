@@ -9,7 +9,7 @@
     <body>
         <div class="int header">
             <div class="flex container">
-                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'about/adb' %></h1>
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'home' %></h1>
                     <ul class="logged-out-nav nav">
                         %= include 'snippets/topmenu'
                     </ul>

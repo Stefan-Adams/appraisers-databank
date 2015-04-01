@@ -58,10 +58,24 @@ sub _add_routes {
   my $self = shift;
 
   my $r = $self->routes;
-  
+
+$r->add_shortcut(pages => sub {
+  my ($r, $name) = @_;
+  foreach ( @$name ) {
+    $r->get("/$_")->name("about/$_");
+  }
+});
+
   # Normal route to controller
-  $r->get('/')->name('about/adb');
-  $r->get('/about/learn-more')->name('about/learn');
+  $r->get('/')->name('home');
+
+  my $about = $r->under('/about');
+  $about->get('/learn-more')->name('about/learn-more');
+  $about->get('/find')->name('about/find');
+  $about->get('/sell')->name('about/sell');
+  $about->get('/us')->name('about/us');
+  $about->get('/contact')->name('about/contact');
+  $about->get('/tos')->name('about/tos');
 
   my $admin = $r->under('/admin')->over(admin=>1);
   $admin->get('/')->to('admin#home')->name('admin');

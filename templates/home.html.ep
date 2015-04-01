@@ -2,9 +2,8 @@
 <div class="welcome-area">
     <div class="text">
     <ul class="boxes">
-        <%= link_to search => begin %><li class="find"><h4>Find</h4>documents</li><% end %>
-        <%= link_to upload => begin %><li class="sell"><h4>Sell</h4>your work</li><% end %>
-        <%= link_to login => begin %><li class="share"><h4>Share</h4>information</li><% end %>
+        <%= link_to 'about/find' => begin %><li class="find"><h4>Find</h4>documents</li><% end %>
+        <%= link_to 'about/sell' => begin %><li class="sell"><h4>Sell</h4>your work</li><% end %>
     </ul> 
     </div>    
 </div>
@@ -28,6 +27,6 @@ Only licensed appraisers will be able to access this information. </p>
         <p>Even better, you can make additional income from each report you upload!</p>
         <h4>Signing up is free</h4>
         <p>That’s right, you pay nothing to create an account. And, you can make money 
-when others purchase your documents. Ready to get started? <%= link_to "sign up now" => 'register' %>.</p>
+when others purchase your documents. Ready to get started? <%= link_to "Sign up now" => 'register' %>.</p>
     </div>
 </div>

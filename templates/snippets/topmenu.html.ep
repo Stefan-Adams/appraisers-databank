@@ -10,5 +10,5 @@
 % } else {
     <li <%== is_current 'login' %>><%= link_to "Login" => 'login' %></li>
     <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', class => 'stand-out' %></li>
-    <li <%== is_current 'about/learn' %>><%= link_to "Learn More" => 'about/learn' %></li>
+    <li <%== is_current 'about/learn-more' %>><%= link_to "Learn More" => 'about/learn-more' %></li>
 % }

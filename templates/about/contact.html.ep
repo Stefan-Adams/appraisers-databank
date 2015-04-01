@@ -1,0 +1,5 @@
+% layout 'subpage';
+<div class="text">
+    <h2>Contact Us</h2>
+    <p>This way.</p>
+</div>
