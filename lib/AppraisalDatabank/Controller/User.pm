@@ -112,7 +112,7 @@ sub login {
   return $c->render if $validation->has_error;
   
   $c->render_later;
-  $c->mysql->db->query('select * from users where email = ? and password = ?', $validation->param([qw/email password/]) => sub {
+  $c->mysql->db->query('select * from users where email = ? and password = ?', (map { $validation->param($_) } qw/email password/) => sub {
     my ($db, $err, $results) = @_;
     if ( $err ) {
       $c->render(error => 'Something went wrong with your login!');
