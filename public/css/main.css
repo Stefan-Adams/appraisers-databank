@@ -24,15 +24,9 @@ html, body {
 }
 
 
-
-
 /* =======================
    TEXT STYLES
 ========================= */
-ul li {
-    list-style: none;
-}
-
 a {
     text-decoration: none;
     color: #939241;
@@ -63,7 +57,7 @@ h4 {
     font-size: 1.6em;
 }
 
-.intro p, .int p, ol {
+.intro p, .int p, ol, ul {
     color: #fafafa;
 }
 h1, h2, h3, h4, p, li, a{
@@ -110,6 +104,7 @@ h1, h2, h3, h4, p, li, a{
 
 .nav li {
     margin-left: 20px;
+    list-style: none;
 }
 
 .welcome {
@@ -134,15 +129,10 @@ h1, h2, h3, h4, p, li, a{
 }
 
 .current {
-    text-decoration: underline;
+    background-color: #7D9138;
+    padding: 0px 8px 4px 8px;
     color: #fafafa;                 
 }
-
-.stand-out {
-    background-color: #7D9138;
-    padding: 8px;
-}
-
 
 /* =======================
    HOME PAGE STYLES
@@ -167,6 +157,7 @@ h1, h2, h3, h4, p, li, a{
 
 
 .boxes li{
+    list-style: none;
     border: 3px solid #fafafa;
     flex-grow: 1;
     -webkit-flex-grow: 1;
@@ -245,6 +236,7 @@ h1, h2, h3, h4, p, li, a{
 }
 
 .footer-nav li {
+    list-style: none;
     float: left;
     margin-left: 20px;
 }
