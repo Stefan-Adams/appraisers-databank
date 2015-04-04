@@ -140,9 +140,8 @@ h1, h2, h3, h4, p, li, a{
 
 .boxes {
     width: 100%;
-    height: 200px;
     color: #fafafa;
-    font-size: 2em;
+    font-size: 1.65em;
     display: flex;
     display: -webkit-flex;
     flex-wrap: no-wrap;
@@ -152,19 +151,20 @@ h1, h2, h3, h4, p, li, a{
     align-items: center;
     -webkit-align-items: center;
     position: relative;
-    top: 60px;
+    top: 120px;
 }
-
 
 .boxes li{
     list-style: none;
     border: 3px solid #fafafa;
     flex-grow: 1;
     -webkit-flex-grow: 1;
-    min-width: 200px;
-    margin-right: 15px;
-    margin-top: 15px;
-    padding: 20px 10px;
+    width: auto;
+    min-width: 250px;
+    max-width: 500px;
+    height: 170px;
+    margin-right: 50px;
+    padding: 40px 10px;
     z-index: 1;
 }
 

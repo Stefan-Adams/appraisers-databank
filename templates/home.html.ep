@@ -1,9 +1,9 @@
 % layout 'mainpage';
 <div class="welcome-area">
-    <div class="text">
+    <div class="container">
     <ul class="boxes">
-        <%= link_to 'about/find' => begin %><li class="find"><h4>Find</h4>documents</li><% end %>
-        <%= link_to 'about/sell' => begin %><li class="sell"><h4>Sell</h4>your work</li><% end %>
+        <%= link_to 'about/find' => begin %><li class="find"><h4>Find Documents</h4>Accurate information, created by appraisers.</li><% end %>
+        <%= link_to 'about/sell' => begin %><li class="sell"><h4>Sell Your Work</h4>Upload your appraisal documents for  purchase.</li><% end %>
     </ul> 
     </div>    
 </div>
