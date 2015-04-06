@@ -12,18 +12,19 @@ use Number::Phone;
 
 # This method will run once at server start
 sub startup {
-  my $self = shift;
+  my $app = shift;
 
-  my $config = $self->plugin('Config');
+  my $config = $app->plugin('Config');
 
-  $self->plugin('AssetPack');
-  $self->plugin(PayPal => $self->config->{paypal});
+  $app->plugin('AssetPack');
+  $app->plugin(PayPal => $app->config->{paypal});
 
-  $self->helper(is_current => sub { q(class="current") if $_[0]->current_route eq $_[1] });
-  $self->helper(mysql => sub { Mojo::mysql->new($config->{mysql}) });
-  $self->helper(sql => sub { SQL::Abstract->new });
-  $self->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
-  $self->helper('reply.document' => sub {
+  $app->helper(is_current => sub { q(class="current") if $_[0]->current_route eq $_[1] });
+  $app->helper(mysql => sub { Mojo::mysql->new($config->{mysql}) });
+  $app->helper(sql => sub { SQL::Abstract->new });
+  $app->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
+  $app->helper('form_row'           => \&_form_row);
+  $app->helper('reply.document' => sub {
     my ($c, $zip, $document) = @_;
     $c->res->headers->content_disposition("attachment; filename=$document.pdf;");
     if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$zip/$document")) ) {
@@ -33,20 +34,20 @@ sub startup {
     }
   });
 
-  $self->mysql->migrations->from_data->migrate;
+  $app->mysql->migrations->from_data->migrate;
 
-  $self->defaults(results => Mojo::Collection->new);
-  $self->session(cart => []) unless $self->session('cart');
+  $app->defaults(results => Mojo::Collection->new);
+  $app->session(cart => []) unless $app->session('cart');
 
-  $self->_add_validations;
-  $self->_add_conditions;
-  $self->_add_assets;
-  $self->_add_routes;
+  $app->_add_validations;
+  $app->_add_conditions;
+  $app->_add_assets;
+  $app->_add_routes;
 }
 
 sub _add_assets {
-  my $self = shift;
-  $self->asset('adb.css' =>
+  my $app = shift;
+  $app->asset('adb.css' =>
     '/css/adb.css',
     '/css/normalize.css',
     '/css/main.css',
@@ -55,9 +56,9 @@ sub _add_assets {
 }
 
 sub _add_routes {
-  my $self = shift;
+  my $app = shift;
 
-  my $r = $self->routes;
+  my $r = $app->routes;
 
   # Normal route to controller
   $r->get('/')->name('home');
@@ -101,20 +102,20 @@ sub _add_routes {
 }
 
 sub _add_validations {
-  my $self = shift;
-  $self->validator->add_check(not_exists => sub {
-    $self->mysql->db->query('select 1 from users where email = ?', $_[2])->rows;
+  my $app = shift;
+  $app->validator->add_check(not_exists => sub {
+    $app->mysql->db->query('select 1 from users where email = ?', $_[2])->rows;
   });
-  $self->validator->add_check(password => sub { $_[2] =~ /^.{1,64}$/ ? 0 : 1 });
-  $self->validator->add_check(state => sub { $_[2] =~ /^[A-Za-z]{2}$/ ? 0 : 1 });
-  $self->validator->add_check(zip => sub { $_[2] =~ /^\d{5}(-\d{4})?$/ ? 0 : 1 });
-  $self->validator->add_check(email => sub { Email::Valid->address($_[2]) ? 0 : 1 });
-  $self->validator->add_check(phone => sub { ref Number::Phone->new('US', $_[2]) ? 0 : 1 });
+  $app->validator->add_check(password => sub { $_[2] =~ /^.{1,64}$/ ? 0 : 1 });
+  $app->validator->add_check(state => sub { $_[2] =~ /^[A-Za-z]{2}$/ ? 0 : 1 });
+  $app->validator->add_check(zip => sub { $_[2] =~ /^\d{5}(-\d{4})?$/ ? 0 : 1 });
+  $app->validator->add_check(email => sub { Email::Valid->address($_[2]) ? 0 : 1 });
+  $app->validator->add_check(phone => sub { ref Number::Phone->new('US', $_[2]) ? 0 : 1 });
 }
 
 sub _add_conditions {
-  my ($self) = @_;
-  my $r = $self->routes;
+  my ($app) = @_;
+  my $r = $app->routes;
   $r->add_condition(xhr => sub {
     my ($route, $c, $captures, $want) = @_;
     $c->req->is_xhr == $want
@@ -126,6 +127,17 @@ sub _add_conditions {
   $r->add_condition(admin => sub {
     my ($route, $c, $captures, $want) = @_;
     defined $c->session('user')->{admin} == $want
+  });
+}
+
+sub _form_row {
+  my ($c, $name, $model, $label, $field) = @_;
+
+  return $c->tag(div => class => 'form-row', sub {
+    return join('',
+      $c->tag(label => for => "form_$name", sub { $label }),
+      $field || $c->text_field($name, $model ? $model->$name : '', id => "form_$name"),
+    );
   });
 }
 
