@@ -19,20 +19,12 @@ sub startup {
   $app->plugin('AssetPack');
   $app->plugin(PayPal => $app->config->{paypal});
 
-  $app->helper(is_current => sub { q(class="current") if $_[0]->current_route eq $_[1] });
-  $app->helper(mysql => sub { Mojo::mysql->new($config->{mysql}) });
-  $app->helper(sql => sub { SQL::Abstract->new });
-  $app->helper(redis => sub { Mojo::Redis2->new($config->{redis}) });
-  $app->helper('form_row'           => \&_form_row);
-  $app->helper('reply.document' => sub {
-    my ($c, $zip, $document) = @_;
-    $c->res->headers->content_disposition("attachment; filename=$document.pdf;");
-    if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$zip/$document")) ) {
-      $c->reply->asset($document);
-    } else {
-      $c->reply->not_found;
-    }
-  });
+  $app->helper('is_current' => sub { q(class="current") if $_[0]->current_route eq $_[1] });
+  $app->helper('mysql' => sub { Mojo::mysql->new($config->{mysql}) });
+  $app->helper('sql' => sub { SQL::Abstract->new });
+  $app->helper('redis => sub { Mojo::Redis2->new($config->{redis}) });
+  $app->helper('form_row' => \&_form_row);
+  $app->helper('reply.document' => \&_reply_document);
 
   $app->mysql->migrations->from_data->migrate;
 
@@ -61,9 +53,9 @@ sub _add_routes {
   my $r = $app->routes;
 
   # Normal route to controller
-  $r->get('/')->name('home');
+  $app->routes->get('/')->name('home');
 
-  my $about = $r->under('/about');
+  my $about = $app->routes->under('/about');
   $about->get('/learn-more')->name('about/learn-more');
   $about->get('/find')->name('about/find');
   $about->get('/sell')->name('about/sell');
@@ -71,10 +63,10 @@ sub _add_routes {
   $about->get('/contact')->name('about/contact');
   $about->get('/tos')->name('about/tos');
 
-  my $admin = $r->under('/admin')->over(admin=>1);
+  my $admin = $app->routes->under('/admin')->over(admin=>1);
   $admin->get('/')->to('admin#home')->name('admin');
 
-  my $user = $r->under('/user');
+  my $user = $app->routes->under('/user');
   $user->get('/register')->over(user=>0)->to('user#profile'); # if logged in, redirect to home
   $user->post('/register')->over(user=>0)->to('user#profile'); # if logged in, redirect to home
   $user->get('/login')->over(user=>0)->to('user#login'); # if logged in, redirect to home
@@ -84,7 +76,7 @@ sub _add_routes {
   $user->post('/profile')->over(user=>1)->to('user#profile'); # e.g. change password, change email and change all DB references
   $user->get('/purchases')->over(user=>1)->to('user#purchases'); # e.g. past purchases
 
-  my $documents = $r->under('/documents')->over(user=>1)->to('user#prereq');
+  my $documents = $app->routes->under('/documents')->over(user=>1)->to('user#prereq');
   $documents->get('/')->to('documents#search')->name('search');
   $documents->post('/')->to('documents#search')->name('search');
   $documents->get('/upload')->to('documents#upload');
@@ -94,7 +86,7 @@ sub _add_routes {
   $documents->get('/review')->over(admin=>1)->to('documents#review'); # review flagged docs
   $documents->get('/verify/:verify/:filename' => [verify => [qw/complete incomplete/]])->over(admin=>1)->to('documents#verify')->name('verify');
 
-  my $cart = $r->under('/cart')->over(user=>1)->to('user#prereq');
+  my $cart = $app->routes->under('/cart')->over(user=>1)->to('user#prereq');
   $cart->get('/add/:filename')->to('cart#additem')->name('add_to_cart');
   $cart->get('/')->to('cart#view')->name('cart');
   $cart->get('/remove/:filename')->to('cart#removeitem')->name('remove_from_cart');
@@ -116,15 +108,15 @@ sub _add_validations {
 sub _add_conditions {
   my ($app) = @_;
   my $r = $app->routes;
-  $r->add_condition(xhr => sub {
+  $app->routes->add_condition(xhr => sub {
     my ($route, $c, $captures, $want) = @_;
     $c->req->is_xhr == $want
   });
-  $r->add_condition(user => sub {
+  $app->routes->add_condition(user => sub {
     my ($route, $c, $captures, $want) = @_;
     defined $c->session('user') == $want
   });
-  $r->add_condition(admin => sub {
+  $app->routes->add_condition(admin => sub {
     my ($route, $c, $captures, $want) = @_;
     defined $c->session('user')->{admin} == $want
   });
@@ -139,6 +131,16 @@ sub _form_row {
       $field || $c->text_field($name, $model ? $model->$name : '', id => "form_$name"),
     );
   });
+}
+
+sub _reply_document {
+  my ($c, $zip, $document) = @_;
+  $c->res->headers->content_disposition("attachment; filename=$document.pdf;");
+  if ( $document = Mojo::Asset::File->new(path => $c->app->home->rel_file("documents/$zip/$document")) ) {
+    $c->reply->asset($document);
+  } else {
+    $c->reply->not_found;
+  }
 }
 
 1;
