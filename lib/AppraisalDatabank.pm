@@ -59,13 +59,6 @@ sub _add_routes {
 
   my $r = $self->routes;
 
-$r->add_shortcut(pages => sub {
-  my ($r, $name) = @_;
-  foreach ( @$name ) {
-    $r->get("/$_")->name("about/$_");
-  }
-});
-
   # Normal route to controller
   $r->get('/')->name('home');
 
