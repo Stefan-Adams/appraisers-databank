@@ -130,7 +130,7 @@ h1, h2, h3, h4, p, li, a{
 
 .current {
     background-color: #7D9138;
-    padding: 0px 8px 4px 8px;
+    padding: 4px 8px;
     color: #fafafa;                 
 }
 
