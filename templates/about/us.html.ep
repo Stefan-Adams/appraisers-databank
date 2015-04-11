@@ -1,5 +1,60 @@
 % layout 'subpage';
 <div class="text">
-    <h2>About Us</h2>
-    <p>Super cool.</p>
+    <h2>About Appraiser's DataBank</h2>
+    
+    <h3>Overview</h3>
+    <p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
+    <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'register' => begin %>create an account<% end %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
+    
+    <h3>Purchasing Appraisal Documents</h3>
+    <p>Think of the hours you spend hunting down MLS records for comps, only to find out that the records you find are out of date, incomplete, or inaccurate.  Save yourself the time and the headache by purchasing documents created by other Appraisers on ADB.</p>
+    <h5>Here’s how it works:</h5>
+    <ol>
+    <li>Once you’re <%= link_to 'user/login.html.ep' => begin %>logged in<% end %>, you’ll be taken to the search page.</li>
+    <li>You can search for a document by zip code and address/MLS listing number.</li>
+    <li>Once results are displayed, simply click on the listing to add the item to your cart. All results include a document set with basic info, photos, and sketches. The cost of each document set is $8.</li>
+    <li>When you’re ready, navigate to your cart to checkout.</li>
+    </ol>
+    
+    <h3>Uploading and Selling Documents</h3>
+    <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available to purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! And the more you upload, the better your chances for generating income.</p>
+    <h5>Here’s how it works:</h5>
+    <ol>
+    <li>Once you’re <%= link_to 'user/login.html.ep' => begin %>logged in<% end %>, click on “Upload” in the top menu.</li>
+    <li>Make sure you have basic information, photos, and sketches all combined in a single PDF document. (If your submission is incomplete, it will be flagged by the buyer and could result in your not being paid.)</li>
+    <li>Fill out the form on the upload page to complete the process.</li>
+    <li>That’s it! Now your document is available for purchase. Each time it’s purchased, we’ll add $4 to your account!</li>
+    </ol>
+    
+    <h3>FAQ</h3>
+    <h5>Can I download my own documents for free?</h5>
+    <p>Of course. No need to pay again for the work you’ve already done.</p>
+    <h5>How can I tell how many documents I’ve sold?</h5>
+    <p>Your account page will give you all the info you need. This includes your uploaded documents, which of your documents have sold, requested documents in your area, and how much money you can expect to receive the next time that payments go out.</p>
+    <h5>How will I get paid for my sold documents?</h5>
+    <p>Payments are provided via <em>[payment service]</em> once every <em>[amount of time]</em>.</p>
+    <h5>How do I know if the document set I download will be complete and professional?</h5>
+    <p>While we cannot guarantee the accuracy, or completeness of anyone’s work, we do require that all Appraisers using our site adhere to our <%= link_to 'about/tos.html.ep' => begin %>terms of service<% end %>, which basically state that we’re all doing our best to provide high quality and accurate work. If someone downloading a document notices that it is incomplete, they can flag the seller. Too many flags on a seller’s account will result in penalties.</p>
+    <h5>What if there are no results for my search?</h5>
+    <p>If your search returns no results, we’ll let other Appraisers in the area know what you’re looking for and encourage them to upload the documents. If the documents you’re searching for get added, we’ll alert you.</p>
+    <h5>How much do documents cost?</h5>
+    <p>Each document costs $8. This includes (at the very least) basic information, sketches, and photos. Sellers can also choose to include additional information if they wish.</p>
+    <h5>How much will I make for each document I sell?</h5>
+    <p>Every time a document which you’ve uploaded is purchased, you earn $4.</p>
+    <h5>Why do I have to create an account?</h5>
+    <p>We understand that creating an account can be a hassle. But we think you’ll like the reasons we require it:</p>
+    <p>First, we want to ensure the integrity of ADB so that our documents are more accurate and better suited for Appraisers than anything you would find on MLS. By requiring registration, we can be sure that everyone here is an Appraiser, and that helps to keep our standards high.</p>
+    <p>You’ll also want to be paid for all of the documents you sell, and creating an account enables us to pay you what you deserve!</p>
+    
+    <h3>Our Guarantee</h3>
+    <p>As Appraisers ourselves, we pride this site on providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'about/tos.html.ep' => begin %>Terms of Service<% end %>. In a nutshell, here is what they say:
+    <ol>
+    <li>All members must be licensed Appraisers.</li>
+    <li>Members won’t let anyone else – fellow Appraisers or otherwise – log in under their account.</li>
+    <li>When you download a document, remember that it’s for your reference only and can’t be distributed.  (But hey, if someone else wants it, send them to ADB!)</li>
+    <li>We can guarantee the completeness, but not accuracy, of any uploaded documents. We ask that everyone do their best to upload high quality and helpful work. We understand that you take pride in your work, and we trust that will shine through in the documents you upload.</li>
+    <li>If you don’t play nice, you’ll have to leave.</li>
+    </ol>
+    
+    <p><strong>Ready to get started? <%= link_to 'user/login.html.ep' => begin %>Log in<% end %> or <%= link_to 'register' => begin %>Register<% end %> now!</strong></p>
 </div>
