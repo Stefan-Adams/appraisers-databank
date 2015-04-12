@@ -22,7 +22,7 @@ sub startup {
   $app->helper('is_current' => sub { q(class="current") if $_[0]->current_route eq $_[1] });
   $app->helper('mysql' => sub { Mojo::mysql->new($config->{mysql}) });
   $app->helper('sql' => sub { SQL::Abstract->new });
-  $app->helper('redis => sub { Mojo::Redis2->new($config->{redis}) });
+  $app->helper('redis' => sub { Mojo::Redis2->new($config->{redis}) });
   $app->helper('form_row' => \&_form_row);
   $app->helper('reply.document' => \&_reply_document);
 
