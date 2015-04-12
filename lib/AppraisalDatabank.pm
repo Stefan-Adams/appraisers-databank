@@ -15,13 +15,16 @@ sub startup {
   my $app = shift;
 
   my $config = $app->plugin('Config');
+  $app->sessions->default_expiration(3600 * 24);
+
+  $app->_setup_secrets;
+  $app->_setup_stripe;
 
   $app->plugin('AssetPack');
   $app->plugin(PayPal => $app->config->{paypal});
 
   $app->helper('is_current' => sub { q(class="current") if $_[0]->current_route eq $_[1] });
   $app->helper('mysql' => sub { Mojo::mysql->new($config->{mysql}) });
-  $app->helper('sql' => sub { SQL::Abstract->new });
   $app->helper('redis' => sub { Mojo::Redis2->new($config->{redis}) });
   $app->helper('form_row' => \&_form_row);
   $app->helper('reply.document' => \&_reply_document);
@@ -39,11 +42,32 @@ sub startup {
 
 sub _add_assets {
   my $app = shift;
+
+  $app->asset->preprocessors->add(
+    css => sub {
+      my ($assetpack, $text, $file) = @_;
+
+      if ($file =~ /font.*awesome/) {
+        $$text =~ s!url\(["']../([^']+)["']\)!url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/$1)!g;
+      }
+    },
+  );
+
+  $app->asset('adb.js' => (
+    'http://code.jquery.com/jquery-1.11.2.min.js',
+    'https://raw.githubusercontent.com/stripe/jquery.payment/master/lib/jquery.payment.js',
+    '/js/main.js',
+    '/js/stripe.js',
+  ));
+
   $app->asset('adb.css' =>
+    'http://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css',
+    'http://fonts.googleapis.com/css?family=EB+Garamond',
+    'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+    '/sass/adb.scss',
     '/css/adb.css',
     '/css/normalize.css',
     '/css/main.css',
-    'http://fonts.googleapis.com/css?family=EB+Garamond',
   );
 }
 
@@ -120,6 +144,28 @@ sub _add_conditions {
     my ($route, $c, $captures, $want) = @_;
     defined $c->session('user')->{admin} == $want
   });
+}
+
+sub _setup_secrets {
+  my $app = shift;
+  my $secrets = $app->config('secrets') || [];
+
+  unless (@$secrets) {
+    my $unsafe = join ':', $app->config('db'), $<, $(, $^X, $^O, $app->home;
+    $app->log->warn('Using default (unsafe) session secrets. (Config file was not set up)');
+    $secrets = [Mojo::Util::md5_sum($unsafe)];
+  }
+
+  $app->secrets($secrets);
+}
+
+sub _setup_stripe {
+  my $app = shift;
+  my $stripe = $app->config('stripe');
+
+  $stripe->{auto_capture} = 0;
+  $stripe->{mocked} //= $ENV{MCT_MOCK};
+  $app->plugin('StripePayment' => $stripe);
 }
 
 sub _form_row {

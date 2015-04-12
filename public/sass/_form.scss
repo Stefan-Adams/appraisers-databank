@@ -1,0 +1,25 @@
+.form-row {
+  clear: left;
+  overflow: hidden;
+  margin: 3px 0;
+
+  label {
+    width: 30%;
+    line-height: 2em;
+    float: left;
+  }
+
+  input, textarea, select {
+    @include form_field();
+  }
+}
+
+.submit-row {
+  margin-left: 30%;
+  margin-top: 10px;
+}
+
+.form-row .field-with-error {
+  background: lighten($error-color, 40%);
+  border-color: $error-color;
+}
