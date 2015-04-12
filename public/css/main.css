@@ -287,6 +287,10 @@ input[type=submit]:hover {
     min-width: 230px;
 }
 
+.col:last-child{
+    width: 60%;
+}
+
 /* =======================
    MEDIA QUERIES
 ========================= */

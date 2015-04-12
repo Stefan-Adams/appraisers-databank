@@ -19,7 +19,7 @@
         %= text_field 'address'
         <br>
     
-        %= submit_button 'Search!'
+        %= submit_button 'Search'
     % end
     <div id="table">
     % my $action = begin

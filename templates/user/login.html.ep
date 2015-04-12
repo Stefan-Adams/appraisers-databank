@@ -11,6 +11,6 @@
         <br>
         %= password_field 'password'
         <br>
-        %= submit_button
+        %= submit_button 'Log In'
     % end
 </div>
