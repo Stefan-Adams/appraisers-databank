@@ -57,6 +57,11 @@ h4 {
     font-size: 1.6em;
 }
 
+h5 {
+    color: #7D9138;
+    font-size: 1.4em;
+}
+
 .intro p, .int p, ol, ul {
     color: #fafafa;
 }
@@ -130,7 +135,7 @@ h1, h2, h3, h4, p, li, a{
 
 .current {
     background-color: #7D9138;
-    padding: 0px 8px 4px 8px;
+    padding: 4px 8px;
     color: #fafafa;                 
 }
 
