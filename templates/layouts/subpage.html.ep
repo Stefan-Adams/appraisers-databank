@@ -15,6 +15,7 @@
                     </ul>
             </div>
         </div>
+        <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
         <div class="content-area">
             <%= content %>
         </div>
