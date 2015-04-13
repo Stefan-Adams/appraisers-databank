@@ -129,7 +129,8 @@ sub login {
 
 sub logout {
   my $c = shift;
-  $c->session(user => undef);
+  #$c->session(user => undef);
+  $c->session(expires => 1);
   $c->redirect_to('home');
 }
 
