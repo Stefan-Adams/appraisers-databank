@@ -130,7 +130,7 @@ sub login {
 sub logout {
   my $c = shift;
   $c->session(user => undef);
-  $c->redirect_to('adb');
+  $c->redirect_to('home');
 }
 
 sub purchases {
