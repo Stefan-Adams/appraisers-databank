@@ -13,6 +13,7 @@
   };
 
   var stripeButtonClicked = function(e) {
+    console.log("kjwhfjkwhfjkf");
     var $target = $(e.target);
     var $stripeForm = $('.stripe-payment-form');
     var $registerBeforeCheckout = $('.register-before-checkout');
@@ -85,6 +86,7 @@
   };
 
   $(document).ready(function() {
+    console.log("123456");
     $('.custom-stripe-button').click(stripeButtonClicked);
     $('input.cc-card').payment('formatCardNumber').keyup(cardIcon).focus(resetValidation);
     $('input.cc-exp-month').payment('restrictNumeric').focus(resetValidation);

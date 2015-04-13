@@ -24,6 +24,7 @@ sub startup {
   $app->plugin(PayPal => $app->config->{paypal});
 
   $app->helper('is_current' => sub { q(class="current") if $_[0]->current_route eq $_[1] });
+  $app->helper('sql' => sub { SQL::Abstract->new });
   $app->helper('mysql' => sub { Mojo::mysql->new($config->{mysql}) });
   $app->helper('redis' => sub { Mojo::Redis2->new($config->{redis}) });
   $app->helper('form_row' => \&_form_row);
@@ -78,6 +79,11 @@ sub _add_routes {
 
   # Normal route to controller
   $app->routes->get('/')->name('home');
+  $app->routes->any('/hook')->to(cb => sub {
+    my $c = shift;
+    $c->app->log->info("Hook: ".$c->req->json->{type});
+    $c->render(text => 'Hooked');
+  });
 
   my $about = $app->routes->under('/about');
   $about->get('/learn-more')->name('about/learn-more');
@@ -114,7 +120,7 @@ sub _add_routes {
   $cart->get('/add/:filename')->to('cart#additem')->name('add_to_cart');
   $cart->get('/')->to('cart#view')->name('cart');
   $cart->get('/remove/:filename')->to('cart#removeitem')->name('remove_from_cart');
-  $cart->get('/checkout')->to('cart#checkout');
+  $cart->post('/purchase')->to('cart#purchase')->name('cart.purchase');
 }
 
 sub _add_validations {
@@ -163,7 +169,7 @@ sub _setup_stripe {
   my $app = shift;
   my $stripe = $app->config('stripe');
 
-  $stripe->{auto_capture} = 0;
+  #$stripe->{auto_capture} = 0;
   $stripe->{mocked} //= $ENV{MCT_MOCK};
   $app->plugin('StripePayment' => $stripe);
 }
@@ -197,6 +203,6 @@ __DATA__
 -- 1 up
 CREATE TABLE IF NOT EXISTS `users` ( `id` int(11) NOT NULL AUTO_INCREMENT, `admin` int(1) DEFAULT NULL, `email` varchar(255) NOT NULL, `password` varchar(64) NOT NULL, `disabled` datetime DEFAULT NULL, `firstname` varchar(255) DEFAULT NULL, `lastname` varchar(255) DEFAULT NULL, `slid` varchar(16) NOT NULL, `taxid` varchar(15) NOT NULL, `address` varchar(255) DEFAULT NULL, `city` varchar(255) DEFAULT NULL, `state` varchar(2) DEFAULT NULL, `zip` varchar(10) DEFAULT NULL, `phone` varchar(15) DEFAULT NULL, `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `tos` text, verified_at datetime, PRIMARY KEY (`id`), UNIQUE KEY `email` (`email`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `documents` ( `id` int(11) NOT NULL AUTO_INCREMENT, `user_id` int(11) NOT NULL, `filename` varchar(64) NOT NULL, `mls` varchar(32) DEFAULT NULL, `address` varchar(255) DEFAULT NULL, `city` varchar(32) DEFAULT NULL, `county` varchar(32) DEFAULT NULL, `state` varchar(2) DEFAULT NULL, `zip` varchar(10) NOT NULL, `inspection_date` date NOT NULL, `uploaded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `complete` datetime DEFAULT NULL, `incomplete` datetime DEFAULT NULL, `flagged_by` int(11) DEFAULT NULL, `flagged_at` datetime DEFAULT NULL, `flagged_reasons` set('pictures','information','sketch') DEFAULT NULL, `flagged_comments` tinytext, PRIMARY KEY (`id`), UNIQUE KEY `filename` (`filename`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
-CREATE TABLE IF NOT EXISTS `transactions` ( `id` int(11) NOT NULL AUTO_INCREMENT, `transaction` varchar(16) NOT NULL, `filename` varchar(64) NOT NULL, `user_id` int(11) NOT NULL, `purchased_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `last_downloaded` datetime DEFAULT NULL, `downloaded` int(11) DEFAULT '0', `refunded_at` datetime DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `transactions` ( `id` int(11) NOT NULL AUTO_INCREMENT, `transaction` varchar(32) NOT NULL, `filename` varchar(64) NOT NULL, `user_id` int(11) NOT NULL, `purchased_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, `last_downloaded` datetime DEFAULT NULL, `downloaded` int(11) DEFAULT '0', `refunded_at` datetime DEFAULT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `searches` ( `id` int(11) NOT NULL AUTO_INCREMENT, `user_id` int(11) NOT NULL, searched_at timestamp, `zip` VARCHAR(10) NOT NULL, `mls` varchar(32) DEFAULT NULL, `address` varchar(255) DEFAULT NULL, results smallint, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 CREATE TABLE IF NOT EXISTS `zips` ( `zip` VARCHAR(5) NOT NULL, `lat` FLOAT NOT NULL, `lng` FLOAT NOT NULL, PRIMARY KEY (`zip`)) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;

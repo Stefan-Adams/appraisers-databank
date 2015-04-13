@@ -169,7 +169,7 @@ sub _search {
     address => $address,
   };
 
-  my $select = 'select documents.*,if(documents.user_id=? or transactions.user_id=? or ?,1,0) can_download from documents';
+  my $select = 'select documents.*,if(documents.user_id=? or (transactions.user_id=? and refunded_at is null) or ?,1,0) can_download from documents';
   my $join_transactions = 'left join transactions on documents.filename=transactions.filename and transactions.user_id=?';
   my $complete_or_not_flagged = 'and ((flagged_at is null and incomplete is null) or complete is not null)';
   my $order = 'order by inspection_date desc, uploaded desc';

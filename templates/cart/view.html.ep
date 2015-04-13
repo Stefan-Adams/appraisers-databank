@@ -1,4 +1,5 @@
 % layout 'subpage';
+% my $charge = 800;
 <div class="text">
     <div id="table">
     % my $action = begin
@@ -7,7 +8,7 @@
     % end
     %= include 'documents/table', docs => stash('cart'), action => $action
     % if ( stash('cart')->size ) {
-        <%= link_to 'Checkout with PayPal' => 'checkout' %>
+        %= include 'partial/stripe_payment_form', currency => 'USD', amount => (stash('cart')->size*$charge), product_id => join(';', map { ($_->{mls} || $_->{address})." ($_->{zip})" } @{stash('cart')});
     % } else {
         Your cart is empty.
     % }

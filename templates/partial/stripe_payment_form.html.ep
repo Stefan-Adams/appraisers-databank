@@ -1,0 +1,12 @@
+%= javascript 'https://js.stripe.com/v2/'
+%= form_for 'cart.purchase', begin
+    <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= app->stripe->pub_key %>"
+        data-amount="<%= $amount %>"
+        data-name="Checkout"
+        data-description="<%= $product_id %>"
+        data-image="/128x128.png">
+    </script>
+    %= hidden_field 'amount' => $amount
+% end
