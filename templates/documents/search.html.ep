@@ -3,39 +3,41 @@
     Welcome, <%= session('user')->{firstname} %><br />
     <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br /><br />
     Search for an Appraisal Packet<br />
-    %= form_for search => begin
-        %= label_for zip => 'Zip (Required)'
-        <br>
-        %= text_field 'zip'
-        <br>
-    
-        %= label_for mls => 'MLS'
-        <br>
-        %= text_field 'mls'
-        <br>
-    
-        %= label_for address => 'Address'
-        <br>
-        %= text_field 'address'
-        <br>
-    
-        %= submit_button 'Search'
-    % end
-    <div id="table">
-    % my $action = begin
-        % my $doc = shift;
-        % if ( $doc->{can_download} ) {
-            <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
-        % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
-            <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
-        % } else {
-            Already in Cart
-        % }
-        % if ( session('user')->{admin} ) {
-            <br /><%= link_to Complete => 'verify' => {verify => 'complete', filename => $doc->{filename}} %>
-            <br /><%= link_to Incomplete => 'verify' => {verify => 'incomplete', filename => $doc->{filename}} %>
-        % }
-    % end
-    %= include 'documents/table', action => $action, docs => stash('results')
+    <div class="col">
+        %= form_for search => begin
+            %= label_for zip => 'Zip (Required)'
+            <br>
+            %= text_field 'zip'
+            <br>
+
+            %= label_for mls => 'MLS'
+            <br>
+            %= text_field 'mls'
+            <br>
+
+            %= label_for address => 'Address'
+            <br>
+            %= text_field 'address'
+            <br>
+
+            %= submit_button 'Search'
+        % end
+    </div>
+    <div id="table" class="col">
+        % my $action = begin
+            % my $doc = shift;
+            % if ( $doc->{can_download} ) {
+                <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
+            % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
+                <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
+            % } else {
+                Already in Cart
+            % }
+            % if ( session('user')->{admin} ) {
+                <br /><%= link_to Complete => 'verify' => {verify => 'complete', filename => $doc->{filename}} %>
+                <br /><%= link_to Incomplete => 'verify' => {verify => 'incomplete', filename => $doc->{filename}} %>
+            % }
+        % end
+        %= include 'documents/table', action => $action, docs => stash('results')
     </div>
 </div>
