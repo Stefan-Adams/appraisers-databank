@@ -287,6 +287,33 @@ input[type=submit]:hover {
     min-width: 230px;
 }
 
+.col:last-child{
+    width: 60%;
+}
+
+/* =======================
+   TABLE STYLES
+========================= */
+th{
+    text-align: center;
+    font-weight: bold;
+    padding: 2px 20px;
+    background: #9DB648;
+}
+
+td{
+    text-align: center;
+    font-size: .9em;
+}
+
+tr:nth-child(odd){
+    background: rgba(0, 0, 0, 0.15);
+}
+
+tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.075);
+}
+
 /* =======================
    MEDIA QUERIES
 ========================= */
