@@ -85,6 +85,7 @@ h1, h2, h3, h4, p, li, a{
 .header {
     width: 100%;
     background: #202E44;
+    min-height: 120px;
     
 }
 
