@@ -1,10 +1,10 @@
 % layout 'subpage';
 <div class="text">
-    Welcome, <%= session('user')->{firstname} %><br />
+    <!-- Welcome, <%= session('user')->{firstname} %><br /> -->
     <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br /><br />
-    Search for an Appraisal Packet<br />
+    Search for an Appraisal Packet<br /><br />
     <div class="col">
-        %= form_for search => begin
+        %= form_for search => (method => 'POST') => begin
             %= label_for zip => 'Zip (Required)'
             <br>
             %= text_field 'zip'
@@ -29,7 +29,24 @@
             % if ( $doc->{can_download} ) {
                 <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
             % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
-                <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
+                %# <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
+                <span class="add_to_cart" id="add_to_cart_<%= $doc->{filename} %>">Add</span>
+                <script>
+                    $(document).ready(function(){
+                        $('#add_to_cart_<%= $doc->{filename} %>').click(function(){
+                            $.get('<%= url_for add_to_cart => {filename => $doc->{filename}} %>', function(data){
+                                if ( data.ok == 1 ) {
+                                    $('#add_to_cart_<%= $doc->{filename} %>').unbind("click");
+                                    $('#add_to_cart_<%= $doc->{filename} %>').removeClass('add_to_cart').html("Added");
+                                    $('#view_cart').html("View Cart ("+(parseInt($('#view_cart').attr('items'))+1)+")");
+                                    $('#view_cart').attr('items', (parseInt($('#view_cart').attr('items'))+1));
+                                } else {
+                                    alert("Error adding to cart");
+                                }
+                            });
+                        });
+                    });
+                </script>
             % } else {
                 Already in Cart
             % }
