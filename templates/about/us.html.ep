@@ -1,12 +1,12 @@
 % layout 'subpage';
 <div class="text">
-    <h2>About Appraiser's DataBank</h2>
     
-    <h3>Overview</h3>
+    <h3>About Appraiser's DataBank</h3>
+    <div class="content-nav"><p><a href="#purchase">Purchase</a> | <a href="#sell">Upload &amp; Sell</a> | <a href="#faq">FAQ</a> | <a href="#guarantee">Guarantee</a></p></div>
     <p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
     <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'create an account' => 'register' %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
     
-    <h3>Purchasing Appraisal Documents</h3>
+    <h3 id="purchase">Purchasing Appraisal Documents</h3>
     <p>Think of the hours you spend hunting down MLS records for comps, only to find out that the records you find are out of date, incomplete, or inaccurate.  Save yourself the time and the headache by purchasing documents created by other Appraisers on ADB.</p>
     <h5>Here’s how it works:</h5>
     <ol>
@@ -16,7 +16,7 @@
     <li>When you’re ready, navigate to your cart to checkout.</li>
     </ol>
     
-    <h3>Uploading and Selling Documents</h3>
+    <h3 id="sell">Uploading and Selling Documents</h3>
     <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available to purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! And the more you upload, the better your chances for generating income.</p>
     <h5>Here’s how it works:</h5>
     <ol>
@@ -26,7 +26,7 @@
     <li>That’s it! Now your document is available for purchase. Each time it’s purchased, we’ll add $4 to your account!</li>
     </ol>
     
-    <h3>FAQ</h3>
+    <h3 id="faq">FAQ</h3>
     <h5>Can I download my own documents for free?</h5>
     <p>Of course. No need to pay again for the work you’ve already done.</p>
     <h5>How can I tell how many documents I’ve sold?</h5>
@@ -46,7 +46,7 @@
     <p>First, we want to ensure the integrity of ADB so that our documents are more accurate and better suited for Appraisers than anything you would find on MLS. By requiring registration, we can be sure that everyone here is an Appraiser, and that helps to keep our standards high.</p>
     <p>You’ll also want to be paid for all of the documents you sell, and creating an account enables us to pay you what you deserve!</p>
     
-    <h3>Our Guarantee</h3>
+    <h3 id="guarantee">Our Guarantee</h3>
     <p>As Appraisers ourselves, we pride this site on providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'Terms of Service' => 'about/tos' %>. In a nutshell, here is what they say:
     <ol>
     <li>All members must be licensed Appraisers.</li>

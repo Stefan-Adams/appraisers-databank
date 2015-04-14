@@ -63,7 +63,7 @@ h5 {
     font-size: 1.4em;
 }
 
-.intro p, .int p, ol, ul {
+.intro p, .int p, .light-text {
     color: #fafafa;
 }
 h1, h2, h3, h4, p, li, a{
@@ -225,6 +225,12 @@ h1, h2, h3, h4, p, li, a{
     -webkit-align-items: center;
 }
 
+.content-nav {
+    background: rgba(0, 0, 0, 0.16);
+    padding: 5px 0 5px 5px;
+    border-top: 1px solid #384047;
+    border-bottom: 1px solid #384047;
+}
 /* =======================
    FOOTER STYLES
 ========================= */
