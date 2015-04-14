@@ -7,8 +7,8 @@
         %= link_to Remove => 'remove_from_cart' => {filename => $doc->{filename}}
     % end
     %= include 'documents/table', docs => stash('cart'), action => $action
-    % if ( stash('cart')->size ) {
-        %= include 'partial/stripe_payment_form', currency => 'USD', amount => (stash('cart')->size*$charge), product_id => join(';', map { ($_->{mls} || $_->{address})." ($_->{zip})" } @{stash('cart')});
+    % if ( my $docs = stash('cart')->size ) {
+        %= include 'partial/stripe_payment_form', currency => 'USD', amount => ($docs*$charge), product_id => "$docs ".$c->pl("document", $docs);
     % } else {
         Your cart is empty.
     % }

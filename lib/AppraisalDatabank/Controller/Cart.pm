@@ -6,7 +6,8 @@ sub additem {
   my $cart = $c->session('cart') || [];
   push @$cart, $c->param('filename');
   $c->session(cart => $cart);
-  $c->redirect_to('search');
+  $c->render(json => {ok => 1});
+  #$c->redirect_to('search');
 }
 
 sub view {
