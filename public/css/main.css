@@ -85,7 +85,7 @@ h1, h2, h3, h4, p, li, a{
 .header {
     width: 100%;
     background: #202E44;
-    min-height: 120px;
+    min-height: 140px;
     
 }
 
@@ -138,6 +138,7 @@ h1, h2, h3, h4, p, li, a{
 
 .current {
     background-color: #7D9138;
+    border-radius: 2px;
     color: #fafafa;                 
 }
 
