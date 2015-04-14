@@ -9,6 +9,7 @@ use Mojo::Redis2;
 use SQL::Abstract;
 use Email::Valid;
 use Number::Phone;
+use Lingua::EN::Inflect 'PL';
 
 # This method will run once at server start
 sub startup {
@@ -29,6 +30,7 @@ sub startup {
   $app->helper('redis' => sub { Mojo::Redis2->new($config->{redis}) });
   $app->helper('form_row' => \&_form_row);
   $app->helper('reply.document' => \&_reply_document);
+  $app->helper('pl' => sub { shift; PL(@_); });
 
   $app->mysql->migrations->from_data->migrate;
 
