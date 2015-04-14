@@ -38,6 +38,7 @@ a:hover {
 
 p {
      font-size: 1.2em;
+     color: #384047;
 }
 
 h2 {
@@ -110,6 +111,7 @@ h1, h2, h3, h4, p, li, a{
 .nav li {
     margin-left: 20px;
     list-style: none;
+    padding: 4px 8px;
 }
 
 .welcome {
@@ -135,7 +137,6 @@ h1, h2, h3, h4, p, li, a{
 
 .current {
     background-color: #7D9138;
-    padding: 4px 8px;
     color: #fafafa;                 
 }
 
@@ -302,6 +303,8 @@ th{
 }
 
 td{
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
     font-size: .9em;
 }
