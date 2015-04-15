@@ -12,16 +12,16 @@
     <ol>
     <li>Once you’re <%= link_to 'logged in' => 'login' %>, you’ll be taken to the search page.</li>
     <li>You can search for a document by zip code and address/MLS listing number.</li>
-    <li>Once results are displayed, simply click on the listing to add the item to your cart. All results include a document set with basic info, photos, and sketches. The cost of each document set is $8.</li>
+    <li>Click on the listing you want to add the item to your cart. All results include a document set with basic info, photos, and sketches. The cost of each document set is $8.</li>
     <li>When you’re ready, navigate to your cart to checkout.</li>
     </ol>
     
     <h3 id="sell">Uploading and Selling Documents</h3>
-    <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available to purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! And the more you upload, the better your chances for generating income.</p>
+    <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available for purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! The more you upload, the better your chances for generating income.</p>
     <h5>Here’s how it works:</h5>
     <ol>
     <li>Once you’re <%= link_to 'logged in' => 'login' %>, click on “Upload” in the top menu.</li>
-    <li>Make sure you have basic information, photos, and sketches all combined in a single PDF document. (If your submission is incomplete, it will be flagged by the buyer and could result in your not being paid.)</li>
+    <li>Make sure you have basic information, photos, and sketches all combined in a single PDF document. (If your submission is incomplete, it will be flagged by the buyer and could result in you not being paid.)</li>
     <li>Fill out the form on the upload page to complete the process.</li>
     <li>That’s it! Now your document is available for purchase. Each time it’s purchased, we’ll add $4 to your account!</li>
     </ol>
@@ -29,14 +29,14 @@
     <h3 id="faq">FAQ</h3>
     <h5>Can I download my own documents for free?</h5>
     <p>Of course. No need to pay again for the work you’ve already done.</p>
-    <h5>How can I tell how many documents I’ve sold?</h5>
-    <p>Your account page will give you all the info you need. This includes your uploaded documents, which of your documents have sold, requested documents in your area, and how much money you can expect to receive the next time that payments go out.</p>
+    <%# <h5>How can I tell how many documents I’ve sold?</h5>
+    <p>Your account page will give you all the info you need. This includes your uploaded documents, which of your documents have sold, requested documents in your area, and how much money you can expect to receive the next time that payments go out.</p> %>
     <h5>How will I get paid for my sold documents?</h5>
     <p>Payments are provided via <em>[payment service]</em> once every <em>[amount of time]</em>.</p>
     <h5>How do I know if the document set I download will be complete and professional?</h5>
     <p>While we cannot guarantee the accuracy, or completeness of anyone’s work, we do require that all Appraisers using our site adhere to our <%= link_to 'Terms of Service' => 'about/tos' %>, which basically state that we’re all doing our best to provide high quality and accurate work. If someone downloading a document notices that it is incomplete, they can flag the seller. Too many flags on a seller’s account will result in penalties.</p>
     <h5>What if there are no results for my search?</h5>
-    <p>If your search returns no results, we’ll let other Appraisers in the area know what you’re looking for and encourage them to upload the documents. If the documents you’re searching for get added, we’ll alert you.</p>
+    <%# <p>If your search returns no results, we’ll let other Appraisers in the area know what you’re looking for and encourage them to upload the documents. If the documents you’re searching for get added, we’ll alert you.</p> %>
     <h5>How much do documents cost?</h5>
     <p>Each document costs $8. This includes (at the very least) basic information, sketches, and photos. Sellers can also choose to include additional information if they wish.</p>
     <h5>How much will I make for each document I sell?</h5>
@@ -49,7 +49,7 @@
     <h3 id="guarantee">Our Guarantee</h3>
     <p>As Appraisers ourselves, we pride this site on providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'Terms of Service' => 'about/tos' %>. In a nutshell, here is what they say:
     <ol>
-    <li>All members must be licensed Appraisers.</li>
+    <li>All members must be licensed Appraisers, following all USPAP guidelines.</li>
     <li>Members won’t let anyone else – fellow Appraisers or otherwise – log in under their account.</li>
     <li>When you download a document, remember that it’s for your reference only and can’t be distributed.  (But hey, if someone else wants it, send them to ADB!)</li>
     <li>We can guarantee the completeness, but not accuracy, of any uploaded documents. We ask that everyone do their best to upload high quality and helpful work. We understand that you take pride in your work, and we trust that will shine through in the documents you upload.</li>
