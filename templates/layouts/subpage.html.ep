@@ -17,8 +17,12 @@
             </div>
         </div>
         <div class="content-area">
+            % if ( stash 'success' || flash 'f_success' ) {
             <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
+            % }
+            % if ( stash 'error' || flash 'f_error'  ) {
             <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %></div>
+            % }
             <%= content %>
         </div>
         <div class="footer">
