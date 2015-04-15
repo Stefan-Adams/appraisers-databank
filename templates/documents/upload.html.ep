@@ -1,61 +1,7 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Upload</title>
-    %= asset 'adb.css'
-  </head>
-  <body>
-    <%= link_to 'Home' => 'search' %><br />
-    <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
-    <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %><br /></div>
-    <h2>Upload Appraisal Documents</h2>
-    <p>Please upload a single PDF document that includes basic information, sketches, and photos. Failure to upload a complete document could result in you not being paid when your document sells.</p>
-    %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
-      %= label_for doc => 'Subject Property Document'
-      <br>
-      %= file_field 'doc'
-      <br>
-
-      %= label_for inspection_date => 'Inspection Date (Required)'
-      <br>
-      %= date_field 'inspection_date'
-      <br>
-
-      %= label_for mls => 'MLS'
-      <br>
-      %= text_field 'mls'
-      <br>
-
-      %= label_for address => 'Address'
-      <br>
-      %= text_field 'address'
-      <br>
-
-      %= label_for city => 'City'
-      <br>
-      %= text_field 'city'
-      <br>
-
-      %= label_for county => 'County'
-      <br>
-      %= text_field 'county'
-      <br>
-
-      %= label_for state => 'State'
-      <br>
-      %= text_field 'state'
-      <br>
-
-      %= label_for zip => 'Zip (Required)'
-      <br>
-      %= text_field 'zip'
-      <br>
-
-      %= submit_button 'Upload'
-=======
 % layout 'subpage';
 <div class="text">
+    <h2>Upload Appraisal Documents</h2>
+    <p>Please upload a single PDF document that includes basic information, sketches, and photos. Failure to upload a complete document could result in you not being paid when your document sells.</p>
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
         %= label_for doc => 'Subject Propery Document'
         <br>
@@ -98,6 +44,5 @@
         <br>
     
         %= submit_button 'Upload'
->>>>>>> origin/master
     % end
 </div>
