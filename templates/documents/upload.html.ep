@@ -6,9 +6,11 @@
   </head>
   <body>
     <%= link_to 'Home' => 'search' %><br />
-    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
+    <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
+    <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %><br /></div>
+    <h2>Upload Documents</h2>
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
-      %= label_for doc => 'Subject Propery Document'
+      %= label_for doc => 'Subject Property Document'
       <br>
       %= file_field 'doc'
       <br>
