@@ -6,7 +6,7 @@
       % my $doc = shift;
       <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
       % unless ( $doc->{complete} ) {
-        <div id="<%= $doc->{filename} %>" class="">Incomplete Document</div>
+        <!-- <div id="<%= $doc->{filename} %>" class="">Incomplete Document</div> -->
       % }
     % end
     %= include 'documents/table', docs => stash('cart'), action => $action
