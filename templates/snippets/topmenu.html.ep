@@ -2,6 +2,7 @@
     % my $cart = session 'cart';
     <li <%== is_current 'cart' %>><%= link_to "View Cart (${\($#$cart+1)})" => 'cart', id => 'view_cart', items => ${\($#$cart+1)} %></li>
     <li <%== is_current 'search' %>><%= link_to Search => 'search' %></li>
+    <li <%== is_current 'upload' %>><%= link_to Upload => 'upload' %></li>
     <!-- <li <%== is_current 'profile' %>><%= link_to Profile => 'profile' %></li> -->
     % if ( session('user')->{admin} ) {
         <li <%== is_current 'admin' %>><%= link_to Admin => 'admin' %></li>
