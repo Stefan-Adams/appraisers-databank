@@ -9,7 +9,8 @@
     <%= link_to 'Home' => 'search' %><br />
     <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
     <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %><br /></div>
-    <h2>Upload Documents</h2>
+    <h2>Upload Appraisal Documents</h2>
+    <p>Please upload a single PDF document that includes basic information, sketches, and photos. Failure to upload a complete document could result in you not being paid when your document sells.</p>
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
       %= label_for doc => 'Subject Property Document'
       <br>
