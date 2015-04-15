@@ -9,10 +9,10 @@
     <body>
         <div class="hm hm-header">
             <div class="flex container">
-                <h1 class="title">Appraiser's DataBank</h1>
-                    <ul class="logged-out-nav nav">
-                        %= include 'snippets/topmenu'
-                    </ul>
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => (session('user') ? 'search' : 'home') %></h1>
+                <ul class="logged-out-nav nav">
+                    %= include 'snippets/topmenu'
+                </ul>
             </div>
         </div>
         <%= content %>
