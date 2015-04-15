@@ -57,7 +57,7 @@ sub profile {
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
-  return $c->render(error => 'File is too big.') if $c->req->is_limit_exceeded;
+  return $c->render(error => 'Sorry, that file is too big.') if $c->req->is_limit_exceeded;
 
   # Process uploaded file
   if ( my $w9 = $c->param('w9') ) {
@@ -69,7 +69,7 @@ sub profile {
       $c->app->log->info("uploaded $name to $filename");
     } else {
       unlink $filename;
-      $c->render(error => 'Something went wrong saving your upload!');
+      $c->render(error => 'Uh oh, something went wrong saving your upload.');
     }
   }
 
@@ -80,7 +80,7 @@ sub profile {
       if ( $err ) {
         $c->render(error => $err);
       } else {
-        $c->flash(f_success => "Thanks for registering.");
+        $c->flash(f_success => "Thanks for registering. We think you'll like it here.");
         $c->redirect_to('login');
       }
     });
@@ -91,7 +91,7 @@ sub profile {
       if ( $err ) {
         $c->render(error => $err);
       } else {
-        $c->render(success => "Updated profile.");
+        $c->render(success => "Success! Your profile has been updated.");
       }
     });
   }
@@ -115,13 +115,13 @@ sub login {
   $c->mysql->db->query('select * from users where email = ? and password = ?', (map { $validation->param($_) } qw/email password/) => sub {
     my ($db, $err, $results) = @_;
     if ( $err ) {
-      $c->render(error => 'Something went wrong with your login!');
+      $c->render(error => "Uh oh, something went wrong with your login. Let's try again.");
     } else {
       if ( $results->rows ) {
         $c->session(user => $results->hash);
         $c->redirect_to('search');
       } else {
-        $c->render(error => 'Something went wrong with your login!');
+        $c->render(error => "Uh oh, something went wrong with your login. Let's try again.");
       }
     }
   });

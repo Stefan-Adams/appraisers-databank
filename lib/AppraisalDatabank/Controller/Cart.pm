@@ -32,7 +32,7 @@ sub purchase {
   my $validation = $c->validation;
 
   $validation->required($_) for qw(amount stripeToken);
-  $validation->has_error and return $c->render(text => 'There was some missing values in the checkout form. Please try again.');
+  $validation->has_error and return $c->render(text => 'There were some missing values in the checkout form. Please try again.');
 
   my $cart = $c->session('cart') || [];
 

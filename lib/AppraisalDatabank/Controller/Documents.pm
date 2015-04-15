@@ -70,13 +70,13 @@ sub upload {
 
   # Re-render if validation was unsuccessful
   return $c->render if $validation->has_error;
-  return $c->render(error => 'File is too big.') if $c->req->is_limit_exceeded;
+  return $c->render(error => 'Sorry, that file is too big.') if $c->req->is_limit_exceeded;
 
   # Process uploaded file
   return $c->render unless my $doc = $c->param('doc');
   my $name = $doc->filename;
   unless ( $doc->headers->content_type eq 'application/pdf' ) {
-    return $c->render(error => 'Document must be of type PDF');
+    return $c->render(error => 'Whoops, your document must be a PDF. Please try again.');
   }
   my $filename = $validation->output->{filename} = md5_sum($name.time.$c->session('user')->{email});
   my $docdir = $c->app->home->rel_file('documents/'.$validation->output->{zip});
@@ -84,7 +84,7 @@ sub upload {
   $doc->move_to("$docdir/$filename");
   unless ( -e "$docdir/$filename" && -s _ == $doc->size ) {
     unlink "$docdir/$filename";
-    $c->render(error => 'Something went wrong saving your upload!');
+    $c->render(error => "Uh oh, something went wrong saving your upload. Let's try this again.");
   }
   $c->delay(
     sub {
@@ -97,7 +97,7 @@ sub upload {
         $c->render(error => $err);
       } else {
         $c->app->log->info("uploaded $name to $filename");
-        $c->render(success => "Uploaded file $name (confirmation: $filename).");
+        $c->render(success => "Great! You've uploaded file $name (confirmation: $filename).");
       }
     }
   );
