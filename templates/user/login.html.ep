@@ -1,6 +1,5 @@
 % layout 'subpage';
 <div class="text">
-    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     <h2>Welcome to ADB</h2>
     %= form_for login => (method => 'POST') => begin
         %= label_for email => 'Email'

@@ -7,7 +7,6 @@
         <p>Update your profile.</p>
     % }
     <hr />
-    <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %><br />
     %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns") => begin
         <div class="col">
             %= label_for email => 'Email *'
