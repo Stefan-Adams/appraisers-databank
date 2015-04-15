@@ -17,8 +17,9 @@
             </div>
         </div>
         <div class="content-area">
+            <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
+            <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %></div>
             <%= content %>
-            <%= stash 'success' %><%= stash 'error' %><%= flash 'f_success' %><%= flash 'f_error' %>
         </div>
         <div class="footer">
            <div class="container">

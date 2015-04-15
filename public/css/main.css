@@ -74,6 +74,27 @@ h1, h2, h3, h4, p, li, a{
     letter-spacing: 1px;
 }
 
+.success-message, .error-message {
+    font-size: 1.4em;
+    color: #fafafa;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    width: auto;
+}
+
+.success-message{
+    background-color: #9DB648;
+    border: 2px solid #7D9138;
+}
+
+.error-message{
+    background-color: #f56767;
+    border: 2px solid #C54442;
+}
+
+
 /* =======================
    HEADER STYLES
 ========================= */
@@ -304,11 +325,11 @@ input[type=submit]:hover {
 }
 
 label.field-with-error{ 
-    color: #C54442 
+    color: #C54442; 
 }
 
 input.field-with-error{ 
-    background-color: #f56767 
+    background-color: #f56767; 
 }
 
 .add_to_cart{ 
