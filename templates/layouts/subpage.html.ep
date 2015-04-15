@@ -10,10 +10,14 @@
     <body>
         <div class="int header">
             <div class="flex container">
-                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'home' %></h1>
-                    <ul class="logged-out-nav nav">
-                        %= include 'snippets/topmenu'
-                    </ul>
+                % if ( session('user') ) { % 
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'search' %></h1>
+                % }
+                else {
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'home' %></h1> % }
+                <ul class="logged-out-nav nav">
+                    %= include 'snippets/topmenu'
+                </ul>
             </div>
         </div>
         <div class="content-area">
