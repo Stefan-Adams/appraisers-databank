@@ -12,9 +12,9 @@
             <div class="flex container">
                 % if ( session('user') ) { % 
                 <h1 class="title"><%= link_to "Appraiser's DataBank" => 'search' %></h1>
+                % } else {
+                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'home' %></h1>
                 % }
-                else {
-                <h1 class="title"><%= link_to "Appraiser's DataBank" => 'home' %></h1> % }
                 <ul class="logged-out-nav nav">
                     %= include 'snippets/topmenu'
                 </ul>
