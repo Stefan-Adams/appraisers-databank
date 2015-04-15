@@ -32,7 +32,11 @@ a {
     color: #939241;
 }
 
-a:hover {
+a:hover{
+    color: #565666;
+}
+
+.header a:hover {
     color: #ededed;
 }
 
@@ -283,7 +287,6 @@ input[type=submit]:hover {
     background-color: #9DB648;
 }
 
-
 .columns::after {
     content: " ";
     display: table;
@@ -298,6 +301,20 @@ input[type=submit]:hover {
 
 .col:last-child{
     width: 60%;
+}
+
+label.field-with-error{ 
+    color: #C54442 
+}
+
+input.field-with-error{ 
+    background-color: #f56767 
+}
+
+.add_to_cart{ 
+    cursor: pointer; 
+    cursor: hand; 
+    color: #9DB648;
 }
 
 /* =======================
