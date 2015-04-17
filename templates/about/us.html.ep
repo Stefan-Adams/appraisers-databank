@@ -29,14 +29,14 @@
     <h3 id="faq">FAQ</h3>
     <h5>Can I download my own documents for free?</h5>
     <p>Of course. No need to pay again for the work you’ve already done.</p>
-    <%# <h5>How can I tell how many documents I’ve sold?</h5>
-    <p>Your account page will give you all the info you need. This includes your uploaded documents, which of your documents have sold, requested documents in your area, and how much money you can expect to receive the next time that payments go out.</p> %>
+    <!--<h5>How can I tell how many documents I’ve sold?</h5>
+    <p>Your account page will give you all the info you need. This includes your uploaded documents, which of your documents have sold, requested documents in your area, and how much money you can expect to receive the next time that payments go out.</p> -->
     <h5>How will I get paid for my sold documents?</h5>
     <p>Payments are provided via <em>[payment service]</em> once every <em>[amount of time]</em>.</p>
     <h5>How do I know if the document set I download will be complete and professional?</h5>
     <p>While we cannot guarantee the accuracy, or completeness of anyone’s work, we do require that all Appraisers using our site adhere to our <%= link_to 'Terms of Service' => 'about/tos' %>, which basically state that we’re all doing our best to provide high quality and accurate work. If someone downloading a document notices that it is incomplete, they can flag the seller. Too many flags on a seller’s account will result in penalties.</p>
     <h5>What if there are no results for my search?</h5>
-    <%# <p>If your search returns no results, we’ll let other Appraisers in the area know what you’re looking for and encourage them to upload the documents. If the documents you’re searching for get added, we’ll alert you.</p> %>
+    <!-- <p>If your search returns no results, we’ll let other Appraisers in the area know what you’re looking for and encourage them to upload the documents. If the documents you’re searching for get added, we’ll alert you.</p> -->
     <h5>How much do documents cost?</h5>
     <p>Each document costs $8. This includes (at the very least) basic information, sketches, and photos. Sellers can also choose to include additional information if they wish.</p>
     <h5>How much will I make for each document I sell?</h5>
