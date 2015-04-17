@@ -9,7 +9,32 @@
     % }
     <li><%= link_to Logout => 'logout' %></li>
 % } else {
-    <li <%== is_current 'login' %>><%= link_to "Login" => 'login' %></li>
+    <li>   
+        <div id="loginContainer">
+            <a href="#" id="loginButton"><span>Sign In</span></a>
+            <div id="loginBox">                
+              %= form_for login, id => 'loginForm' => (method => 'POST') => begin
+                <fieldset id="body">
+                    <fieldset>
+                         %= label_for email => 'Email'
+                         <br>
+                         %= email_field 'email'
+                         <br>
+                    </fieldset>
+                    <fieldset>
+                        %= label_for password => 'Password'
+                        <br>
+                        %= password_field 'password'
+                        <br>
+                    </fieldset>
+                    %= submit_button 'Log In', id => 'login'
+                    %= label_for remember, class => 'checkbox' => 'Remember me'
+                    %= check_box remember, id => 'checkbox'
+                </fieldset>
+                <!--<span><a href="#">Forgot your password?</a></span>-->
+                % end
+            </div>
+        </div></li>
     <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register' %></li>
     <li <%== is_current 'about/learn-more' %>><%= link_to "Learn More" => 'about/learn-more' %></li>
 % }
