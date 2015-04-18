@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Appraiser's DataBank</title>
         %= asset 'adb.css'
+        %= asset 'adb.js'
         <meta name="viewport" content="width=device-width">
     </head>
     <body>

@@ -58,9 +58,10 @@ sub _add_assets {
 
   $app->asset('adb.js' => (
     'http://code.jquery.com/jquery-1.11.2.min.js',
-    'https://raw.githubusercontent.com/stripe/jquery.payment/master/lib/jquery.payment.js',
-    '/js/main.js',
-    '/js/stripe.js',
+    #'https://raw.githubusercontent.com/stripe/jquery.payment/master/lib/jquery.payment.js',
+    '/js/adb.js',
+    #'/js/main.js',
+    #'/js/stripe.js',
   ));
 
   $app->asset('adb.css' =>
