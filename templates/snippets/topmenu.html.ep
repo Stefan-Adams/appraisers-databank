@@ -11,7 +11,7 @@
 % } else {
     <li>   
         <div id="loginContainer">
-            <a href="#" id="loginButton"><span>Sign In</span></a>
+            <a href="#" id="loginButton"><span>Log In</span></a>
             <div id="loginBox">                
                 %= form_for 'login', id => 'loginForm' => (method => 'POST') => begin
                 <fieldset id="body">

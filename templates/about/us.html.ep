@@ -46,8 +46,8 @@
     <p>First, we want to ensure the integrity of ADB so that our documents are more accurate and better suited for Appraisers than anything you would find on MLS. By requiring registration, we can be sure that everyone here is an Appraiser, and that helps to keep our standards high.</p>
     <p>You’ll also want to be paid for all of the documents you sell, and creating an account enables us to pay you what you deserve!</p>
     
-    <h3 id="guarantee">Our Guarantee</h3>
-    <p>As Appraisers ourselves, we pride this site on providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'Terms of Service' => 'about/tos' %>. In a nutshell, here is what they say:
+    <h3 id="guarantee">Our Commitment to You</h3>
+    <p>As Appraisers ourselves, we are committed to providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'Terms of Service' => 'about/tos' %>. In a nutshell, here is what they say:
     <ol>
     <li>All members must be licensed Appraisers, following all USPAP guidelines.</li>
     <li>Members won’t let anyone else – fellow Appraisers or otherwise – log in under their account.</li>
