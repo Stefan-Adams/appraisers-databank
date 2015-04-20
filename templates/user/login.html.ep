@@ -1,6 +1,6 @@
 % layout 'subpage';
+<h2 class="page-title">Welcome to ADB</h2>
 <div class="text">
-    <h2>Welcome to ADB</h2>
     %= form_for login => (method => 'POST') => begin
         %= label_for email => 'Email'
         <br>

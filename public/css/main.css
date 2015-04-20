@@ -17,7 +17,7 @@ html, body {
     margin-right: auto;
 }
 
-.text {
+.text, .success-message, .error-message {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -27,31 +27,41 @@ html, body {
 /* =======================
    TEXT STYLES
 ========================= */
+
 a {
     text-decoration: none;
     color: #939241;
 }
 
-a:hover{
-    color: #565666;
+a:hover {
+    color: #ededed;
 }
 
-.header a:hover {
-    color: #ededed;
+.content-area a{
+    color: #9DB648;
+}
+
+.content-area a:hover{
+    color: #939241;
 }
 
 p {
      font-size: 1.2em;
-     color: #384047;
+     color: #fafafa;
+}
+
+label, input, .white, ul, ol{
+    color: #fafafa;
 }
 
 h2 {
-    color: #9DB648;
-    margin-top: 0;  
+    color: #B7D358;
+    margin-top: 0; 
+    margin-bottom: 0;
 }
 
 h3 {
-    color: #9DB648;
+    color: #B7D358;
     font-size: 1.8em;
 }
 
@@ -63,7 +73,7 @@ h4 {
 }
 
 h5 {
-    color: #7D9138;
+    color: #B7D358;
     font-size: 1.4em;
 }
 
@@ -84,16 +94,15 @@ h1, h2, h3, h4, p, li, a{
     width: auto;
 }
 
-.success-message{
+.success-message {
     background-color: #9DB648;
     border: 2px solid #7D9138;
 }
 
-.error-message{
+.error-message {
     background-color: #f56767;
     border: 2px solid #C54442;
 }
-
 
 /* =======================
    HEADER STYLES
@@ -352,9 +361,6 @@ input:focus {
 .sell {
     background-color: rgba(125,145,56,.7);
 }    
-.share {
-    background-color: rgba(147,146,65,.7);
-}
 
 .intro {
     background: #161F2E;
@@ -373,12 +379,23 @@ input:focus {
     z-index: 0;
 }
 
+.page-title {
+    width: 100%;
+    margin-left: 10%;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 2em;
+    color: #202E44;
+    background: rgba(250,250,250,0.57);
+}
+
 .content-area {
-    background: linear-gradient(90deg, #FFFFFF 30%, rgba(255,255,255,0.50) 100%),
-                #DCDCDC url('../img/house-row.jpg') no-repeat center;
+    background: #202E44 url('../img/house-row-blur.jpg') no-repeat center;            
     background-size: cover;
-    background-attachment: fixed;
     min-height: 65vh;
+    background-attachment: fixed;
 }
 
 .welcome-area {
@@ -393,9 +410,9 @@ input:focus {
     -webkit-align-items: center;
 }
 
-.content-nav {
+.darken-bg {
     background: rgba(0, 0, 0, 0.16);
-    padding: 5px 0 5px 5px;
+    padding: 5px 10px 5px 10px;
     border-top: 1px solid #384047;
     border-bottom: 1px solid #384047;
 }
@@ -523,8 +540,16 @@ tr:nth-child(even){
     padding: 5px 10px;
     margin: 15px;
 }
-    
 
+.page-title {
+    font-size: 1.6em;
+    margin-left: 5%;
+}
+    
+p {
+    font-size: 1em;
+}
+    
 }
     
 @media (max-width: 360px){

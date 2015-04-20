@@ -1,6 +1,6 @@
 % layout 'subpage';
+<h2 class="page-title">Download Purchased Documents</h2>
 <div class="text">
-    <h2>Download Purchased Documents</h2>
     <div id="table">
     % my $action = begin
       % my $doc = shift;

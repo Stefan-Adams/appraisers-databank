@@ -1,7 +1,7 @@
 % layout 'subpage';
 % my $charge = 800;
+<h2 class="page-title">My Cart</h2>
 <div class="text">
-    <h2>My Cart</h2>
     <div id="table">
     % my $action = begin
         % my $doc = shift;

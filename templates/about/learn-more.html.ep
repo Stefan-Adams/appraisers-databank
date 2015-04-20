@@ -1,6 +1,7 @@
 % layout 'subpage';
+<h2 class="page-title">Appraiser's DataBank Features</h2>
 <div class="text">
-    <h3>About Appraiser's DataBank</h3>
+    <div class="darken-bg">
     <p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
     <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'create an account' => 'register' %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
     
@@ -32,6 +33,6 @@
     <p>You’ll also want to be paid for all of the documents you sell, and creating an account enables us to pay you what you deserve!</p>
     
     <h5>Ready to get started? <%= link_to 'Sign up now' => 'register' %> and start simplifying your work!</h5>
-    
+    </div>
     
 </div>

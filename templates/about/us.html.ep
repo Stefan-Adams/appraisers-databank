@@ -1,9 +1,8 @@
 % layout 'subpage';
+<h2 class="page-title">About Appraiser's DataBank</h2>
 <div class="text">
-    
-    <h3>About Appraiser's DataBank</h3>
-    <div class="content-nav"><p><a href="#purchase">Purchase</a> | <a href="#sell">Upload &amp; Sell</a> | <a href="#faq">FAQ</a> | <a href="#guarantee">Guarantee</a></p></div>
-    <p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
+    <p><a href="#purchase">Purchase</a> | <a href="#sell">Upload &amp; Sell</a> | <a href="#faq">FAQ</a> | <a href="#guarantee">Guarantee</a></p>
+    <div class="darken-bg"><p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
     <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'create an account' => 'register' %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
     
     <h3 id="purchase">Purchasing Appraisal Documents</h3>
@@ -57,4 +56,5 @@
     </ol>
     
     <p><strong>Ready to get started? <%= link_to 'Log in' => 'login' %> or <%= link_to 'Register' => 'register' %> now!</strong></p>
+    </div>
 </div>

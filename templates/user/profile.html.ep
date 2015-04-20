@@ -1,6 +1,6 @@
 % layout 'subpage', title => $register ? 'Register' : 'Profile';
+<h2 class="page-title"><%= $register ? 'Register for An Account' : 'My Profile' %></h2>
 <div class="text">
-    <h2><%= $register ? 'Register' : 'Profile' %></h2>
     % if ( $register ) {
         <p>To keep our work secure, you must create an account to use the database. Signing up is absolutely free and only takes a few minutes. Simply fill out the form below to get started. Already have an account? <%= link_to "Login" => 'login' %>.</p>
     % } else {

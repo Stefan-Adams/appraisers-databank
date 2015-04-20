@@ -1,7 +1,8 @@
 % layout 'subpage';
+<h2 class="page-title">Search for Appraisal Documents</h2>
 <div class="text">
     <!-- Welcome, <%= session('user')->{firstname} %><br /> -->
-    <h2>Search for Appraisal Documents</h2><br /><br />
+    <br /><br />
     <div class="col">
         %= form_for search => (method => 'POST') => begin
             %= label_for zip => 'Zip (Required)'
