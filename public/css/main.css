@@ -237,6 +237,12 @@ fieldset#body {
     margin:0;
 }
 
+#loginForm .error-message,
+#loginForm .success-message {
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
 #loginForm #checkbox {
     width:auto;
     margin:1px 9px 0 0;

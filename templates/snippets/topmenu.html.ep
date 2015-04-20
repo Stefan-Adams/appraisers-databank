@@ -14,6 +14,12 @@
             <a href="#" id="loginButton"><span>Log In</span></a>
             <div id="loginBox">                
                 %= form_for 'login', id => 'loginForm' => (method => 'POST') => begin
+                % if ( stash 'success' || flash 'f_success' ) {
+                <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
+                % }
+                % if ( stash 'error' || flash 'f_error'  ) {
+                <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %></div>
+                % }
                 <fieldset id="body">
                     <fieldset>
                          %= label_for email => 'Email'
