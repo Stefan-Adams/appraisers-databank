@@ -180,18 +180,19 @@ h1, h2, h3, h4, p, li, a{
    DROP DOWN MENU 
 ========================= */
 /* Login Container (default to float:right) */
-#loginContainer {
+#loginContainer, #searchContainer {
     position:relative;
     float:right;
     /*font-size:12px;*/
 }
 
-#loginButton:hover {
+#loginButton:hover
+#searchButton:hover {
     cursor: pointer;
 }
 
 /* Login Box */
-#loginBox {
+#loginBox, #searchBox {
     position:absolute;
     top:34px;
     right:-150px;
@@ -200,11 +201,13 @@ h1, h2, h3, h4, p, li, a{
 }
 
 /* If the Login Button has been clicked */  
-#loginButton span{
+#loginButton span,
+#searchButton span {
     padding: 4px 8px;
 }
 
-#loginButton.active {
+#loginButton.active, 
+#searchButton.active {
     background-color: #161F2E;
     padding-bottom: 34px;
     padding-top: 5px;
@@ -213,7 +216,8 @@ h1, h2, h3, h4, p, li, a{
 }
 
 /* Login Form */
-#loginForm {
+#loginForm, 
+#searchForm {
     width:248px; 
     /*border:1px solid #fafafa;*/
     border-radius:3px 0 3px 3px;
@@ -223,14 +227,15 @@ h1, h2, h3, h4, p, li, a{
     padding:6px;
 }
 
-#loginForm fieldset {
+#loginForm fieldset,
+#searchFrom fieldset {
     margin:0 0 12px 0;
     display:block;
     border:0;
     padding:0;
 }
 
-fieldset#body {
+fieldset.body {
     background:#fff;
     border-radius:3px;
     -moz-border-radius:3px;
@@ -260,21 +265,22 @@ fieldset#body {
     float: right;
 }
 
-#body label {
+.body label {
     color:#3a454d;
     margin:9px 0 0 0;
     display:block;
     float:left;
 }
 
-#loginForm #body fieldset label {
+#loginForm .body fieldset label {
     display:block;
     float:none;
     margin:0 0 6px 0;
 }
 
 /* Default Input */
-#loginForm input {
+#loginForm input, 
+#searchForm input {
     width:92%;
     border:1px solid #899caa;
     border-radius:3px;
@@ -289,7 +295,8 @@ fieldset#body {
 }
 
 /* Sign In Button */
-#loginForm #login {
+#loginForm #login 
+#searchForm #search {
     width:auto;
     float:left;
     font-size: 18px;
@@ -304,7 +311,8 @@ fieldset#body {
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }
 
-#loginForm #login:hover{
+#loginForm #login:hover
+#searchForm #search:hover {
     background-color: #9DB648;
 }
 
