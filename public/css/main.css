@@ -205,8 +205,9 @@ h1, h2, h3, h4, p, li, a{
 }
 
 #loginButton.active {
-    background-color: #202E44;
+    background-color: #161F2E;
     padding-bottom: 34px;
+    padding-top: 5px;
     border-radius: 2px;
     color: #fafafa;  
 }
@@ -218,7 +219,7 @@ h1, h2, h3, h4, p, li, a{
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
     margin-top:-1px;
-    background: #202E44;
+    background: #161F2E;
     padding:6px;
 }
 
