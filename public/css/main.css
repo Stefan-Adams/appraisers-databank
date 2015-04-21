@@ -4,6 +4,7 @@
 body {
     width: 100%;
     font-family: 'Tinos', serif;
+    color: #fafafa;
 }
 
 
@@ -45,13 +46,12 @@ a:hover {
     color: #939241;
 }
 
-p {
-     font-size: 1.2em;
-     color: #fafafa;
+input{
+    color: #333333;
 }
 
-label, input, .white, ul, ol{
-    color: #fafafa;
+p {
+     font-size: 1.2em;
 }
 
 h2 {
@@ -395,9 +395,9 @@ input:focus {
 }
 
 .page-title {
-    width: 100%;
-    margin-left: 10%;
-    float: left;
+    position: relative;
+    right: 0;
+    left: 10%;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
@@ -558,7 +558,7 @@ tr:nth-child(even){
 
 .page-title {
     font-size: 1.6em;
-    margin-left: 5%;
+    left: 5%;
 }
     
 p {
