@@ -186,7 +186,10 @@ h1, h2, h3, h4, p, li, a{
     /*font-size:12px;*/
 }
 
-#loginButton:hover
+#loginButton:hover {
+    cursor: pointer;
+}
+
 #searchButton:hover {
     cursor: pointer;
 }
@@ -205,6 +208,7 @@ h1, h2, h3, h4, p, li, a{
 #searchButton span {
     padding: 4px 8px;
 }
+
 
 #loginButton.active, 
 #searchButton.active {
@@ -278,10 +282,17 @@ fieldset.body {
     margin:0 0 6px 0;
 }
 
+#searchForm p {
+    font-size: 14px;
+    color: #3a454d;
+}
+
 /* Default Input */
-#loginForm input, 
-#searchForm input {
-    width:92%;
+#loginForm input[type=text], 
+#searchForm input[type=text] {
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
     border:1px solid #899caa;
     border-radius:3px;
     -moz-border-radius:3px;
@@ -297,7 +308,6 @@ fieldset.body {
 /* Sign In Button */
 #loginForm #login 
 #searchForm #search {
-    width:auto;
     float:left;
     font-size: 18px;
     background:#7D9138;
@@ -306,7 +316,7 @@ fieldset.body {
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
-    margin:-10px 12px 0 0;
+    margin:-10px 12px 0 10px;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }
