@@ -1,7 +1,7 @@
 % layout 'subpage';
 <h2 class="page-title">Download Purchased Documents</h2>
 <div class="text">
-    <div id="table">
+    <div id="table" class="table">
     % my $action = begin
       % my $doc = shift;
       <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>

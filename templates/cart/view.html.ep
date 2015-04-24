@@ -2,7 +2,7 @@
 % my $charge = 800;
 <h2 class="page-title">My Cart</h2>
 <div class="text">
-    <div id="table">
+    <div id="table" class="table">
     % my $action = begin
         % my $doc = shift;
         %= link_to Remove => 'remove_from_cart' => {filename => $doc->{filename}}

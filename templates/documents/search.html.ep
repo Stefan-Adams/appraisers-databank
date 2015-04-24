@@ -3,58 +3,61 @@
 <div class="text">
     <!-- Welcome, <%= session('user')->{firstname} %><br /> -->
     <br /><br />
-    <div class="col">
-        %= form_for search => (method => 'POST') => begin
-            %= label_for zip => 'Zip (Required)'
-            <br>
-            %= text_field 'zip'
-            <br>
+    <div class="table">
+        <div>
+            %= form_for search => (method => 'POST') => begin
+                %= label_for zip => 'Zip (Required)'
+                <br>
+                %= text_field 'zip'
+                <br>
 
-            %= label_for mls => 'MLS'
-            <br>
-            %= text_field 'mls'
-            <br>
+                %= label_for mls => 'MLS'
+                <br>
+                %= text_field 'mls'
+                <br>
 
-            %= label_for address => 'Address'
-            <br>
-            %= text_field 'address'
-            <br>
+                %= label_for address => 'Address'
+                <br>
+                %= text_field 'address'
+                <br>
 
-            %= submit_button 'Search'
-        % end
-    </div>
-    <div id="table" class="col">
-        % my $action = begin
-            % my $doc = shift;
-            % if ( $doc->{can_download} ) {
-                <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
-            % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
-                %# <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
-                <span class="add_to_cart" id="add_to_cart_<%= $doc->{filename} %>">Add</span>
-                <script>
-                    $(document).ready(function(){
-                        $('#add_to_cart_<%= $doc->{filename} %>').click(function(){
-                            $.get('<%= url_for add_to_cart => {filename => $doc->{filename}} %>', function(data){
-                                if ( data.ok == 1 ) {
-                                    $('#add_to_cart_<%= $doc->{filename} %>').unbind("click");
-                                    $('#add_to_cart_<%= $doc->{filename} %>').removeClass('add_to_cart').html("Added");
-                                    $('#view_cart').html("View Cart ("+(parseInt($('#view_cart').attr('items'))+1)+")");
-                                    $('#view_cart').attr('items', (parseInt($('#view_cart').attr('items'))+1));
-                                } else {
-                                    alert("Error adding to cart");
-                                }
+                %= submit_button 'Search'
+            % end
+        </div>
+        <div>
+            % my $action = begin
+                % my $doc = shift;
+                % if ( $doc->{can_download} ) {
+                    <%= link_to Download => 'download' => {zip => $doc->{zip}, filename => $doc->{filename}} => (target => '_blank') %>
+                % } elsif ( !session('cart') || not grep { $_ eq $doc->{filename} } @{session('cart')} ) {
+                    %# <%= link_to Add => 'add_to_cart' => {filename => $doc->{filename}} %>
+                    <span class="add_to_cart" id="add_to_cart_<%= $doc->{filename} %>">Add</span>
+                    <script>
+                        $(document).ready(function(){
+                            $('#add_to_cart_<%= $doc->{filename} %>').click(function(){
+                                $.get('<%= url_for add_to_cart => {filename => $doc->{filename}} %>', function(data){
+                                    if ( data.ok == 1 ) {
+                                        $('#add_to_cart_<%= $doc->{filename} %>').unbind("click");
+                                        $('#add_to_cart_<%= $doc->{filename} %>').removeClass('add_to_cart').html("Added");
+                                        $('#view_cart').html("View Cart ("+(parseInt($('#view_cart').attr('items'))+1)+")");
+                                        $('#view_cart').attr('items', (parseInt($('#view_cart').attr('items'))+1));
+                                    } else {
+                                        alert("Error adding to cart");
+                                    }
+                                });
                             });
                         });
-                    });
-                </script>
-            % } else {
-                Already in Cart
-            % }
-            % if ( session('user')->{admin} ) {
-                <br /><%= link_to Complete => 'verify' => {verify => 'complete', filename => $doc->{filename}} %>
-                <br /><%= link_to Incomplete => 'verify' => {verify => 'incomplete', filename => $doc->{filename}} %>
-            % }
-        % end
-        %= include 'documents/table', action => $action, docs => stash('results')
+                    </script>
+                % } else {
+                    Already in Cart
+                % }
+                % if ( session('user')->{admin} ) {
+                    <br /><%= link_to Complete => 'verify' => {verify => 'complete', filename => $doc->{filename}} %>
+                    <br /><%= link_to Incomplete => 'verify' => {verify => 'incomplete', filename => $doc->{filename}} %>
+                % }
+            % end
+            %= include 'documents/table', action => $action, docs => stash('results')
+        </div>
     </div>
 </div>
+

@@ -12,18 +12,6 @@ html, body {
     min-height: 100vh;
 }
 
-.container, .text {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.text, .success-message, .error-message {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 /* =======================
    TEXT STYLES
@@ -51,30 +39,39 @@ input{
 }
 
 p {
-     font-size: 1.2em;
+     font-size: 1.6em;
+}
+
+table {
+    font-size: 1.2em;
+}
+
+label{
+    font-size: 1.2em;
 }
 
 h2 {
     color: #B7D358;
     margin-top: 0; 
     margin-bottom: 0;
+    font-size: 2.4em;
 }
 
 h3 {
     color: #B7D358;
-    font-size: 1.8em;
+    font-size: 2.2em;
 }
 
 h4 {
     color: #fafafa;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.6em;
+    font-size: 2em;
 }
 
 h5 {
     color: #B7D358;
-    font-size: 1.4em;
+    font-size: 1.8em;
 }
 
 .intro p, .int p, .light-text {
@@ -226,13 +223,15 @@ h1, h2, h3, h4, p, li, a{
     /*border:1px solid #fafafa;*/
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
+    box-shadow: 4px 5px 8px #333;
+    -webkit-box-shadow: 4px 5px 8px #333;
     margin-top:-1px;
     background: #161F2E;
     padding:6px;
 }
 
 #loginForm fieldset,
-#searchFrom fieldset {
+#searchForm fieldset {
     margin:0 0 12px 0;
     display:block;
     border:0;
@@ -247,6 +246,20 @@ fieldset.body {
     margin:0;
 }
 
+#loginForm .body fieldset,
+#loginForm .body input[type="submit"], 
+#searchForm .body fieldset,
+#searchForm .body input[type="submit"]{
+    margin-left: 4px;
+}
+
+#loginForm .body .checkbox {
+    margin-right: 4px;
+    position: relative;
+    top: 23px;
+}
+
+
 #loginForm .error-message,
 #loginForm .success-message {
     font-size: 1em;
@@ -260,6 +273,8 @@ fieldset.body {
     padding:0;
     border:0;
     *margin:-3px 9px 0 0; /* IE7 Fix */
+    position: relative;
+    top: 35px;
 }
 
 #loginForm .checkbox {
@@ -276,7 +291,8 @@ fieldset.body {
     float:left;
 }
 
-#loginForm .body fieldset label {
+#loginForm .body fieldset label, 
+#searchForm .body fieldset label{
     display:block;
     float:none;
     margin:0 0 6px 0;
@@ -288,9 +304,9 @@ fieldset.body {
 }
 
 /* Default Input */
-#loginForm input[type=text], 
-#searchForm input[type=text] {
-    width:90%;
+#loginForm input, 
+#searchForm input {
+    width:92%;
     margin-right: auto;
     margin-left: auto;
     border:1px solid #899caa;
@@ -305,6 +321,13 @@ fieldset.body {
     font-size:12px;
 }
 
+#loginForm input[type="submit"], 
+#searchForm input[type="submit"]{
+    width: 40%;
+    color: #fafafa;
+    font-size: 18px;
+}
+
 /* Sign In Button */
 #loginForm #login 
 #searchForm #search {
@@ -313,6 +336,8 @@ fieldset.body {
     background:#7D9138;
     color:#fafafa;
     padding:7px 15px 8px 15px;
+    border-radius:3px;
+    -moz-border-radius:3px;
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;
@@ -341,7 +366,6 @@ fieldset.body {
 input:focus {
     outline:none;
 }
-
 /* =======================
    HOME PAGE STYLES
 ========================= */
@@ -398,6 +422,22 @@ input:focus {
 /* =======================
    CONTENT STYLES
 ========================= */
+.container, .text {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text, .success-message, .error-message {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .content-area, .welcome-area {
     padding: 20px;
@@ -405,15 +445,15 @@ input:focus {
 }
 
 .page-title {
-    position: relative;
-    right: 0;
-    left: 10%;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px;
     font-size: 2em;
     color: #202E44;
     background: rgba(250,250,250,0.57);
+    width: 90%;
+    align-self: flex-end;
+    -webkit-align-self: flex-end;
 }
 
 .content-area {
@@ -421,6 +461,10 @@ input:focus {
     background-size: cover;
     min-height: 65vh;
     background-attachment: fixed;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 .welcome-area {
@@ -481,10 +525,16 @@ input {
 }
 
 input[type=submit] {
-    padding: 8px 10px;
-    background: #7D9138;
-    color: #ffffff;
     font-size: 1.2em;
+    background:#7D9138;
+    color:#fafafa;
+    padding:7px 15px 8px 15px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    cursor:pointer;
 }
 
 input[type=submit]:hover {
@@ -527,14 +577,12 @@ input.field-with-error{
 th{
     text-align: center;
     font-weight: bold;
-    padding: 2px 20px;
+    padding: 15px 30px;
     background: #9DB648;
-    color: #384047;;
 }
 
 td{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 1.2em 1.4em;
     text-align: center;
     font-size: .9em;
 }
