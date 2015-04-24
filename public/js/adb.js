@@ -39,3 +39,23 @@ $(function() {
         }
     });
 });
+
+//Toggle search menu when Revise Search button is clicked
+$(function(){
+    var button = $('#searchButton');
+    var box = $('#searchBox');
+    var form = $('#searchForm');
+    $('#reviseSearch').mouseup(function(login) {
+        box.toggle();
+        button.toggleClass('active');
+    });
+    form.mouseup(function() { 
+        return false;
+    });
+    $(this).mouseup(function(login) {
+        if(!($(login.target).parent('#searchButton').length > 0)) {
+            button.removeClass('active');
+            box.hide();
+        }
+    });
+});

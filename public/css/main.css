@@ -12,6 +12,18 @@ html, body {
     min-height: 100vh;
 }
 
+button {
+    background-color: #7D9138;
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+button:hover{
+     background-color: #9DB648;
+}
+
 
 /* =======================
    TEXT STYLES
@@ -346,7 +358,10 @@ fieldset.body {
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }
 
-#loginForm #login:hover
+#loginForm #login:hover {
+    background-color: #9DB648;
+}
+
 #searchForm #search:hover {
     background-color: #9DB648;
 }
