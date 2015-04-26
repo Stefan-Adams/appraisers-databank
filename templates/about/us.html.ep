@@ -16,7 +16,7 @@
     </ol>
     
     <h3 id="sell">Uploading and Selling Documents</h3>
-    <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available for purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! The more you upload, the better your chances for generating income.</p>
+    <p><a href="/t/sample-doc.pdf" target="_blank"><img src="/public/img/sample-button.png" class="right" /></a>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available for purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! The more you upload, the better your chances for generating income.</p>
     <h5>Here’s how it works:</h5>
     <ol>
     <li>Once you’re <%= link_to 'logged in' => 'login' %>, click on “Upload” in the top menu.</li>

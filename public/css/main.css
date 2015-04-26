@@ -114,6 +114,25 @@ h1, h2, h3, h4, p, li, a{
 }
 
 /* =======================
+   LAYOUT SHORTCUTS
+========================= */
+.right {
+    float: right;
+}
+
+.flex,  .nav {
+    display: flex;
+    display: -webkit-flex;
+}
+
+.flex {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+}
+
+/* =======================
    HEADER STYLES
 ========================= */
 
@@ -130,18 +149,6 @@ h1, h2, h3, h4, p, li, a{
     background: #202E44;
     min-height: 140px;
     
-}
-
-.flex,  .nav {
-    display: flex;
-    display: -webkit-flex;
-}
-
-.flex {
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
 }
 
 .nav {
