@@ -66,7 +66,7 @@ sub _add_assets {
 
   $app->asset('adb.css' =>
     'http://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css',
-    'http://fonts.googleapis.com/css?family=Tinos:400,700,400italic',
+    'http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic',
     'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
     '/sass/adb.scss',
     '/css/adb.css',
