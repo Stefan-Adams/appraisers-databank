@@ -61,6 +61,86 @@
             </div>
         </div>
     </li>
-    <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register' %></li>
+    <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
+            %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
+            <h3>Register for ADB</h3>
+            <div class="col">
+                %= label_for firstname => 'First Name *'
+                <br>
+                %= text_field 'firstname'
+                <br>
+
+                %= label_for lastname => 'Last Name *'
+                <br>
+                %= text_field 'lastname'
+                <br>
+
+                %= label_for address => 'Address *'
+                <br>
+                %= text_field 'address'
+                <br>
+
+                %= label_for city => 'City *'
+                <br>
+                %= text_field 'city'
+                <br>
+
+                %= label_for state => 'State *'
+                <br>
+                %= text_field 'state'
+                <br>
+
+                %= label_for zip => 'Zip *'
+                <br>
+                %= text_field 'zip'
+                <br>
+
+                %= label_for phone => 'Phone *'
+                <br>
+                %= text_field 'phone'
+                <br>
+
+                %= check_box 'tos' => include('user/tos')
+                %= label_for tos => 'I agree to the Terms of Service *'
+                <br>
+            </div>
+            <div class="col">
+                %= label_for email => 'Email *'
+                <br>
+                %= email_field 'email'
+                <br>
+
+                %= label_for password => 'Password * (minimum 6 characters)'
+                <br>
+                %= password_field 'password'
+                <br>
+
+                %= label_for pass_again => 'Password again *'
+                <br>
+                %= password_field 'pass_again'
+                <br>
+
+                %= label_for slid => 'State License Number *'
+                <br>
+                %= text_field 'slid'
+                <br>
+
+                %= label_for taxid => 'Federal ID or Social Security Number *'
+                <br>
+                %= text_field 'taxid'
+                <br>
+
+                %= label_for w9 => 'W-9 *'
+                <br>
+                %= file_field 'w9'
+                <br>
+
+            </div>
+            <div class="col">
+                <div id="tos_text"><%= include 'user/tos' %></div>
+                %= submit_button 'Create Account'
+            </div>
+        % end 
+    </li>
     <li <%== is_current 'about/learn-more' %>><%= link_to "Learn More" => 'about/learn-more' %></li>
 % }

@@ -59,3 +59,23 @@ $(function(){
         }
     });
 });
+
+//Registration Form lightbox
+var $overlay = $('<div id="overlay"></div>');
+$(function() {
+    $("body").append($overlay);
+    $overlay.append($('#regForm'));
+});
+
+ 
+$(function() {
+    var link = $('#regLink');
+    $('#regForm').hide();
+    link.removeAttr('href');
+    link.css('cursor', 'pointer');
+    link.click(function() {
+        $overlay.toggle();
+        $('#regForm').show();
+    });
+
+});

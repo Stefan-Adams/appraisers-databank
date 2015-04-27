@@ -113,6 +113,10 @@ h1, h2, h3, h4, p, li, a{
     border: 2px solid #C54442;
 }
 
+.tos {
+    font-size: .8em;
+}
+
 /* =======================
    LAYOUT SHORTCUTS
 ========================= */
@@ -388,6 +392,36 @@ fieldset.body {
 input:focus {
     outline:none;
 }
+
+/* =======================
+   LIGHTBOX
+========================= */
+#overlay {
+    background: rgba(0, 0, 0, .7);
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+#regForm {
+    color: #224055;
+    background: #efefef;
+    border: 2px solid #7D9138;
+    border-radius: 3px;
+    width: 50%;
+    max-width: 680px;
+    padding: 0 20px 10px 20px;
+    position: absolute;
+    top: 80px;
+    left: 25%;
+    right: 25%;
+    z-index: 100;
+    display: none;
+}
+
 /* =======================
    HOME PAGE STYLES
 ========================= */
