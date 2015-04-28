@@ -3,27 +3,22 @@
     <li <%== is_current 'cart' %>><%= link_to "View Cart (${\($#$cart+1)})" => 'cart', id => 'view_cart', items => ${\($#$cart+1)} %></li>
     <li>
     <div id="searchContainer">
-            <a href="#" id="searchButton"><span>Search</span></a>
-            <div id="searchBox">                
-            %= form_for search, id => 'searchForm' => (method => 'POST') => begin
-                <fieldset class="body">
-                    <fieldset>
+            <a href="#" id="search-button">Search</a>                
+            %= form_for search, id => 'search-form' => (method => 'POST') => begin
+                <fieldset>
                           %= label_for zip => 'Zip (Required)'
                           %= text_field 'zip'
-                    </fieldset>
-                    <fieldset>
+                    <br />
                           <p>Either MLS or Address is required</p>
                           %= label_for mls => 'MLS'
                           %= text_field 'mls'
-                    </fieldset>
-                    <fieldset>
+                    <br />
                           %= label_for address => 'Address'
                           %= text_field 'address'
-                    </fieldset>
+                    <br />
                     %= submit_button 'Search', id => 'search'
                 </fieldset>
-                % end
-            </div>
+            % end
     </li>
     <li <%== is_current 'upload' %>><%= link_to Upload => 'upload' %></li>
     <!-- <li <%== is_current 'profile' %>><%= link_to Profile => 'profile' %></li> -->
@@ -34,7 +29,7 @@
 % } else {
     <li>   
         <div id="loginContainer">
-            <a href="#" id="loginButton"><span>Log In</span></a>
+            <%= link_to 'login', id => 'loginButton' => begin %><span>Log In</span><% end %>
             <div id="loginBox">                
                 %= form_for 'login', id => 'loginForm' => (method => 'POST') => begin
                 % if ( stash 'success' || flash 'f_success' ) {

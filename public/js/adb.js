@@ -19,45 +19,26 @@ $(function() {
     });
 });
 
-//Dropdown search menu
+//Toggle search form from Revise Search button and "search" in menu
 $(function() {
-    var button = $('#searchButton');
-    var box = $('#searchBox');
-    var form = $('#searchForm');
+    var button = $('#search-button');
+    $('#reviseSearch').show();
+    $('.search-form').hide();
     button.removeAttr('href');
-    button.mouseup(function(login) {
-        box.toggle();
-        button.toggleClass('active');
-    });
-    form.mouseup(function() { 
-        return false;
-    });
-    $(this).mouseup(function(login) {
-        if(!($(login.target).parent('#searchButton').length > 0)) {
-            button.removeClass('active');
-            box.hide();
-        }
-    });
-});
+    button.css('cursor', 'pointer');
+})
 
-//Toggle search menu when Revise Search button is clicked
-$(function(){
-    var button = $('#searchButton');
-    var box = $('#searchBox');
-    var form = $('#searchForm');
-    $('#reviseSearch').mouseup(function(login) {
-        box.toggle();
+$(function() {
+    var button = $('#search-button');
+    var form = $('#search-form');
+    $('#reviseSearch').click(function() {
         button.toggleClass('active');
+        form.toggle();
     });
-    form.mouseup(function() { 
-        return false;
-    });
-    $(this).mouseup(function(login) {
-        if(!($(login.target).parent('#searchButton').length > 0)) {
-            button.removeClass('active');
-            box.hide();
-        }
-    });
+    button.click(function(){
+        $(this).toggleClass('active');
+        form.toggle();
+    })
 });
 
 //Registration Form lightbox

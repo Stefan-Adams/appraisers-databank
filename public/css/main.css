@@ -200,7 +200,7 @@ h1, h2, h3, h4, p, li, a{
    DROP DOWN MENU 
 ========================= */
 /* Login Container (default to float:right) */
-#loginContainer, #searchContainer {
+#loginContainer {
     position:relative;
     float:right;
     /*font-size:12px;*/
@@ -210,12 +210,8 @@ h1, h2, h3, h4, p, li, a{
     cursor: pointer;
 }
 
-#searchButton:hover {
-    cursor: pointer;
-}
-
 /* Login Box */
-#loginBox, #searchBox {
+#loginBox {
     position:absolute;
     top:34px;
     right:-150px;
@@ -224,14 +220,12 @@ h1, h2, h3, h4, p, li, a{
 }
 
 /* If the Login Button has been clicked */  
-#loginButton span,
-#searchButton span {
+#loginButton span {
     padding: 4px 8px;
 }
 
 
-#loginButton.active, 
-#searchButton.active {
+#loginButton.active {
     background-color: #161F2E;
     padding-bottom: 34px;
     padding-top: 5px;
@@ -240,8 +234,7 @@ h1, h2, h3, h4, p, li, a{
 }
 
 /* Login Form */
-#loginForm, 
-#searchForm {
+#loginForm {
     width:248px; 
     /*border:1px solid #fafafa;*/
     border-radius:3px 0 3px 3px;
@@ -253,8 +246,7 @@ h1, h2, h3, h4, p, li, a{
     padding:6px;
 }
 
-#loginForm fieldset,
-#searchForm fieldset {
+#loginForm fieldset {
     margin:0 0 12px 0;
     display:block;
     border:0;
@@ -270,9 +262,7 @@ fieldset.body {
 }
 
 #loginForm .body fieldset,
-#loginForm .body input[type="submit"], 
-#searchForm .body fieldset,
-#searchForm .body input[type="submit"]{
+#loginForm .body input[type="submit"] {
     margin-left: 4px;
 }
 
@@ -314,21 +304,14 @@ fieldset.body {
     float:left;
 }
 
-#loginForm .body fieldset label, 
-#searchForm .body fieldset label{
+#loginForm .body fieldset label {
     display:block;
     float:none;
     margin:0 0 6px 0;
 }
 
-#searchForm p {
-    font-size: 14px;
-    color: #3a454d;
-}
-
 /* Default Input */
-#loginForm input, 
-#searchForm input {
+#loginForm input {
     width:92%;
     margin-right: auto;
     margin-left: auto;
@@ -344,16 +327,14 @@ fieldset.body {
     font-size:12px;
 }
 
-#loginForm input[type="submit"], 
-#searchForm input[type="submit"]{
+#loginForm input[type="submit"] {
     width: 40%;
     color: #fafafa;
     font-size: 18px;
 }
 
 /* Sign In Button */
-#loginForm #login 
-#searchForm #search {
+#loginForm #login {
     float:left;
     font-size: 18px;
     background:#7D9138;
@@ -373,10 +354,6 @@ fieldset.body {
     background-color: #9DB648;
 }
 
-#searchForm #search:hover {
-    background-color: #9DB648;
-}
-
 /* Forgot your password */
 #loginForm span {
     text-align:center;
@@ -392,6 +369,74 @@ fieldset.body {
 input:focus {
     outline:none;
 }
+
+/* Search form */
+#reviseSearch {
+    display: none;
+}
+
+#search-button .active {
+    background-color: #161F2E;
+    padding-bottom: 34px;
+    padding-top: 5px;
+    border-radius: 2px;
+    color: #fafafa;  
+} 
+
+#search-form {
+    display: none;
+    width:248px; 
+    border-radius:3px 0 3px 3px;
+    -moz-border-radius:3px 0 3px 3px;
+    box-shadow: 4px 5px 8px #333;
+    -webkit-box-shadow: 4px 5px 8px #333;
+    margin-top:-1px;
+    background: #161F2E;
+    padding:6px;
+    position: absolute;
+    top: 134px;
+    right: 130px;
+}
+
+#search-form input {
+    width:92%;
+    margin-right: auto;
+    margin-left: auto;
+    border:1px solid #899caa;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    color:#3a454d;
+    font-weight:bold;
+    padding:8px 8px;
+    box-shadow:inset 0px 1px 3px #bbb;
+    -webkit-box-shadow:inset 0px 1px 3px #bbb;
+    -moz-box-shadow:inset 0px 1px 3px #bbb;
+    font-size:12px;
+}
+
+#search-form input[type="submit"]{
+    width: 40%;
+    color: #fafafa;
+    font-size: 18px;
+}
+
+#search-form fieldset {
+    background:#fff;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    padding:10px 13px;
+    margin:0;
+}
+
+#search-form p {
+    font-size: 14px;
+    color: #3a454d;
+}
+
+#search-form label {
+    color: #3a454d;
+}
+
 
 /* =======================
    LIGHTBOX
