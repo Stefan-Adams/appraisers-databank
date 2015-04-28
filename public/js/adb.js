@@ -28,14 +28,14 @@ var revise = $('#reviseSearch');
     
 revise.show();
 searchform.hide();
-button.removeAttr('href');
-button.css('cursor', 'pointer');
+searchbutton.removeAttr('href');
+searchbutton.css('cursor', 'pointer');
     
 revise.click(function() {
     button.toggleClass('active');
     searchform.toggle();
 });
-button.click(function(){
+searchbutton.click(function(){
     $(this).toggleClass('active');
     searchform.toggle();
 })
@@ -52,7 +52,6 @@ var overlay = $('#overlay');
 var link = $('#regLink');
 var regForm = $('#regForm');
     
-
 link.removeAttr('href');
 link.css('cursor', 'pointer');
 link.click(function() {
