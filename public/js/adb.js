@@ -1,44 +1,50 @@
 $(document).ready(function(){
   
 //Dropdown login menu
-var button = $('#loginButton');
+var loginbutton = $('#loginButton');
 var box = $('#loginBox');
-var form = $('#loginForm');
-button.removeAttr('href');
-button.click(function(login) {
+var loginform = $('#loginForm');
+loginbutton.removeAttr('href');
+loginbutton.click(function(login) {
     console.log('hi');
-    $(this).html("djkhdkjfd");
+    $(this).addClass('active');
     box.toggle();
 });
-form.click(function() { 
+loginform.click(function() { 
     return false;
 });
 $(this).click(function(login) {
-    if(!($(login.target).parent('#loginButton').length > 0)) {
-        button.removeClass('active');
+    if(!($(login.target).parent(loginbutton).length > 0)) {
+        loginbutton.removeClass('active');
         box.hide();
     }
 });
 
 
 //Toggle search form from Revise Search button and "search" in menu
-var button = $('#search-button');
-var form = $('#search-form');
+var searchbutton = $('#search-button');
+var searchform = $('#search-form');
 var revise = $('#reviseSearch');
     
 revise.show();
-form.hide();
+searchform.hide();
 button.removeAttr('href');
 button.css('cursor', 'pointer');
     
 revise.click(function() {
     button.addClass('active');
-    form.toggle();
+    searchform.toggle();
 });
 button.click(function(){
     $(this).addClass('active');
-    form.toggle();
+    searchform.toggle();
 })
+$(this).click(function(search) {
+    if(!($(search.target).parent(searchbutton).length > 0)) {
+        searchbutton.removeClass('active');
+        box.hide();
+    }
+});
 
 
 //Registration Form lightbox
