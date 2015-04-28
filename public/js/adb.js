@@ -7,7 +7,7 @@ var loginform = $('#loginForm');
 loginbutton.removeAttr('href');
 loginbutton.click(function(login) {
     console.log('hi');
-    $(this).addClass('active');
+    $(this).toggleClass('active');
     box.toggle();
 });
 loginform.click(function() { 
@@ -32,11 +32,11 @@ button.removeAttr('href');
 button.css('cursor', 'pointer');
     
 revise.click(function() {
-    button.addClass('active');
+    button.toggleClass('active');
     searchform.toggle();
 });
 button.click(function(){
-    $(this).addClass('active');
+    $(this).toggleClass('active');
     searchform.toggle();
 })
 $(this).click(function(search) {
