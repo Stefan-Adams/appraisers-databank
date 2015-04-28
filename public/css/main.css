@@ -225,7 +225,7 @@ h1, h2, h3, h4, p, li, a{
 }
 
 
-#loginButton.active {
+.active {
     background-color: #161F2E;
     padding-bottom: 34px;
     padding-top: 5px;
