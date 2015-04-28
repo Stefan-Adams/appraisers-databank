@@ -5,7 +5,7 @@
     <br /><br />
     <div class="table">
         <button id="reviseSearch">Revise Search</button>
-        %= form_for search, class => 'search-form' => (method => 'POST') => begin
+        %= form_for 'search', class => 'search-form' => (method => 'POST') => begin
             <fieldset>
                       %= label_for zip => 'Zip (Required)'
                       %= text_field 'zip'
