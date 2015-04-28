@@ -5,14 +5,14 @@ var button = $('#loginButton');
 var box = $('#loginBox');
 var form = $('#loginForm');
 button.removeAttr('href');
-button.mouseup(function(login) {
+button.click(function(login) {
     box.toggle();
-    button.toggleClass('active');
+    button.addClass('active');
 });
-form.mouseup(function() { 
+form.click(function() { 
     return false;
 });
-$(this).mouseup(function(login) {
+$(this).click(function(login) {
     if(!($(login.target).parent('#loginButton').length > 0)) {
         button.removeClass('active');
         box.hide();
