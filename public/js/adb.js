@@ -48,13 +48,10 @@ $(this).click(function(search) {
 
 
 //Registration Form lightbox
-var overlay = $('<div id="overlay"></div>');
+var overlay = $('#overlay');
 var link = $('#regLink');
 var regForm = $('#regForm');
     
-    
-$("body").append(overlay);
-overlay.append(regForm);
 
 link.removeAttr('href');
 link.css('cursor', 'pointer');
