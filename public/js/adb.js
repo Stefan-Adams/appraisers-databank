@@ -7,6 +7,7 @@ var form = $('#loginForm');
 button.removeAttr('href');
 button.click(function(login) {
     box.toggle();
+    console.log('hi');
     button.addClass('active');
 });
 form.click(function() { 
