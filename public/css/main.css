@@ -464,7 +464,6 @@ input:focus {
     left: 25%;
     right: 25%;
     z-index: 100;
-    display: none;
 }
 
 /* =======================
