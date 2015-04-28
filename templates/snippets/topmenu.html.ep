@@ -4,7 +4,7 @@
     <li>
     <div id="searchContainer">
             <a href="#" id="search-button">Search</a>                
-            %= form_for search, id => 'search-form' => (method => 'POST') => begin
+            %= form_for 'search', id => 'search-form' => (method => 'POST') => begin
                 <fieldset>
                           %= label_for zip => 'Zip (Required)'
                           %= text_field 'zip'
