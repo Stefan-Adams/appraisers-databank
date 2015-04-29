@@ -19,6 +19,10 @@ $(this).click(function(login) {
         box.hide();
     }
 });
+    
+$(this + ':not("#loginBox")').click(function(){
+    console.log('good job');
+});
 
 
 //Toggle search form from Revise Search button and "search" in menu
@@ -64,6 +68,8 @@ $(this).click(function(overlay) {
         box.hide();
     }
 });
+    
+
 
     
 });
