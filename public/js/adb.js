@@ -13,13 +13,21 @@ loginbutton.click(function(login) {
 loginform.click(function() { 
     return false;
 });
-$(this).click(function(login) {
-    if(!($(login.target).parent(loginbutton).length > 0)) {
+$(this).click(function(goaway) {
+    if(!($(goaway.target).parent(loginbutton).length > 0)) {
         loginbutton.removeClass('active');
         box.hide();
     }
+    if(!($(goaway.target).parent(searchbutton).length > 0)) {
+        searchbutton.removeClass('active');
+        box.hide();
+    }
+    if(!($(goaway.target).parent($('#register')).length > 0)) {
+        $('#register').removeClass('active');
+        box.hide();
+    }
 });
-
+$('#body > not(.class)')
 
 //Toggle search form from Revise Search button and "search" in menu
 var searchbutton = $('#search-button');
@@ -39,12 +47,6 @@ searchbutton.click(function(){
     $(this).toggleClass('active');
     searchform.toggle();
 })
-$(this).click(function(search) {
-    if(!($(search.target).parent(searchbutton).length > 0)) {
-        searchbutton.removeClass('active');
-        box.hide();
-    }
-});
 
 
 //Registration Form lightbox
@@ -58,12 +60,6 @@ link.click(function() {
     overlay.toggle();
 });
     
-$(this).click(function(overlay) {
-    if(!($(overlay.target).parent($('#register')).length > 0)) {
-        $('#register').removeClass('active');
-        box.hide();
-    }
-});
 
     
 });
