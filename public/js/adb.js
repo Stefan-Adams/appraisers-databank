@@ -27,7 +27,10 @@ $(this).click(function(goaway) {
         box.hide();
     }
 });
-$('#body > not(.class)')
+
+$(this).click(function(){
+    console.log('good job');
+});
 
 //Toggle search form from Revise Search button and "search" in menu
 var searchbutton = $('#search-button');
@@ -40,7 +43,7 @@ searchbutton.removeAttr('href');
 searchbutton.css('cursor', 'pointer');
     
 revise.click(function() {
-    button.toggleClass('active');
+    searchbutton.toggleClass('active');
     searchform.toggle();
 });
 searchbutton.click(function(){
@@ -59,7 +62,6 @@ link.css('cursor', 'pointer');
 link.click(function() {
     overlay.toggle();
 });
-    
 
     
 });
