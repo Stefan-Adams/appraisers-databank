@@ -56,7 +56,7 @@
             </div>
         </div>
     </li>
-    <li <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
+    <li id="register" <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
         <div id="overlay">
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
             <h3>Register for ADB</h3>

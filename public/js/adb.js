@@ -57,6 +57,13 @@ link.css('cursor', 'pointer');
 link.click(function() {
     overlay.toggle();
 });
+    
+$(this).click(function(overlay) {
+    if(!($(overlay.target).parent($('#register')).length > 0)) {
+        $('#register').removeClass('active');
+        box.hide();
+    }
+});
 
     
 });
