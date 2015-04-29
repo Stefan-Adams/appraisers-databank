@@ -444,7 +444,7 @@ input:focus {
 #overlay {
     background: rgba(0, 0, 0, .7);
     width: 100%;
-    height: 200vh;
+    height: 312vh;
     position: absolute;
     left: 0;
     top: 0;
@@ -453,7 +453,7 @@ input:focus {
 
 #regForm {
     color: #224055;
-    background: #efefef;
+    background: #fafafa;
     border: 2px solid #7D9138;
     border-radius: 3px;
     width: 50%;
@@ -463,7 +463,15 @@ input:focus {
     top: 80px;
     left: 25%;
     right: 25%;
-    z-index: 100;
+    z-index: 90;
+}
+
+#close-button {
+    position: relative;
+    bottom: 12px;
+    left: 630px;
+    z-index: 91;
+    cursor: pointer;
 }
 
 /* =======================

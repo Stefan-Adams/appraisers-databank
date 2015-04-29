@@ -56,10 +56,16 @@ searchbutton.click(function(){
 var overlay = $('#overlay');
 var link = $('#regLink');
 var regForm = $('#regForm');
-    
+var close = $('#close-button');
+
+
 link.removeAttr('href');
 link.css('cursor', 'pointer');
 link.click(function() {
+    overlay.toggle();
+});
+
+close.click(function() {
     overlay.toggle();
 });
 
