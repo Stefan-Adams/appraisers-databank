@@ -124,6 +124,10 @@ h1, h2, h3, h4, p, li, a{
     float: right;
 }
 
+.left {
+    float: left;
+}
+
 .flex,  .nav {
     display: flex;
     display: -webkit-flex;
@@ -199,182 +203,11 @@ h1, h2, h3, h4, p, li, a{
 /* =======================
    DROP DOWN MENU 
 ========================= */
-/* Login Container (default to float:right) */
-#loginContainer {
-    position:relative;
-    float:right;
-    /*font-size:12px;*/
-}
-
-#loginButton:hover {
-    cursor: pointer;
-}
-
-/* Login Box */
-#loginBox {
-    position:absolute;
-    top:34px;
-    right:-150px;
-    display:none;
-    z-index:29;
-}
-
-/* If the Login Button has been clicked */  
-#loginButton span {
-    padding: 4px 8px;
-}
-
-
-.active {
-    background-color: #161F2E;
-    padding-bottom: 34px;
-    padding-top: 5px;
-    border-radius: 2px;
-    color: #fafafa;  
-}
-
-/* Login Form */
-#loginForm {
-    width:248px; 
-    /*border:1px solid #fafafa;*/
-    border-radius:3px 0 3px 3px;
-    -moz-border-radius:3px 0 3px 3px;
-    box-shadow: 4px 5px 8px #333;
-    -webkit-box-shadow: 4px 5px 8px #333;
-    margin-top:-1px;
-    background: #161F2E;
-    padding:6px;
-}
-
-#loginForm fieldset {
-    margin:0 0 12px 0;
-    display:block;
-    border:0;
-    padding:0;
-}
-
-fieldset.body {
-    background:#fff;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    padding:10px 13px;
-    margin:0;
-}
-
-#loginForm .body fieldset,
-#loginForm .body input[type="submit"] {
-    margin-left: 4px;
-}
-
-#loginForm .body .checkbox {
-    margin-right: 4px;
-    position: relative;
-    top: 23px;
-}
-
-
-#loginForm .error-message,
-#loginForm .success-message {
-    font-size: 1em;
-    padding: 5px 10px;
-}
-
-#loginForm #checkbox {
-    width:auto;
-    margin:1px 9px 0 0;
-    float:right;
-    padding:0;
-    border:0;
-    *margin:-3px 9px 0 0; /* IE7 Fix */
-    position: relative;
-    top: 35px;
-}
-
-#loginForm .checkbox {
-    font-size: .8em;
-    position: relative;
-    bottom: 12px;
-    float: right;
-}
-
-.body label {
-    color:#3a454d;
-    margin:9px 0 0 0;
-    display:block;
-    float:left;
-}
-
-#loginForm .body fieldset label {
-    display:block;
-    float:none;
-    margin:0 0 6px 0;
-}
-
-/* Default Input */
-#loginForm input {
-    width:92%;
-    margin-right: auto;
-    margin-left: auto;
-    border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    color:#3a454d;
-    font-weight:bold;
-    padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
-    font-size:12px;
-}
-
-#loginForm input[type="submit"] {
-    width: 40%;
-    color: #fafafa;
-    font-size: 18px;
-}
-
-/* Sign In Button */
-#loginForm #login {
-    float:left;
-    font-size: 18px;
-    background:#7D9138;
-    color:#fafafa;
-    padding:7px 15px 8px 15px;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    margin:-10px 12px 0 10px;
-    cursor:pointer;
-    *padding:7px 2px 8px 2px; /* IE7 Fix */
-}
-
-#loginForm #login:hover {
-    background-color: #9DB648;
-}
-
-/* Forgot your password */
-#loginForm span {
-    text-align:center;
-    display:block;
-    padding:7px 0 4px 0;
-}
-
-#loginForm span a {
-    color:#fafafa;
-    font-size:12px;
-}
-
-input:focus {
-    outline:none;
-}
-
-/* Search form */
 #reviseSearch {
     display: none;
 }
 
+#login-button .active,
 #search-button .active {
     background-color: #161F2E;
     padding-bottom: 34px;
@@ -383,6 +216,7 @@ input:focus {
     color: #fafafa;  
 } 
 
+#login-form,
 #search-form {
     display: none;
     width:248px; 
@@ -398,6 +232,7 @@ input:focus {
     right: 130px;
 }
 
+#login-form input,
 #search-form input {
     width:92%;
     margin-right: auto;
@@ -414,12 +249,19 @@ input:focus {
     font-size:12px;
 }
 
+#login-form input[type="submit"]{
+    width: 40%;
+    color: #fafafa;
+    font-size: 18px;
+}
+
 #search-form input[type="submit"]{
     width: 40%;
     color: #fafafa;
     font-size: 18px;
 }
 
+#login-form fieldset,
 #search-form fieldset {
     background:#fff;
     border-radius:3px;
@@ -428,13 +270,26 @@ input:focus {
     margin:0;
 }
 
+#login-form label,
+#search-form label {
+    color: #3a454d;
+}
+
+#login-form p,
+#login-form a,
 #search-form p {
     font-size: 14px;
     color: #3a454d;
 }
 
-#search-form label {
-    color: #3a454d;
+.checkbox {
+float: right;
+}
+
+#checkbox {
+    position: relative;
+    bottom: 62px;
+    left: 105px;
 }
 
 

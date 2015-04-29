@@ -1,9 +1,7 @@
 % if ( session('user') ) {
     % my $cart = session 'cart';
     <li <%== is_current 'cart' %>><%= link_to "View Cart (${\($#$cart+1)})" => 'cart', id => 'view_cart', items => ${\($#$cart+1)} %></li>
-    <li>
-    <div id="searchContainer">
-            <a href="#" id="search-button">Search</a>                
+    <li>    <%= link_to "Search" => 'search', id => 'search-button' %>                
             %= form_for 'search', id => 'search-form' => (method => 'POST') => begin
                 <fieldset>
                           %= label_for zip => 'Zip (Required)'
@@ -28,33 +26,27 @@
     <li><%= link_to Logout => 'logout' %></li>
 % } else {
     <li>   
-        <div id="loginContainer">
-            <%= link_to 'login', id => 'loginButton' => begin %><span>Log In</span><% end %>
-            <div id="loginBox">                
-                %= form_for 'login', id => 'loginForm' => (method => 'POST') => begin
+            <%= link_to "Log In", 'login', id => 'login-button' %>                
+                %= form_for 'login', id => 'login-form' => (method => 'POST') => begin
                 % if ( stash 'success' || flash 'f_success' ) {
                 <div class="success-message"><%= stash 'success' %><%= flash 'f_success' %></div>
                 % }
                 % if ( stash 'error' || flash 'f_error'  ) {
                 <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %></div>
                 % }
-                <fieldset class="body">
-                    <fieldset>
+                <fieldset>
                          %= label_for email => 'Email'
                          %= email_field 'email'
-                    </fieldset>
-                    <fieldset>
+                    <br />
                         %= label_for password => 'Password'
                         %= password_field 'password'
-                    </fieldset>
+                    <br />
                     %= submit_button 'Log In', id => 'login'
                     %= label_for remember => 'Remember me', class => 'checkbox'
                     %= check_box 'remember', id => 'checkbox'
+                    <a href="#">Forgot your password?</a>
                 </fieldset>
-                <span><a href="#">Forgot your password?</a></span>
                 % end
-            </div>
-        </div>
     </li>
     <li id="register" <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
         <div id="overlay">

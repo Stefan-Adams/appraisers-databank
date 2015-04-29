@@ -1,35 +1,23 @@
 $(document).ready(function(){
   
 //Dropdown login menu
-var loginbutton = $('#loginButton');
-var box = $('#loginBox');
-var loginform = $('#loginForm');
+var loginbutton = $('#login-button');
+var loginform = $('#login-form');
+    
+loginform.hide();
 loginbutton.removeAttr('href');
-loginbutton.click(function(login) {
-    console.log('hi');
-    $(this).toggleClass('active');
-    box.toggle();
-});
-loginform.click(function() { 
-    return false;
-});
-$(this).click(function(goaway) {
-    if(!($(goaway.target).parent(loginbutton).length > 0)) {
-        loginbutton.removeClass('active');
-        box.hide();
-    }
-    if(!($(goaway.target).parent(searchbutton).length > 0)) {
-        searchbutton.removeClass('active');
-        box.hide();
-    }
-    if(!($(goaway.target).parent($('#register')).length > 0)) {
-        $('#register').removeClass('active');
-        box.hide();
-    }
-});
+loginbutton.css('cursor', 'pointer');
 
-$(this).click(function(){
-    console.log('good job');
+loginbutton.click(function(){
+    $(this).toggleClass('active');
+    loginform.toggle();
+});
+   
+$(this).click(function(login) {
+    if(!($(login.target).parent(loginbutton).length > 0)) {
+        loginbutton.removeClass('active');
+        loginform.hide();
+    }
 });
 
 //Toggle search form from Revise Search button and "search" in menu
