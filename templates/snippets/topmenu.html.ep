@@ -42,8 +42,8 @@
                         %= password_field 'password'
                     <br />
                     %= submit_button 'Log In', id => 'login'
-                    %= label_for remember => '<p>Remember me</p>', class => 'checkbox'
-                    %= check_box 'remember', id => 'checkbox'
+                    %= label_for remember => '<span class="tos">Remember me</span>', class => 'checkbox'
+                    %= check_box 'remember' => 'yes', id => 'checkbox'
                     <a href="#">Forgot your password?</a>
                 </fieldset>
                 % end
@@ -53,7 +53,7 @@
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
             <img id="close-button" src="img/close-button.png" />
             <h3>Register for ADB</h3>
-            <p>All fields are required</p>
+            <p class="dark-text">All fields are required</p>
             <div class="col">
                 %= label_for firstname => 'First Name'
                 <br>
@@ -122,7 +122,7 @@
                 <br>
                 %= check_box 'tos' => include('user/tos')
                 %= label_for tos => 'I agree to the Terms of Service'
-                <div id="tos_text"><%= include 'user/tos' %></div>
+                <div id="tos_text" class="dark-text"><%= include 'user/tos' %></div>
                 %= submit_button 'Create Account'
             </div>
         % end 

@@ -89,9 +89,6 @@ h5 {
 .intro p, .int p, .light-text {
     color: #fafafa;
 }
-h1, h2, h3, h4, p, li, a{
-    letter-spacing: 1px;
-}
 
 .success-message, .error-message {
     font-size: 1.4em;
@@ -115,6 +112,10 @@ h1, h2, h3, h4, p, li, a{
 
 .tos {
     font-size: .8em;
+}
+
+.dark-text{
+    color: #224055;
 }
 
 /* =======================
@@ -322,9 +323,9 @@ float: right;
 }
 
 #close-button {
-    position: relative;
-    bottom: 12px;
-    left: 630px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
     z-index: 91;
     cursor: pointer;
 }

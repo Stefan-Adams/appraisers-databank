@@ -6,81 +6,78 @@
     % } else {
         <p>Update your profile.</p>
     % }
-    <hr />
     %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns") => begin
         <div class="col">
-            %= label_for firstname => 'First Name *'
+            <p>All fields are required</p>
+            %= label_for firstname => 'First Name'
             <br>
             %= text_field 'firstname'
             <br>
     
-            %= label_for lastname => 'Last Name *'
+            %= label_for lastname => 'Last Name'
             <br>
             %= text_field 'lastname'
             <br>
     
-            %= label_for address => 'Address *'
+            %= label_for address => 'Address'
             <br>
             %= text_field 'address'
             <br>
     
-            %= label_for city => 'City *'
+            %= label_for city => 'City'
             <br>
             %= text_field 'city'
             <br>
     
-            %= label_for state => 'State *'
+            %= label_for state => 'State'
             <br>
             %= text_field 'state'
             <br>
     
-            %= label_for zip => 'Zip *'
+            %= label_for zip => 'Zip'
             <br>
             %= text_field 'zip'
             <br>
     
-            %= label_for phone => 'Phone *'
+            %= label_for phone => 'Phone'
             <br>
             %= text_field 'phone'
             <br>
             
-            %= check_box 'tos' => include('user/tos')
-            %= label_for tos => 'I agree to the Terms of Service *'
-            <br>
         </div>
         <div class="col">
-            %= label_for email => 'Email *'
+            %= label_for email => 'Email'
             <br>
             %= email_field 'email'
             <br>
     
-            %= label_for password => 'Password * (minimum 6 characters)'
+            %= label_for password => 'Password (minimum 6 characters)'
             <br>
             %= password_field 'password'
             <br>
     
-            %= label_for pass_again => 'Password again *'
+            %= label_for pass_again => 'Password again'
             <br>
             %= password_field 'pass_again'
             <br>
     
-            %= label_for slid => 'State License Number *'
+            %= label_for slid => 'State License Number'
             <br>
             %= text_field 'slid'
             <br>
     
-            %= label_for taxid => 'Federal ID or Social Security Number *'
+            %= label_for taxid => 'Federal ID or Social Security Number'
             <br>
             %= text_field 'taxid'
             <br>
     
-            %= label_for w9 => 'W-9 *'
+            %= label_for w9 => 'W-9'
             <br>
             %= file_field 'w9'
             <br>
-
-        </div>
-        <div class="col">
+            %= check_box 'tos' => include('user/tos')
+            %= label_for tos => 'I agree to the Terms of Service'
+            <br>
             <div id="tos_text"><%= include 'user/tos' %></div>
             %= submit_button 'Create Account'
         </div>
