@@ -42,7 +42,7 @@
                         %= password_field 'password'
                     <br />
                     %= submit_button 'Log In', id => 'login'
-                    %= label_for remember => '<span class="tos">Remember me</span>', class => 'checkbox'
+                    %= label_for remember => '<p>Remember me</p>', class => 'checkbox'
                     %= check_box 'remember' => 'yes', id => 'checkbox'
                     <a href="#">Forgot your password?</a>
                 </fieldset>

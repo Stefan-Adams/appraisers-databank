@@ -208,8 +208,13 @@ h5 {
     display: none;
 }
 
-#login-button .active,
-#search-button .active {
+#login-button,
+#search-button{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.active {
     background-color: #161F2E;
     padding-bottom: 34px;
     padding-top: 5px;
