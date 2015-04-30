@@ -51,7 +51,7 @@
     <li id="register" <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
         <div id="overlay">
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
-            <img id="close-button" src="img/close-button.png" />
+            <img id="close-button" src="/img/close-button.png" />
             <h3>Register for ADB</h3>
             <p class="dark-text">All fields are required</p>
             <div class="col">
