@@ -338,6 +338,12 @@ float: right;
 /* =======================
    HOME PAGE STYLES
 ========================= */
+.small-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
 
 .boxes {
     width: 100%;
