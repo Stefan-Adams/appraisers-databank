@@ -6,19 +6,20 @@
     <div class="table">
         <button id="reviseSearch">Revise Search</button>
         %= form_for 'search', class => 'search-form' => (method => 'POST') => begin
-            <fieldset>
-                      %= label_for zip => 'Zip (Required)'
-                      %= text_field 'zip'
-                <br />
-                      <p>Either MLS or Address is required</p>
-                      %= label_for mls => 'MLS'
-                      %= text_field 'mls'
-                <br />
-                      %= label_for address => 'Address'
-                      %= text_field 'address'
-                <br />
-                %= submit_button 'Search', id => 'search'
-            </fieldset>
+              %= label_for zip => 'Zip (Required)'
+              <br>
+              %= text_field 'zip'
+              <br>
+              <p>Either MLS or Address is required</p>
+              %= label_for mls => 'MLS'
+              <br>
+              %= text_field 'mls'
+              <br>
+              %= label_for address => 'Address'
+              <br>
+              %= text_field 'address'
+              <br>
+              %= submit_button 'Search', id => 'search'
         % end
         <div>
             % my $action = begin
