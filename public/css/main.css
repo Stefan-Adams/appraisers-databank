@@ -546,6 +546,10 @@ input[type=submit]:hover {
     color: #fafafa;
 }
 
+#contact-form select{
+    color: #3a454d;
+}
+
 label.field-with-error{ 
     color: #C54442; 
 }
