@@ -141,6 +141,22 @@ h5 {
     -webkit-align-items: flex-end;
 }
 
+.columns::after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.col{
+    float: left;
+    width: 40%;
+    min-width: 230px;
+}
+
+.col:last-child{
+    width: 60%;
+}
+
 /* =======================
    HEADER STYLES
 ========================= */
@@ -243,15 +259,6 @@ h5 {
     width:92%;
     margin-right: auto;
     margin-left: auto;
-    border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    color:#3a454d;
-    font-weight:bold;
-    padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
     font-size:12px;
 }
 
@@ -415,7 +422,7 @@ float: right;
 }
 
 .content-area, .welcome-area {
-    padding: 20px;
+    padding: 20px 0 20px 0;
     z-index: 0;
 }
 
@@ -493,6 +500,29 @@ float: right;
 /* =======================
    FORM STYLES
 ========================= */
+input{
+    border:1px solid #899caa;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    color:#3a454d;
+    padding:8px 8px;
+    box-shadow:inset 0px 1px 3px #bbb;
+    -webkit-box-shadow:inset 0px 1px 3px #bbb;
+    -moz-box-shadow:inset 0px 1px 3px #bbb;
+}
+
+textarea{
+    min-width: 400px;
+    min-height: 200px;
+    border:1px solid #899caa;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    color:#3a454d;
+    padding:8px 8px;
+    box-shadow:inset 0px 1px 3px #bbb;
+    -webkit-box-shadow:inset 0px 1px 3px #bbb;
+    -moz-box-shadow:inset 0px 1px 3px #bbb;
+}
 
 input {
     margin-top: 8px;
@@ -500,36 +530,19 @@ input {
 }
 
 input[type=submit] {
+    padding: 8px 10px;
+    background: #7D9138;
+    color: #ffffff;
     font-size: 1.2em;
-    background:#7D9138;
-    color:#fafafa;
-    padding:7px 15px 8px 15px;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    cursor:pointer;
+    border: none;
 }
 
 input[type=submit]:hover {
     background-color: #9DB648;
 }
 
-.columns::after {
-    content: " ";
-    display: table;
-    clear: both;
-}
-
-.col{
-    float: left;
-    width: 40%;
-    min-width: 230px;
-}
-
-.col:last-child{
-    width: 60%;
+#contact-form label {
+    color: #fafafa;
 }
 
 label.field-with-error{ 
