@@ -1,10 +1,10 @@
 % layout 'subpage';
 <h2 class="page-title">Contact Us</h2>
     <div class="text">
-        %= form_for contact => begin
+        %= form_for contact, id => 'contact-form' => begin
             %=label_for topic => '<p>How can we help you?</p>'
             <br>
-            %=select_field 'topic' => [[A document I downloaded is incomplete => 'incomplete_doc'], [I'm looking for a document that you don't have => 'request_doc'], [I love ADB and want to let you know => 'positive_review'], [Something else => 'other'] ], id=> 'topic'
+            %=select_field 'topic' => [[A document I downloaded is incomplete => 'incomplete_doc'], [I'm looking for a document that you don't have => 'request_doc'], [I love ADB and want to let you know => 'positive_review'], [Something else => 'other'] ], id => 'topic'
             <br>
             %=label_for description => '<p>Please give us more details:</p>'
             <br>
