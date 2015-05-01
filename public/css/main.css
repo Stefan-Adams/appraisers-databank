@@ -296,7 +296,9 @@ h5 {
 }
 
 .checkbox {
-    float: right;
+    position: relative;
+    bottom: 38px;
+    left: 112px;
     font-size: 14px;
 }
 

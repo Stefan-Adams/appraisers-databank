@@ -1,7 +1,8 @@
 % layout 'subpage';
 <h2 class="page-title">Upload Appraisal Documents</h2>
 <div class="text">
-    <p>Please upload a single PDF document that includes basic information, sketches, and photos. Failure to upload a complete document could result in you not being paid when your document sells.</p>
+    <p>Please upload a single PDF document that includes basic information, sketches, and photos.</p>
+    <p>Failure to upload a complete document could result in you not being paid when your document sells.</p>
     %= form_for upload => (method => 'POST', enctype => 'multipart/form-data') => begin
         %= label_for doc => 'Subject Propery Document'
         <br>

@@ -4,23 +4,6 @@
     <!-- Welcome, <%= session('user')->{firstname} %><br /> -->
     <br /><br />
     <div class="table">
-        <button id="reviseSearch">Revise Search</button>
-        %= form_for 'search', class => 'search-form' => (method => 'POST') => begin
-              %= label_for zip => 'Zip (Required)'
-              <br>
-              %= text_field 'zip'
-              <br>
-              <p>Either MLS or Address is required</p>
-              %= label_for mls => 'MLS'
-              <br>
-              %= text_field 'mls'
-              <br>
-              %= label_for address => 'Address'
-              <br>
-              %= text_field 'address'
-              <br>
-              %= submit_button 'Search', id => 'search'
-        % end
         <div>
             % my $action = begin
                 % my $doc = shift;
@@ -55,6 +38,24 @@
             % end
             %= include 'documents/table', action => $action, docs => stash('results')
         </div>
+        <button id="reviseSearch">Revise Search</button>
+        %= form_for 'search', class => 'search-form' => (method => 'POST') => begin
+              %= label_for zip => 'Zip (Required)'
+              <br>
+              %= text_field 'zip'
+              <br>
+              <p class="tos">Either MLS or Address is required</p>
+              %= label_for mls => 'MLS'
+              <br>
+              %= text_field 'mls'
+              <br>
+              %= label_for address => 'Address'
+              <br>
+              %= text_field 'address'
+              <br>
+              %= submit_button 'Search', id => 'search'
+        % end
+        
     </div>
 </div>
 

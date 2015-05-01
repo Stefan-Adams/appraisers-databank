@@ -12,7 +12,7 @@
         <br />
         %= include 'partial/stripe_payment_form', currency => 'USD', amount => ($docs*$charge), product_id => "$docs ".$c->pl("document", $docs);
     % } else {
-        Your cart is empty.
+        <p>Your cart is empty.</p>
     % }
     </div>
 </div>
