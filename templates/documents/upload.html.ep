@@ -49,7 +49,7 @@
         %= label_for date => 'Property date'
         <br>
         %= check_box sketch, id => 'sketch'
-        %= label_for date => 'Property sketch'
+        %= label_for sketch => 'Property sketch'
         <br>
         %= check_box photos, id => 'photos'
         %= label_for photos => 'Property photos'
