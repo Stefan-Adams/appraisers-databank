@@ -42,8 +42,18 @@
         %= label_for zip => 'Zip (Required)'
         <br>
         %= text_field 'zip'
+        
+        I certify that my document includes all of the following:<br>
+        
+        %= check_box date, id => 'date'
+        %= label_for date => 'Property date'
         <br>
-    
-        %= submit_button 'Upload'
+        %= check_box sketch, id => 'sketch'
+        %= label_for date => 'Property sketch'
+        <br>
+        %= check_box photos, id => 'photos'
+        %= label_for photos => 'Property photos'
+        <br>
+        %= submit_button 'Upload', id => 'upload', disabled
     % end
 </div>

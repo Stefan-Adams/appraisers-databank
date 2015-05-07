@@ -8,6 +8,10 @@ var overlay = $('#overlay');
 var link = $('#regLink');
 var regForm = $('#regForm');
 var close = $('#close-button');
+var upload = $('#upload');
+var date = $('#date');
+var sketch = $('#sketch');
+var photos = $('#photos');
     
 //Dropdown login menu   
 loginform.hide();
@@ -63,6 +67,20 @@ link.click(function() {
 close.click(function() {
     overlay.toggle();
 });
+    
+//Enable submit button when all three boxes are checked on upload form
+
+function enableSubmit() {
+  if (date.prop('checked') && sketch.prop('checked') && photos.prop('checked')) {
+          upload.prop('disabled', false);
+      } else {
+          upload.prop('disabled', true);        
+     }
+}
+
+date.click(enableSubmit);
+photos.click(enableSubmit);
+sketch.click(enableSubmit);
  
     
     

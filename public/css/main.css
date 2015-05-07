@@ -566,6 +566,10 @@ input.field-with-error{
     color: #9DB648;
 }
 
+#upload:disabled {
+    background-color: #b2b2b2;
+}
+
 /* =======================
    TABLE STYLES
 ========================= */
