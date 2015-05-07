@@ -54,6 +54,6 @@
         %= check_box photos, id => 'photos'
         %= label_for photos => 'Property photos'
         <br>
-        %= submit_button 'Upload', id => 'upload', disabled
+        %= submit_button 'Upload', id => 'upload', disabled => 'disabled'
     % end
 </div>
