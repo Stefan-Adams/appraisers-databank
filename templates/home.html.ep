@@ -2,7 +2,7 @@
 <div class="welcome-area">
     <div class="small-container">
     <ul class="boxes">
-        <%= link_to 'register' => begin %><li class="find"><h4>Find Documents</h4><br />Accurate information, created by appraisers.</li><% end %>
+        <%= link_to 'register' => begin %><li class="find"><h4>Find YOUR Documents</h4><br />Accurate information, created by appraisers.</li><% end %>
         <%= link_to 'register' => begin %><li class="sell"><h4>Sell Your Work</h4><br />Upload your appraisal documents for  purchase.</li><% end %>
     </ul> 
     </div>    
