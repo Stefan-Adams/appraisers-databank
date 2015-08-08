@@ -1,15 +1,16 @@
 % layout 'mainpage';
 <div class="welcome-area">
     <div class="small-container">
-    <ul class="boxes">
-        <%= link_to 'register' => begin %><li class="find"><h4>Find Documents</h4><br />Accurate information, created by appraisers.</li><% end %>
-        <%= link_to 'register' => begin %><li class="sell"><h4>Sell Your Work</h4><br />Upload your appraisal documents for  purchase.</li><% end %>
-    </ul> 
+        <ul class="green-boxes">
+            <a href="/docs/sample-doc.pdf" target="_blank"><li class="left"><img src="/img/view-a-sample.png" /></li></a>
+            <%= link_to 'register' => begin %><li class="left"><img src="/img/find-documents.png" /></li><% end %>
+            <%= link_to 'register' => begin %><li class="left"><img src="/img/sell-your-work.png" /></li><% end %>
+        </ul> 
     </div>    
 </div>
 <div class="intro">
     <div class="text">
-        <h3><em>Improving the quality of appraisal work everywhere by providing you, the appraiser, with the best, unbiased comparable information available.</em></h3>
+        <h3>Improving the quality of appraisal work everywhere by providing you, the appraiser, with the best, unbiased comparable information available.</h3>
         <h4>Welcome to ADB</h4>
         <p>ADB is a comparable information bank, where licensed appraisers just like you, can upload accurate property information gathered during their site visits. This information will then be available to other licensed appraisers.
 Only licensed appraisers will be able to access this information.</p>
