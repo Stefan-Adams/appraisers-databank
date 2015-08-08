@@ -3,8 +3,9 @@
 ========================= */
 body {
     width: 100%;
-    font-family: 'Crimson Text', serif;
-    color: #fafafa;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 
@@ -51,7 +52,7 @@ input{
 }
 
 p {
-     font-size: 1.6em;
+     font-size: 16px;
 }
 
 table {
@@ -62,26 +63,37 @@ label{
     font-size: 1.2em;
 }
 
+h1 {
+    font-family: 'Quattrocento', serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+
 h2 {
+    font-family: 'Quattrocento', serif;
+    font-size: 24px;
     color: #B7D358;
     margin-top: 0; 
     margin-bottom: 0;
-    font-size: 2.4em;
 }
 
 h3 {
+    font-family: 'Quattrocento', serif;
     color: #B7D358;
-    font-size: 2.2em;
+    font-size: 22px;
+    line-height: 27px;
 }
 
 h4 {
-    color: #fafafa;
+    font-family: 'Quattrocento', serif;
+    color: #5077af;
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 2em;
+    font-size: 24px;
 }
 
 h5 {
+    font-family: 'Quattrocentro', serif;
     color: #B7D358;
     font-size: 1.8em;
 }
