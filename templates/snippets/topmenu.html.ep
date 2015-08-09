@@ -52,7 +52,7 @@
         <div id="overlay">
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
             <img id="close-button" src="/img/close-button.png" />
-            <h3>Register for ADB</h3>
+            <h4>Register for ADB</h4>
             <p class="dark-text">All fields are required</p>
             <div class="col">
                 %= label_for firstname => 'First Name'
