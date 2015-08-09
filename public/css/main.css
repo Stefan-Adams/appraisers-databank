@@ -39,10 +39,6 @@ a:hover {
     color: #ededed;
 }
 
-.nav li a:hover {
-    color: #81AF6D;
-}
-
 .content-area a{
     color: #9DB648;
 }
@@ -142,6 +138,7 @@ h5 {
 .right {
     float: right;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .left {
@@ -580,7 +577,12 @@ tr:nth-child(even){
 @media screen and (max-width: 768px){
     .green-boxes li {float: none; margin-bottom: 8px;}
     .green-boxes {padding-top: 120px;}
-    .page-title {font-size: 1.6em; left: 5%;}
+    .page-title {font-size: 1.6em; left: 5px;}
+    .footer {height: 55px;}
+        
+}
+
+@media screen and (max-width: 736px){
 }
 
 @media screen and (max-width: 568px){
@@ -592,7 +594,7 @@ tr:nth-child(even){
     .green-boxes li {margin: 0 auto;}
 }
     
-@media screen and (max-width: 360px){
+@media screen and (max-width: 375px){
     .footer-nav {float: left; margin-left: -20px; padding-left: 0;}
     .green-boxes {position: relative; left: -30px;}
     .footer {height: 15vh;}
