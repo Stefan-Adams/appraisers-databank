@@ -1,6 +1,6 @@
 % layout 'subpage';
 <h2 class="page-title">Contact Us</h2>
-    <div class="text">
+    <div class="text darken-bg">
         %= form_for 'contact', id => 'contact-form' => begin
             %=label_for topic => 'How can we help you?'
             <br><br>

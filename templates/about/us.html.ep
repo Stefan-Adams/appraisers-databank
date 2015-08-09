@@ -5,27 +5,27 @@
     <div class="darken-bg"><p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
     <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'create an account' => 'register' %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
     
-    <h3 id="purchase">Purchasing Appraisal Documents</h3>
+    <h2 id="purchase">Purchasing Appraisal Documents</h2>
     <p>Think of the hours you spend hunting down MLS records for comps, only to find out that the records you find are out of date, incomplete, or inaccurate.  Save yourself the time and the headache by purchasing documents created by other Appraisers on ADB.</p>
     <h5>Here’s how it works:</h5>
-    <ol>
+    <ol class="light-text">
     <li>Once you’re <%= link_to 'logged in' => 'login' %>, you’ll be taken to the search page.</li>
     <li>You can search for a document by zip code and address/MLS listing number.</li>
     <li>Click on the listing you want to add the item to your cart. All results include a document set with basic info, photos, and sketches. The cost of each document set is $8.</li>
     <li>When you’re ready, navigate to your cart to checkout.</li>
     </ol>
     
-    <h3 id="sell"><a href="/docs/sample-doc.pdf" target="_blank"><img src="/img/sample-button.png" class="right" /></a>Uploading and Selling Documents</h3>
+    <h2 id="sell"><a href="/docs/sample-doc.pdf" target="_blank"><img src="/img/sample-button.png" class="right" /></a>Uploading and Selling Documents</h2>
     <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available for purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased. Just think – you can make money over and over again for work that you only had to do once! The more you upload, the better your chances for generating income.</p>
     <h5>Here’s how it works:</h5>
-    <ol>
+    <ol class="light-text">
     <li>Once you’re <%= link_to 'logged in' => 'login' %>, click on “Upload” in the top menu.</li>
     <li>Make sure you have basic information, photos, and sketches all combined in a single PDF document. (If your submission is incomplete, it will be flagged by the buyer and could result in you not being paid.)</li>
     <li>Fill out the form on the upload page to complete the process.</li>
     <li>That’s it! Now your document is available for purchase. Each time it’s purchased, we’ll add $4 to your account!</li>
     </ol>
     
-    <h3 id="faq">FAQ</h3>
+    <h2 id="faq">FAQ</h2>
     <h5>Can I download my own documents for free?</h5>
     <p>Of course. No need to pay again for the work you’ve already done.</p>
     <!--<h5>How can I tell how many documents I’ve sold?</h5>
@@ -45,9 +45,9 @@
     <p>First, we want to ensure the integrity of ADB so that our documents are more accurate and better suited for Appraisers than anything you would find on MLS. By requiring registration, we can be sure that everyone here is an Appraiser, and that helps to keep our standards high.</p>
     <p>You’ll also want to be paid for all of the documents you sell, and creating an account enables us to pay you what you deserve!</p>
     
-    <h3 id="guarantee">Our Commitment to You</h3>
+    <h2 id="guarantee">Our Commitment to You</h2>
     <p>As Appraisers ourselves, we are committed to providing the most comprehensive, accurate, and high quality appraisal documents available. To keep our standards high so that ADB will remain the most useful resource available, we ask that all users agree to our <%= link_to 'Terms of Service' => 'about/tos' %>. In a nutshell, here is what they say:
-    <ol>
+    <ol class="light-text">
     <li>All members must be licensed Appraisers, following all USPAP guidelines.</li>
     <li>Members won’t let anyone else – fellow Appraisers or otherwise – log in under their account.</li>
     <li>When you download a document, remember that it’s for your reference only and can’t be distributed.  (But hey, if someone else wants it, send them to ADB!)</li>
@@ -55,6 +55,6 @@
     <li>If you don’t play nice, you’ll have to leave.</li>
     </ol>
     
-    <p><strong>Ready to get started? <%= link_to 'Log in' => 'login' %> or <%= link_to 'Register' => 'register' %> now!</strong></p>
+    <p><b>Ready to get started? <%= link_to 'Log in' => 'login' %> or <%= link_to 'Register' => 'register' %> now!</b></p>
     </div>
 </div>

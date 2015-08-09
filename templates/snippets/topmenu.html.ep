@@ -70,12 +70,12 @@
                 %= email_field 'email'
                 <br>
 
-                %= label_for password => 'Password (minimum 6 characters)'
+                %= label_for password => 'Password (min. 6 characters)'
                 <br>
                 %= password_field 'password'
                 <br>
 
-                %= label_for pass_again => 'Password again'
+                %= label_for pass_again => 'Confirm password'
                 <br>
                 %= password_field 'pass_again'
                 <br>
