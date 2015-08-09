@@ -360,7 +360,7 @@ h5 {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
+    max-width: 1040px;
 }
 
 .green-boxes li {
@@ -571,32 +571,19 @@ tr:nth-child(even){
 ========================= */
 
 @media screen and (max-width: 768px){
-    
-.green-boxes li {
-    float: none;
-    margin-bottom: 8px;
+    .green-boxes li {float: none; margin-bottom: 8px;}
+    .green-boxes {padding-top: 120px;}
+    .page-title {font-size: 1.6em; left: 5%;}
 }
 
-.green-boxes {
-    padding-top: 120px;
-}
-
-.page-title {
-    font-size: 1.6em;
-    left: 5%;
-}
-    
-p {
-    font-size: 1em;
-}
-    
+@media screen and (max-width: 568px){
+    .left {float: none;}
+    .green-boxes {padding-top: 140px;}
+    .green-boxes li {margin: 0 auto;}
 }
     
 @media screen and (max-width: 360px){
-    
-.footer-nav {
-    float: left;
-}
+    .footer-nav {float: left;}
     
 }
 
