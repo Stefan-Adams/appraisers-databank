@@ -6,7 +6,7 @@
     % } else {
         <p>Update your profile.</p>
     % }
-     %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
+     %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns",) => begin
             <h4>Register for ADB</h4>
             <p>All fields are required</p>
             <div class="col">
