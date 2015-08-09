@@ -64,34 +64,8 @@
                 <br>
                 %= text_field 'lastname'
                 <br>
-
-                %= label_for address => 'Address'
-                <br>
-                %= text_field 'address'
-                <br>
-
-                %= label_for city => 'City'
-                <br>
-                %= text_field 'city'
-                <br>
-
-                %= label_for state => 'State'
-                <br>
-                %= text_field 'state'
-                <br>
-
-                %= label_for zip => 'Zip'
-                <br>
-                %= text_field 'zip'
-                <br>
-
-                %= label_for phone => 'Phone'
-                <br>
-                %= text_field 'phone'
-                <br>
-            </div>
-            <div class="col">
-                %= label_for email => 'Email'
+                
+                 %= label_for email => 'Email'
                 <br>
                 %= email_field 'email'
                 <br>
@@ -106,20 +80,14 @@
                 %= password_field 'pass_again'
                 <br>
 
-                %= label_for slid => 'State License Number'
-                <br>
-                %= text_field 'slid'
-                <br>
-
-                %= label_for taxid => 'Federal ID or Social Security Number'
-                <br>
-                %= text_field 'taxid'
-                <br>
-
-                %= label_for w9 => 'W-9'
-                <br>
-                %= file_field 'w9'
-                <br>
+            </div>
+            <div class="col">
+                <p class="dark-text">Or use an exisiting account:</p>
+                <a href="#"><img src="/img/facebook-sign-up.png" /></a>
+                <br><br>
+                <a href="#"><img src="/img/google-sign-up.png" /></a>
+            </div>
+            <div class="col-2">
                 %= check_box 'tos' => include('user/tos')
                 %= label_for tos => 'I agree to the Terms of Service'
                 <div id="tos_text" class="dark-text"><%= include 'user/tos' %></div>

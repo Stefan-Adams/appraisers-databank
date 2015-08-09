@@ -6,6 +6,7 @@ body {
     font-family: 'Questrial', sans-serif;
     font-size: 16px;
     line-height: 22px;
+    color: #333333;
 }
 
 
@@ -75,6 +76,7 @@ h2 {
     color: #B7D358;
     margin-top: 0; 
     margin-bottom: 0;
+    font-weight: 400;
 }
 
 h3 {
@@ -83,6 +85,7 @@ h3 {
     font-size: 22px;
     line-height: 27px;
     font-weight: 400;
+    margin-bottom: 0px
 }
 
 h4 {
@@ -95,9 +98,11 @@ h4 {
 }
 
 h5 {
-    font-family: 'Quattrocentro', serif;
+    font-family: 'Quattrocento', serif;
     color: #B7D358;
-    font-size: 1.8em;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 
 .intro p, .int p, .light-text {
@@ -165,12 +170,13 @@ h5 {
 
 .col{
     float: left;
-    width: 40%;
+    width: 50%;
     min-width: 230px;
 }
 
-.col:last-child{
-    width: 60%;
+.col-2 {
+    width: 90%;
+    margin: 5px auto;
 }
 
 /* =======================

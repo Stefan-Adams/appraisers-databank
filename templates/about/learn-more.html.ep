@@ -5,14 +5,14 @@
     <p>Appraiser’s DataBank (ADB) is the first and only database that allows Appraisers to buy and sell the documents that they need. No more digging through messy or incomplete MLS reports. No more hunting down real estate agents to find more information about a home – information which <em>may or may not</em> be correct.</p>
     <p>ADB is your trusted source for accurate appraisal documents. You must be a registered appraiser and <%= link_to 'create an account' => 'register' %> to use the site. This means that you can trust all documents were created by fellow Appraisers.</p>
     
-    <h3>Purchasing Appraisal Documents</h3>
+    <h2>Purchasing Appraisal Documents</h2>
     <p>Think of the hours you spend hunting down MLS records for comps, only to find out that the records you find are out of date, incomplete, or inaccurate.  Save yourself the time and the headache by purchasing documents created by other Appraisers on ADB.</p>
     
-    <h3><a href="/docs/sample-doc.pdf" target="_blank"><img src="/img/sample-button.png" class="right" /></a>Uploading and Selling Documents</h3>
+    <h2><a href="/docs/sample-doc.pdf" target="_blank"><img src="/img/sample-button.png" class="right" /></a>Uploading and Selling Documents</h2>
     <p>This is the heart and soul of ADB – that Appraisers like you upload documents so that they are available to purchase by other Appraisers. Of course, we wouldn’t just give away your hard work without making sure that you get your fair share. That’s why you earn money every time one of your documents is purchased.</p>
     <p>Just think – you can make money over and over again for work that you only had to do once! And the more you upload, the better your chances for generating income.</p>
     
-    <h3>FAQ</h3>
+    <h2>FAQ</h2>
     <h5>Can I download my own documents for free?</h5>
     <p>Of course. No need to pay again for the work you’ve already done.</p>
     <h5>How can I tell how many documents I’ve sold?</h5>
