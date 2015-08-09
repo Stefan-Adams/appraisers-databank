@@ -1,85 +1,51 @@
 % layout 'subpage', title => $register ? 'Register' : 'Profile';
 <h2 class="page-title"><%= $register ? 'Register for An Account' : 'My Profile' %></h2>
-<div class="text">
+<div class="text darken-bg">
     % if ( $register ) {
         <p>To keep our work secure, you must create an account to use the database. Signing up is absolutely free and only takes a few minutes. Simply fill out the form below to get started. Already have an account? <%= link_to "Login" => 'login' %>.</p>
     % } else {
         <p>Update your profile.</p>
     % }
-    %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns") => begin
-        <div class="col">
+     %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
+            <h4>Register for ADB</h4>
             <p>All fields are required</p>
-            %= label_for firstname => 'First Name'
-            <br>
-            %= text_field 'firstname'
-            <br>
-    
-            %= label_for lastname => 'Last Name'
-            <br>
-            %= text_field 'lastname'
-            <br>
-    
-            %= label_for address => 'Address'
-            <br>
-            %= text_field 'address'
-            <br>
-    
-            %= label_for city => 'City'
-            <br>
-            %= text_field 'city'
-            <br>
-    
-            %= label_for state => 'State'
-            <br>
-            %= text_field 'state'
-            <br>
-    
-            %= label_for zip => 'Zip'
-            <br>
-            %= text_field 'zip'
-            <br>
-    
-            %= label_for phone => 'Phone'
-            <br>
-            %= text_field 'phone'
-            <br>
-            
-        </div>
-        <div class="col">
-            %= label_for email => 'Email'
-            <br>
-            %= email_field 'email'
-            <br>
-    
-            %= label_for password => 'Password (minimum 6 characters)'
-            <br>
-            %= password_field 'password'
-            <br>
-    
-            %= label_for pass_again => 'Password again'
-            <br>
-            %= password_field 'pass_again'
-            <br>
-    
-            %= label_for slid => 'State License Number'
-            <br>
-            %= text_field 'slid'
-            <br>
-    
-            %= label_for taxid => 'Federal ID or Social Security Number'
-            <br>
-            %= text_field 'taxid'
-            <br>
-    
-            %= label_for w9 => 'W-9'
-            <br>
-            %= file_field 'w9'
-            <br>
-            %= check_box 'tos' => include('user/tos')
-            %= label_for tos => 'I agree to the Terms of Service'
-            <br>
-            <div id="tos_text"><%= include 'user/tos' %></div>
-            %= submit_button 'Create Account'
-        </div>
-    % end
+            <div class="col">
+                %= label_for firstname => 'First Name', class => 'light-text'
+                <br>
+                %= text_field 'firstname'
+                <br>
+
+                %= label_for lastname => 'Last Name', class => 'light-text'
+                <br>
+                %= text_field 'lastname'
+                <br>
+                
+                 %= label_for email => 'Email', class => 'light-text'
+                <br>
+                %= email_field 'email'
+                <br>
+
+                %= label_for password => 'Password (min. 6 characters)', class => 'light-text'
+                <br>
+                %= password_field 'password'
+                <br>
+
+                %= label_for pass_again => 'Confirm password', class => 'light-text'
+                <br>
+                %= password_field 'pass_again'
+                <br>
+            </div>
+            <div class="col">
+                <p>Or use an exisiting account:</p>
+                <a href="#"><img src="/img/facebook-sign-up.png" /></a>
+                <br><br>
+                <a href="#"><img src="/img/google-sign-up.png" /></a>
+            </div>
+            <div class="col-2">
+                %= check_box 'tos' => include('user/tos')
+                %= label_for tos => 'I agree to the Terms of Service', class => 'light-text'
+                <div id="tos_text" class="light-text"><%= include 'user/tos' %></div>
+                %= submit_button 'Create Account'
+            </div>
+        % end 
 </div>
