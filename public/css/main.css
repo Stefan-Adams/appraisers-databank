@@ -577,7 +577,10 @@ tr:nth-child(even){
 }
 
 @media screen and (max-width: 568px){
-    .left {float: none;}
+    h1 {font-size: 30px;}
+    .left {float: none; margin: 0 auto;}
+    .small-container{width: 100%;}
+    .small-container ul{margin: 0 auto;}
     .green-boxes {padding-top: 140px;}
     .green-boxes li {margin: 0 auto;}
 }
