@@ -150,7 +150,7 @@ h5 {
     float: left;
 }
 
-img.center {
+.center, .center img {
     display: block;
     margin: 10px auto 0;
 }
@@ -188,6 +188,7 @@ img.center {
 
 .inline {
     display: inline;
+    width: auto;
     margin-right: 5px;
 }
 
