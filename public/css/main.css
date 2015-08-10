@@ -152,7 +152,8 @@ h5 {
 
 .center, .center img {
     display: block;
-    margin: 10px auto 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .flex,  .nav {

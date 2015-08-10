@@ -52,7 +52,6 @@
         <div id="overlay">
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
             <img id="close-button" src="/img/close-button.png" />
-            <h4>Register for ADB</h4>
             <div class="col-2">
                 <div class="center">
                     <a href="#"><img src="/img/facebook-sign-up.png" /></a>
@@ -61,14 +60,14 @@
                     <p class="dark-text">Or use your email address:</p>
                 </div>
                 <div class="inline">
-                %= label_for firstname => 'First Name',
-                <br>
-                %= text_field 'firstname'
+                    %= label_for firstname => 'First Name',
+                    <br>
+                    %= text_field 'firstname'
                 </div>
                 <div class="inline">
-                %= label_for lastname => 'Last Name', class => 'inline'
-                <br>
-                %= text_field 'lastname'
+                    %= label_for lastname => 'Last Name', class => 'inline'
+                    <br>
+                    %= text_field 'lastname'
                 </div>
                 %= label_for email => 'Email'
                 <br>
@@ -84,7 +83,7 @@
                 <br>
                 %= check_box 'tos' => include('user/tos')
                 %= label_for tos => 'I agree to the Terms of Service'
-                <div id="tos_text" class="dark-text"><%= include 'user/tos' %></div>
+                <div id="tos_text" class="dark-text"><!--<%= include 'user/tos' %>--></div>
                 %= submit_button 'Create Account'
             </div>
         % end 
