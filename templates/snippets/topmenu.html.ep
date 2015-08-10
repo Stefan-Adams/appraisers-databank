@@ -54,38 +54,33 @@
             <img id="close-button" src="/img/close-button.png" />
             <h4>Register for ADB</h4>
             <p class="dark-text">All fields are required</p>
-            <div class="col">
+            <div class="col-2">
+                <a href="#"><img src="/img/facebook-sign-up.png" /></a>
+                <br><br>
+                <a href="#"><img src="/img/google-sign-up.png" /></a>
+                <p class="dark-text">Or use your email address:</p>
+                <div class="col">
                 %= label_for firstname => 'First Name'
                 <br>
                 %= text_field 'firstname'
-                <br>
-
+                </div>
+                <div class="col">
                 %= label_for lastname => 'Last Name'
                 <br>
                 %= text_field 'lastname'
-                <br>
-                
-                 %= label_for email => 'Email'
+                </div>
+                %= label_for email => 'Email'
                 <br>
                 %= email_field 'email'
                 <br>
-
                 %= label_for password => 'Password (min. 6 characters)'
                 <br>
                 %= password_field 'password'
                 <br>
-
                 %= label_for pass_again => 'Confirm password'
                 <br>
                 %= password_field 'pass_again'
                 <br>
-
-            </div>
-            <div class="col">
-                <p class="dark-text">Or use an exisiting account:</p>
-                <a href="#"><img src="/img/facebook-sign-up.png" /></a>
-                <br><br>
-                <a href="#"><img src="/img/google-sign-up.png" /></a>
             </div>
             <div class="col-2">
                 %= check_box 'tos' => include('user/tos')

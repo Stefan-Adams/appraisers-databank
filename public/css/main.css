@@ -171,7 +171,7 @@ h5 {
 .col{
     float: left;
     width: 50%;
-    min-width: 230px;
+    min-width: 200px;
 }
 
 .col-2 {
