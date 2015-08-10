@@ -189,6 +189,10 @@ h5 {
     margin-right: 5px;
 }
 
+.full-width {
+    width: 375px;
+}
+
 /* =======================
    HEADER STYLES
 ========================= */
@@ -355,7 +359,7 @@ h5 {
     background: #fafafa;
     border: 2px solid #7D9138;
     border-radius: 3px;
-    width: 35%;
+    width: 30%;
     min-width: 450px;
     padding: 10px 0px;
     position: absolute;
