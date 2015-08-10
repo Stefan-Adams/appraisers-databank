@@ -54,10 +54,12 @@
             <img id="close-button" src="/img/close-button.png" />
             <h4>Register for ADB</h4>
             <div class="col-2">
-                <a href="#" class="center"><img src="/img/facebook-sign-up.png" /></a>
-                <br><br>
-                <a href="#" class="center"><img src="/img/google-sign-up.png" /></a>
-                <p class="dark-text">Or use your email address:</p>
+                <div class="center">
+                    <a href="#"><img src="/img/facebook-sign-up.png" /></a>
+                    <br><br>
+                    <a href="#"><img src="/img/google-sign-up.png" /></a>
+                    <p class="dark-text">Or use your email address:</p>
+                </div>
                 <div class="inline">
                 %= label_for firstname => 'First Name',
                 <br>
