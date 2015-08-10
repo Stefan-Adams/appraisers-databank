@@ -150,6 +150,11 @@ h5 {
     float: left;
 }
 
+img.center {
+    display: block;
+    margin: 10px auto 0;
+}
+
 .flex,  .nav {
     display: flex;
     display: -webkit-flex;
@@ -178,6 +183,12 @@ h5 {
     width: 90%;
     margin: 5px auto;
     clear: left;
+}
+
+
+.inline {
+    display: inline;
+    margin-right: 5px;
 }
 
 /* =======================
