@@ -53,19 +53,18 @@
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
             <img id="close-button" src="/img/close-button.png" />
             <h4>Register for ADB</h4>
-            <p class="dark-text">All fields are required</p>
             <div class="col-2">
                 <a href="#"><img src="/img/facebook-sign-up.png" /></a>
                 <br><br>
                 <a href="#"><img src="/img/google-sign-up.png" /></a>
                 <p class="dark-text">Or use your email address:</p>
-                <div class="col">
-                %= label_for firstname => 'First Name'
+                <div class="inline">
+                %= label_for firstname => 'First Name',
                 <br>
                 %= text_field 'firstname'
                 </div>
-                <div class="col">
-                %= label_for lastname => 'Last Name'
+                <div class="inline">
+                %= label_for lastname => 'Last Name', class => 'inline'
                 <br>
                 %= text_field 'lastname'
                 </div>
@@ -81,8 +80,6 @@
                 <br>
                 %= password_field 'pass_again'
                 <br>
-            </div>
-            <div class="col-2">
                 %= check_box 'tos' => include('user/tos')
                 %= label_for tos => 'I agree to the Terms of Service'
                 <div id="tos_text" class="dark-text"><%= include 'user/tos' %></div>

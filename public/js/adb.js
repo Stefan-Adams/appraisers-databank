@@ -12,6 +12,7 @@ var upload = $('#upload');
 var date = $('#date');
 var sketch = $('#sketch');
 var photos = $('#photos');
+var tosText = $('#tos_text');
     
 //Dropdown login menu   
 loginform.hide();
@@ -58,6 +59,7 @@ searchbutton.click(function(){
 });*/
 
 //Registration Form lightbox
+tosText.css('display', 'hidden');
 link.removeAttr('href');
 link.css('cursor', 'pointer');
 link.click(function() {
