@@ -60,10 +60,6 @@ table {
     font-size: 1.2em;
 }
 
-label{
-    font-size: 1.2em;
-}
-
 h1 {
     font-family: 'Quattrocento', serif;
     font-weight: 400;
@@ -359,13 +355,13 @@ h5 {
     background: #fafafa;
     border: 2px solid #7D9138;
     border-radius: 3px;
-    width: 50%;
-    max-width: 680px;
-    padding: 0 20px 10px 20px;
+    width: 35%;
+    min-width: 450px;
+    padding: 10px 0px;
     position: absolute;
     top: 80px;
-    left: 25%;
-    right: 25%;
+    left: 35%;
+    right: 35%;
     z-index: 90;
 }
 

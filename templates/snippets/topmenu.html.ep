@@ -54,8 +54,9 @@
             <img id="close-button" src="/img/close-button.png" />
             <div class="col-2">
                 <div class="center">
+                    <br>
                     <a href="#"><img src="/img/facebook-sign-up.png" /></a>
-                    <br><br>
+                    <br>
                     <a href="#"><img src="/img/google-sign-up.png" /></a>
                     <p class="dark-text">Or use your email address:</p>
                 </div>
