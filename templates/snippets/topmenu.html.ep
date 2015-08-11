@@ -73,7 +73,7 @@
                             %= password_field password => 'Password', class => 'full-width'
                             <input type="checkbox" id="tos-agree" name="tos-agree" />
                             %= check_box 'tos'
-                            %= label_for tos => "I agree to the <%= link_to 'Terms of Service' => 'about/tos' %>"
+                            %= label_for tos => "I agree to the ".link_to('Terms of Service' => 'about/tos')
                             <button type="submit" class="full-width">Create Account</button>
                             %= submit_button 'Create Account', class => 'full-width'
                         </div>
