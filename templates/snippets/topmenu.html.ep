@@ -35,6 +35,10 @@
                 <div class="error-message"><%= stash 'error' %><%= flash 'f_error' %></div>
                 % }
                 <fieldset>
+                    <p class="dark-text">Sign in with:</p>
+                    <a href="#"><img src="/img/facebook-sm.png" class="inline"/></a>
+                    <a href="#"><img src="/img/google-sm.png" class="inline"/></a>
+                    <p class="dark-text">Or use your email address:</p>
                          %= label_for email => 'Email'
                          %= email_field 'email'
                     <br />
