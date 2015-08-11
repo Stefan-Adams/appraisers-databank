@@ -39,6 +39,14 @@ a:hover {
     color: #ededed;
 }
 
+.form-link {
+    color: #8CA96A;
+}
+
+.form-link:hover {
+    color: #AFD484;
+}
+
 .content-area a{
     color: #9DB648;
 }
@@ -603,6 +611,7 @@ tr:nth-child(even){
 }
 
 @media screen and (max-width: 736px){
+    #regForm {width: 95%; left: auto; right: auto; min-width: 300px;}
 }
 
 @media screen and (max-width: 568px){

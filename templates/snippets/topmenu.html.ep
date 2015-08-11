@@ -67,9 +67,8 @@
                             <input type="email" id="email" name="email" placeholder="Email Address" class="full-width"/>
                             <input type="password" id="password" name="pass" placeholder="Password" class="full-width"/>
                             <input type="checkbox" id="tos-agree" name="tos-agree" />
-                            <label for="tos-agree">I agree to the <a href="about/tos">Terms of Service</a></label>
+                            <label for="tos-agree">I agree to the <a href="about/tos" class="form-link">Terms of Service</a></label>
                             <input type="submit" class="full-width" value="Create Account" />
-                        </div>
                         </div>
                     </div>
             % end 
