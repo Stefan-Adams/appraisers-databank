@@ -51,24 +51,25 @@
     <li id="register" <%== is_current 'register' %>><%= link_to "Sign Up" => 'register', id => 'regLink' %>
         <div id="overlay">
             %= form_for register => (method => 'POST', enctype => 'multipart/form-data', class => "columns", id => "regForm") => begin
-                    <img id="close-button" src="/img/close-button.png" />
+                    <img id="close-button" src="img/close-button.png" />
                     <div class="col-2">
                         <div class="center">
                             <br>
-                            <a href="#"><img src="img/facebook-sign-up.png" /></a>
+                            <a href="#"><img src="/img/facebook-sign-up.png" /></a>
                             <br>
-                            <a href="#"><img src="img/google-sign-up.png" /></a>
+                            <a href="#"><img src="/img/google-sign-up.png" /></a>
                             <br>
                         </div>
                         <p class="dark-text">Or use your email address:</p>
                         <div class="center">
-                            %= text_field 'firstname' => 'First Name', class => 'inline'
-                            %= text_field 'lastname' => 'Last Name', class => 'inline'
-                            %= email_field email => 'Email Address', class => 'full-width'
-                            %= password_field 'password', class => 'full-width'
-                            %= check_box 'tos'
-                            %= label_for tos => "I agree to the Terms of Service"
-                            %= submit_button 'Create Account', class => 'full-width'
+                            <input class="inline" type="text" id="firsttname" name="firsttname" placeholder="First Name" />
+                            <input class="inline" type="text" id="lastname" name="lasttname" placeholder="Last Name" />
+                            <input type="email" id="email" name="email" placeholder="Email Address" class="full-width"/>
+                            <input type="password" id="password" name="pass" placeholder="Password" class="full-width"/>
+                            <input type="checkbox" id="tos-agree" name="tos-agree" />
+                            <label for="tos-agree">I agree to the <a href="about/tos">Terms of Service</a></label>
+                            <input type="submit" class="full-width" value="Create Account" />
+                        </div>
                         </div>
                     </div>
             % end 
