@@ -193,6 +193,8 @@ h5 {
 
 .inline {
     display: inline;
+    display: -moz-inline-box;
+    display: -webkit-inline-box;
     width: auto;
     margin-right: 5px;
 }
