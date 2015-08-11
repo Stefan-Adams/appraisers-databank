@@ -65,9 +65,9 @@
                             %= text_field 'firstname' => 'First Name', class => 'inline'
                             %= text_field 'lastname' => 'Last Name', class => 'inline'
                             %= email_field email => 'Email Address', class => 'full-width'
-                            %= password_field password => 'Password', class => 'full-width'
+                            %= password_field 'password', class => 'full-width'
                             %= check_box 'tos'
-                            %= label_for tos => "I agree to the ".link_to('Terms of Service' => 'about/tos')
+                            %= label_for tos => "I agree to the Terms of Service"
                             %= submit_button 'Create Account', class => 'full-width'
                         </div>
                     </div>
