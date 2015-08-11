@@ -36,9 +36,9 @@
                 % }
                 <fieldset>
                     <p class="dark-text">Sign in with:</p>
-                    <div class="flex">
-                        <a href="#"><img src="/img/facebook-sm.png" class="inline"/></a>
-                        <a href="#"><img src="/img/google-sm.png" class="inline"/></a>
+                    <div class="form-flex">
+                        <a href="#"><img src="/img/facebook-sm.png"/></a>
+                        <a href="#"><img src="/img/google-sm.png"/></a>
                     </div>
                     <p class="dark-text">Or use your email address:</p>
                     <input type="email" name="email" placeholder="Email Address" />
@@ -64,8 +64,10 @@
                         </div>
                         <p class="dark-text">Or use your email address:</p>
                         <div class="center">
-                            <input class="inline" type="text" id="firsttname" name="firsttname" placeholder="First Name" />
-                            <input class="inline" type="text" id="lastname" name="lasttname" placeholder="Last Name" />
+                            <div class="form-flex">
+                                <input type="text" id="firsttname" name="firsttname" placeholder="First Name" />
+                                <input type="text" id="lastname" name="lasttname" placeholder="Last Name" />
+                            </div>
                             <input type="email" id="email" name="email" placeholder="Email Address" class="full-width"/>
                             <input type="password" id="password" name="password" placeholder="Password" class="full-width"/>
                             <input type="checkbox" id="tos-agree" name="tos-agree" />

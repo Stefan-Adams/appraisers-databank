@@ -172,6 +172,15 @@ h5 {
     -webkit-align-items: flex-end;
 }
 
+.form-flex {
+    dixplay: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    align-items: space-around;
+    -webkit-align-items: space-around;
+}
+
 .columns::after {
     content: " ";
     display: table;
