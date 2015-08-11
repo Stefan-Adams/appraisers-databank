@@ -36,15 +36,13 @@
                 % }
                 <fieldset>
                     <p class="dark-text">Sign in with:</p>
-                    <a href="#"><img src="/img/facebook-sm.png" class="inline"/></a>
-                    <a href="#"><img src="/img/google-sm.png" class="inline"/></a>
+                    <div class="flex">
+                        <a href="#"><img src="/img/facebook-sm.png" class="inline"/></a>
+                        <a href="#"><img src="/img/google-sm.png" class="inline"/></a>
+                    </div>
                     <p class="dark-text">Or use your email address:</p>
-                         %= label_for email => 'Email'
-                         %= email_field 'email'
-                    <br />
-                        %= label_for password => 'Password'
-                        %= password_field 'password'
-                    <br />
+                    <input type="email" name="email" placeholder="Email Address" />
+                    <input type="password"name="password" placeholder="Password" />
                     %= submit_button 'Log In', id => 'login'
                     %= label_for remember => 'Remember me', class => 'checkbox'
                     %= check_box 'remember' => 'yes', id => 'checkbox'
@@ -69,7 +67,7 @@
                             <input class="inline" type="text" id="firsttname" name="firsttname" placeholder="First Name" />
                             <input class="inline" type="text" id="lastname" name="lasttname" placeholder="Last Name" />
                             <input type="email" id="email" name="email" placeholder="Email Address" class="full-width"/>
-                            <input type="password" id="password" name="pass" placeholder="Password" class="full-width"/>
+                            <input type="password" id="password" name="password" placeholder="Password" class="full-width"/>
                             <input type="checkbox" id="tos-agree" name="tos-agree" />
                             <label for="tos-agree">I agree to the <a href="about/tos" class="form-link">Terms of Service</a></label>
                             <input type="submit" class="full-width" value="Create Account" />
